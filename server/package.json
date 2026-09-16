@@ -1,7 +1,7 @@
 {
   "name": "medikiosk-server",
   "version": "1.0.0",
-  "description": "Backend API & Clinical Engine for SIH 26047 MEDIKIOSK",
+  "description": "Backend API & Clinical Engine for MEDIKIOSK Clinical OS",
   "main": "index.js",
   "type": "module",
   "scripts": {

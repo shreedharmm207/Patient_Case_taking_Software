@@ -1,5 +1,161 @@
 [
   {
+    "id": "cons_1789584743438_7pcx",
+    "tokenNumber": "OPD-107 [URGENT]",
+    "patientId": "pat_1789584743426",
+    "patientName": "Smt. Gangamma Gowda",
+    "patientAge": 58,
+    "patientGender": "Female",
+    "abhaId": "91-3829-5721-8932",
+    "language": "kn",
+    "chiefComplaint": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು",
+    "chiefComplaintKn": "",
+    "status": "IMMEDIATE_ATTENTION",
+    "isRedFlag": true,
+    "urgencyLevel": "HIGH",
+    "redFlagReport": {
+      "isRedFlag": true,
+      "flags": [
+        {
+          "id": "acute_abdomen",
+          "title": "Acute Surgical Abdomen / Suspected Appendicitis or Perforation",
+          "severity": "HIGH",
+          "triggerEvidence": "Clinical answer pattern",
+          "rationale": "Acute localized or generalized severe abdominal pain with guarding or rebound tenderness requires prompt surgical review.",
+          "rationaleKn": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು ಮತ್ತು ತಡೆಯಲಾಗದ ಬಾಧೆಯು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ತಕ್ಷಣದ ಪರೀಕ್ಷೆಯನ್ನು ಬಯಸುತ್ತದೆ.",
+          "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
+        }
+      ],
+      "urgencyLevel": "HIGH",
+      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+    },
+    "createdAt": "2026-09-16T18:52:23.438Z",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Abdominal Pain",
+          "detectedWord": "abdominal_pain",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        }
+      ],
+      "duration": null,
+      "severity": "Severe (Grade 3)",
+      "modifiers": []
+    },
+    "adaptiveAnswers": [],
+    "medicalHistory": {
+      "conditions": [
+        "Hypertension (5 years)"
+      ],
+      "medications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [],
+    "ayushData": null,
+    "summary": {
+      "generatedAt": "2026-09-16T18:52:23.438Z",
+      "clinicalStatus": "IMMEDIATE_ATTENTION",
+      "isRedFlag": true,
+      "redFlagReport": {
+        "isRedFlag": true,
+        "flags": [
+          {
+            "id": "acute_abdomen",
+            "title": "Acute Surgical Abdomen / Suspected Appendicitis or Perforation",
+            "severity": "HIGH",
+            "triggerEvidence": "Clinical answer pattern",
+            "rationale": "Acute localized or generalized severe abdominal pain with guarding or rebound tenderness requires prompt surgical review.",
+            "rationaleKn": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು ಮತ್ತು ತಡೆಯಲಾಗದ ಬಾಧೆಯು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ತಕ್ಷಣದ ಪರೀಕ್ಷೆಯನ್ನು ಬಯಸುತ್ತದೆ.",
+            "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
+          }
+        ],
+        "urgencyLevel": "HIGH",
+        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+      },
+      "chiefComplaint": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು",
+      "presentingSymptoms": [
+        "Abdominal Pain"
+      ],
+      "duration": "Recorded during intake",
+      "severity": "Severe (Grade 3)",
+      "historyOfPresentingIllness": "Patient presented with chief complaint of ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು. Reported severity: Severe (Grade 3).",
+      "pastMedicalHistory": [
+        "Hypertension (5 years)"
+      ],
+      "currentMedications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Balanced regular diet",
+        "activity": "Moderate activity"
+      },
+      "documentFindings": [],
+      "ayushAssessment": null,
+      "clinicalObservations": [
+        "PRIORITY: Urgent red-flag symptoms detected during intake. Immediate vitals & triage advised.",
+        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
+        "Attending physician verification required before prescribing or formulating clinical impression."
+      ],
+      "crossVerificationReport": {
+        "verifiedAt": "2026-09-16T18:52:23.438Z",
+        "totalAlerts": 1,
+        "alerts": [
+          {
+            "type": "MEDICATION_DISCREPANCY",
+            "severity": "HIGH",
+            "title": "Medication Adherence Gap: Antihypertensive Therapy",
+            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+            "evidenceSource": "Intake History & Medication Audit",
+            "status": "REQUIRES_PHYSICIAN_REVIEW"
+          }
+        ],
+        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+      },
+      "doctorVerification": {
+        "verified": false,
+        "verifiedBy": null,
+        "verificationTimestamp": null,
+        "doctorNotes": "",
+        "provisionalDiagnosis": "",
+        "suggestedInvestigations": [],
+        "prescriptions": []
+      }
+    },
+    "doctorVerification": {
+      "verified": false,
+      "verifiedBy": null,
+      "verificationTimestamp": null,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "suggestedInvestigations": [],
+      "prescriptions": []
+    }
+  },
+  {
     "id": "cons_1789577787073_fyvu",
     "tokenNumber": "OPD-106 [URGENT]",
     "patientId": "pat_1789577787058",
@@ -207,6 +363,29 @@
       "provisionalDiagnosis": "",
       "suggestedInvestigations": [],
       "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-16T18:52:23.441Z",
+      "totalAlerts": 2,
+      "alerts": [
+        {
+          "type": "MEDICATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Medication Adherence Gap: Antihypertensive Therapy",
+          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+          "evidenceSource": "Intake History & Medication Audit",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        },
+        {
+          "type": "CLINICAL_ESCALATION",
+          "severity": "CRITICAL",
+          "title": "Escalation Warning: Vascular Risk Correlation",
+          "finding": "Patient with pre-existing vascular risk (Hypertension) presents with acute chest pain radiating to extremity. Immediate 12-lead ECG and troponin monitoring indicated.",
+          "evidenceSource": "Cross-comparison: Past History vs Presenting Complaint",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {

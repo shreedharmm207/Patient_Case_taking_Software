@@ -70,7 +70,7 @@ router.get("/doctors", (req, res) => {
 // Reset demo data
 router.post("/reset-demo", (req, res) => {
   const result = resetDemoData();
-  addAuditLog("ADMIN_RESET_DEMO_DATA", "Administrator reseeded benchmark SIH 26047 clinical scenarios", "Admin Console");
+  addAuditLog("ADMIN_RESET_DEMO_DATA", "Administrator reseeded benchmark clinical scenarios", "Admin Console");
   res.json({ success: true, message: result.message });
 });
 

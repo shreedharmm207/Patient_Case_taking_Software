@@ -1,5 +1,5 @@
 // server/services/clinicalEngine.js
-// MEDIKIOSK Clinical Intelligence Engine - SIH 26047
+// MEDIKIOSK Clinical Intelligence & Triage Engine
 
 /**
  * RED-FLAG Emergency Criteria & Keywords

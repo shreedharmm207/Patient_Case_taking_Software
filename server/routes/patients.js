@@ -1,6 +1,6 @@
 // server/routes/patients.js
 import express from "express";
-import { getPatients, getPatientById, savePatient, getConsultations } from "../services/dataStore.js";
+import { getPatients, getPatientById, savePatient, getConsultations, getPatientTimeline } from "../services/dataStore.js";
 
 const router = express.Router();
 
@@ -8,6 +8,19 @@ const router = express.Router();
 router.get("/", (req, res) => {
   const patients = getPatients();
   res.json({ success: true, data: patients });
+});
+
+// Get unified longitudinal timeline for patient
+router.get("/:id/timeline", (req, res) => {
+  try {
+    const timelineData = getPatientTimeline(req.params.id);
+    if (!timelineData) {
+      return res.status(404).json({ success: false, message: "Patient timeline not found" });
+    }
+    res.json({ success: true, ...timelineData });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
 });
 
 // Get patient by ID with full consultation history timeline

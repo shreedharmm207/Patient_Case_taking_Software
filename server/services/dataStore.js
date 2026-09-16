@@ -653,3 +653,38 @@ export function addAuditLog(event, details, actor = "MEDIKIOSK System") {
 export function getAuditLogs() {
   return readJSON(AUDIT_FILE, INITIAL_AUDIT_LOGS);
 }
+
+export function getPatientTimeline(patientId) {
+  const patient = getPatientById(patientId);
+  if (!patient) return null;
+
+  const allConsultations = getConsultations();
+  const patientConsultations = allConsultations.filter(
+    c => c.patientId === patient.id || c.abhaId === patient.abhaId
+  );
+
+  const timeline = [
+    ...(patient.pastConsultations || []).map(p => ({
+      date: p.date,
+      type: "HISTORICAL_RECORD",
+      complaint: p.complaint,
+      doctor: p.doctor,
+      outcome: p.outcome
+    })),
+    ...patientConsultations.map(c => ({
+      date: c.createdAt ? c.createdAt.split("T")[0] : "2026-09-16",
+      type: "MEDIKIOSK_INTAKE",
+      consultationId: c.id,
+      tokenNumber: c.tokenNumber,
+      complaint: c.chiefComplaint,
+      status: c.status,
+      isRedFlag: c.isRedFlag,
+      doctorNotes: c.doctorVerification?.doctorNotes || "Pending Doctor Review"
+    }))
+  ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  return {
+    patient,
+    unifiedTimeline: timeline
+  };
+}
