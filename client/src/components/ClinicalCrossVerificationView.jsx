@@ -254,7 +254,7 @@ export default function ClinicalCrossVerificationView({ onOpenDoctorCase }) {
       {/* 4 Pillars Grid from Presentation Slide 2 */}
       <div>
         <h2 style={{ fontSize: '1.4rem', fontWeight: 800, textAlign: 'center', marginBottom: '1.5rem' }}>
-          Innovation & Architectural Pillars (CureCoders – MEDIKIOSK)
+          Core Architectural Innovation & Safety Pillars
         </h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>

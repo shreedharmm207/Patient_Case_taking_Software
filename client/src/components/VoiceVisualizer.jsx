@@ -39,19 +39,19 @@ export default function VoiceVisualizer({ isListening, transcript, onStop, onSta
             width: '64px',
             height: '64px',
             borderRadius: '50%',
-            background: isListening ? 'linear-gradient(135deg, #ff2d55, #c9184a)' : 'linear-gradient(135deg, #00e5a3, #00b4d8)',
+            background: isListening ? 'linear-gradient(135deg, #0284c7, #00b4d8)' : 'linear-gradient(135deg, #00e5a3, #00b4d8)',
             border: 'none',
-            color: isListening ? '#ffffff' : '#04151f',
+            color: '#04151f',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: isListening ? '0 0 20px rgba(255, 45, 85, 0.5)' : '0 4px 18px rgba(0, 229, 163, 0.35)',
-            transform: isListening ? 'scale(1.08)' : 'scale(1)',
+            boxShadow: isListening ? '0 0 20px rgba(0, 180, 216, 0.5)' : '0 4px 18px rgba(0, 229, 163, 0.35)',
+            transform: isListening ? 'scale(1.05)' : 'scale(1)',
             transition: 'all 0.2s ease'
           }}
         >
-          {isListening ? <MicOff size={28} /> : <Mic size={28} />}
+          <Mic size={28} />
         </button>
 
         {isListening && (

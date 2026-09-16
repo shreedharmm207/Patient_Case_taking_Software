@@ -1,5 +1,182 @@
 [
   {
+    "id": "cons_1789585610343_kwa7",
+    "tokenNumber": "OPD-108",
+    "patientId": "pat_1789585610302",
+    "patientName": "Smt. Gangamma Gowda",
+    "patientAge": 58,
+    "patientGender": "Female",
+    "abhaId": "91-3829-5721-8932",
+    "language": "kn",
+    "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
+    "chiefComplaintKn": "",
+    "status": "REVIEWED",
+    "isRedFlag": false,
+    "urgencyLevel": "STANDARD",
+    "redFlagReport": {
+      "isRedFlag": false,
+      "flags": [],
+      "urgencyLevel": "STANDARD",
+      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+    },
+    "createdAt": "2026-09-16T19:06:50.343Z",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Fever (Pyrexia)",
+          "detectedWord": "fever",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        },
+        {
+          "canonicalName": "Cough",
+          "detectedWord": "cough",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        }
+      ],
+      "duration": null,
+      "severity": "Severe (Grade 3)",
+      "modifiers": []
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "fc_duration_temp",
+        "question": "ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ?",
+        "answer": "3 to 5 days (High fever >101°F)",
+        "rationale": "Duration helps determine whether this is an acute viral infection, bacterial pneumonia, or prolonged fever requiring tropical fever workup.",
+        "rationaleKn": "ಜ್ವರದ ಅವಧಿಯು ವೈದ್ಯರಿಗೆ ಇದು ಸಾಧಾರಣ ವೈರಲ್ ಸೋಂಕೇ ಅಥವಾ ನ್ಯುಮೋನಿಯಾ ಅಥವಾ ಡೆಂಗ್ಯೂ ಮುಂತಾದ ತೀವ್ರ ಸೋಂಕೇ ಎಂದು ತೀರ್ಮಾನಿಸಲು ನೆರವಾಗುತ್ತದೆ.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      },
+      {
+        "id": "fc_cough_character",
+        "question": "ನಿಮ್ಮ ಕೆಮ್ಮು ಒಣ ಕೆಮ್ಮೇ ಅಥವಾ ಕಫ (ಕಫ ಬರುವುದು) ಇದೆಯೇ?",
+        "answer": "Yellow or greenish thick phlegm",
+        "rationale": "Purulent (yellow/green) sputum or blood streaks points towards bacterial lower respiratory infection or tuberculosis requiring targeted sputum workup.",
+        "rationaleKn": "ಹಳದಿ/ಹಸಿರು ಕಫ ಅಥವಾ ರಕ್ತದ ಅಂಶ ಶ್ವಾಸಕೋಶದ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಸೋಂಕನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಇದಕ್ಕೆ ಆಂಟಿಬಯೋಟಿಕ್ ಅಥವಾ ಎಕ್ಸ್‌ರೇ ಅಗತ್ಯವಿರಬಹುದು.",
+        "isAlert": false,
+        "source": "Patient Touch / Voice"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Hypertension (5 years)"
+      ],
+      "medications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [],
+    "ayushData": null,
+    "summary": {
+      "generatedAt": "2026-09-16T19:06:50.343Z",
+      "clinicalStatus": "PENDING_DOCTOR_REVIEW",
+      "isRedFlag": false,
+      "redFlagReport": {
+        "isRedFlag": false,
+        "flags": [],
+        "urgencyLevel": "STANDARD",
+        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+      },
+      "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
+      "presentingSymptoms": [
+        "Fever (Pyrexia)",
+        "Cough"
+      ],
+      "duration": "Recorded during intake",
+      "severity": "Severe (Grade 3)",
+      "historyOfPresentingIllness": "Patient presented with chief complaint of ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು. Reported severity: Severe (Grade 3). ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ? -> 3 to 5 days (High fever >101°F). ನಿಮ್ಮ ಕೆಮ್ಮು ಒಣ ಕೆಮ್ಮೇ ಅಥವಾ ಕಫ (ಕಫ ಬರುವುದು) ಇದೆಯೇ? -> Yellow or greenish thick phlegm.",
+      "pastMedicalHistory": [
+        "Hypertension (5 years)"
+      ],
+      "currentMedications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Balanced regular diet",
+        "activity": "Moderate activity"
+      },
+      "documentFindings": [],
+      "ayushAssessment": null,
+      "clinicalObservations": [
+        "Vitals and triage recommended prior to clinical examination.",
+        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
+        "Attending physician verification required before prescribing or formulating clinical impression."
+      ],
+      "crossVerificationReport": {
+        "verifiedAt": "2026-09-16T19:06:50.343Z",
+        "totalAlerts": 1,
+        "alerts": [
+          {
+            "type": "MEDICATION_DISCREPANCY",
+            "severity": "HIGH",
+            "title": "Medication Adherence Gap: Antihypertensive Therapy",
+            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+            "evidenceSource": "Intake History & Medication Audit",
+            "status": "REQUIRES_PHYSICIAN_REVIEW"
+          }
+        ],
+        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+      },
+      "doctorVerification": {
+        "verified": false,
+        "verifiedBy": null,
+        "verificationTimestamp": null,
+        "doctorNotes": "",
+        "provisionalDiagnosis": "",
+        "suggestedInvestigations": [],
+        "prescriptions": []
+      }
+    },
+    "doctorVerification": {
+      "verified": true,
+      "verifiedBy": "Dr. Ananya Sharma, MD",
+      "verificationTimestamp": "2026-09-16T19:07:04.389Z",
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "suggestedInvestigations": [],
+      "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-16T19:07:04.389Z",
+      "totalAlerts": 1,
+      "alerts": [
+        {
+          "type": "MEDICATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Medication Adherence Gap: Antihypertensive Therapy",
+          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+          "evidenceSource": "Intake History & Medication Audit",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+    }
+  },
+  {
     "id": "cons_1789584743438_7pcx",
     "tokenNumber": "OPD-107 [URGENT]",
     "patientId": "pat_1789584743426",
@@ -153,6 +330,21 @@
       "provisionalDiagnosis": "",
       "suggestedInvestigations": [],
       "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-16T19:06:50.345Z",
+      "totalAlerts": 1,
+      "alerts": [
+        {
+          "type": "MEDICATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Medication Adherence Gap: Antihypertensive Therapy",
+          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+          "evidenceSource": "Intake History & Medication Audit",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {

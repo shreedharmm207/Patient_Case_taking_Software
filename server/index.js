@@ -49,7 +49,7 @@ app.get("/api/health", (req, res) => {
   res.json({
     status: "HEALTHY",
     service: "MEDIKIOSK Clinical Intake API",
-    problemStatement: "SIH-26047 Patient Case-Taking Software",
+    platform: "Intelligent Patient Pre-Consultation & Clinical Triage",
     version: "1.0.0",
     timestamp: new Date().toISOString(),
     supportedLanguages: ["en-IN", "kn-IN"]
@@ -70,7 +70,7 @@ if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
     console.log(`\n======================================================`);
     console.log(`🏥 MEDIKIOSK Clinical Server running on port ${PORT}`);
     console.log(`📡 Health Check: http://localhost:${PORT}/api/health`);
-    console.log(`✨ SIH 26047 - CureCoders Solution Ready`);
+    console.log(`✨ MEDIKIOSK Clinical Engine Ready`);
     console.log(`======================================================\n`);
   });
 }

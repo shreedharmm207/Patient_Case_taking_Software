@@ -104,11 +104,11 @@ export default function Navbar({ activeTab, setActiveTab }) {
                 border: '1px solid rgba(0, 229, 163, 0.3)',
                 fontWeight: 700
               }}>
-                SIH 26047
+                CLINICAL INTAKE
               </span>
             </div>
             <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-              CureCoders • AI Clinical Pre-Consultation
+              Intelligent Patient Pre-Consultation
             </p>
           </div>
         </div>

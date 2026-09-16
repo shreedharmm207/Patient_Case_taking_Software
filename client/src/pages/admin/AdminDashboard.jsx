@@ -49,7 +49,7 @@ export default function AdminDashboard({ onDemoResetSuccess }) {
   }, []);
 
   const handleResetDemo = async () => {
-    if (!window.confirm("Reset all consultation cases and audit trail back to SIH 26047 benchmark demo data?")) return;
+    if (!window.confirm("Reset all consultation cases and audit trail back to standard clinical benchmark demo data?")) return;
     setIsResetting(true);
     try {
       const res = await resetDemoData();
@@ -75,7 +75,7 @@ export default function AdminDashboard({ onDemoResetSuccess }) {
             <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>
               {t('adminTitle')}
             </h1>
-            <span className="badge badge-success">SIH 26047 NODE</span>
+            <span className="badge badge-success">CLINICAL OPD NODE</span>
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.2rem' }}>
             {t('adminSubtitle')}

@@ -69,37 +69,6 @@ function MainApp() {
           />
         )}
       </main>
-
-      {/* Hospital Grade Safety Disclaimer Footer */}
-      <footer style={{
-        background: 'rgba(5, 10, 22, 0.95)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        padding: '1.25rem 1.5rem',
-        fontSize: '0.8rem',
-        color: 'var(--text-muted)'
-      }}>
-        <div style={{
-          maxWidth: '1440px',
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '1rem'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', maxWidth: '850px' }}>
-            <ShieldCheck size={18} color="#00e5a3" style={{ flexShrink: 0 }} />
-            <span style={{ lineHeight: '1.45', color: '#94a3b8' }}>
-              <strong>MEDIKIOSK Advisory:</strong> {t('legalDisclaimer')}
-            </span>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '0.78rem' }}>
-            <span>Smart India Hackathon 2026 • PS 26047</span>
-            <span>Team CureCoders</span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -24,7 +24,7 @@ export default function HomePage({ setActiveTab, onLaunchDemoScenario }) {
   return (
     <div style={{ maxWidth: '1360px', margin: '0 auto', padding: '2.5rem 1.5rem 5rem 1.5rem' }}>
       
-      {/* SIH 2026 Header Badge */}
+      {/* Clinical Platform Header Badge */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
         <div style={{
           display: 'inline-flex',
@@ -39,7 +39,7 @@ export default function HomePage({ setActiveTab, onLaunchDemoScenario }) {
           fontWeight: 700
         }}>
           <Sparkles size={16} />
-          <span>Smart India Hackathon 2026 • Problem Statement ID: 26047 • Team CureCoders</span>
+          <span>Intelligent Patient Pre-Consultation & Clinical Triage Platform</span>
         </div>
       </div>
 
@@ -224,7 +224,7 @@ export default function HomePage({ setActiveTab, onLaunchDemoScenario }) {
         </div>
       </div>
 
-      {/* 4 Core Pillars from CureCoders Presentation Slide 2 */}
+      {/* 4 Core Architectural Innovation Pillars */}
       <div style={{
         background: 'rgba(15, 25, 51, 0.7)',
         border: '1.5px solid rgba(0, 229, 163, 0.3)',
@@ -235,10 +235,10 @@ export default function HomePage({ setActiveTab, onLaunchDemoScenario }) {
         <div style={{ marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
             <span className="badge badge-success">CORE SYSTEM ARCHITECTURE</span>
-            <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>SIH 26047 Solution Pillars</span>
+            <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Flagship Clinical Pillars</span>
           </div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800 }}>
-            Innovation & Uniqueness (CureCoders – MEDIKIOSK)
+            Innovation & Core Architectural Pillars
           </h2>
         </div>
 

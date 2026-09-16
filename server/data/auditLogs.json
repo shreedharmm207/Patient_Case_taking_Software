@@ -1,5 +1,19 @@
 [
   {
+    "id": "log_1789585624407_q6hz",
+    "timestamp": "2026-09-16T19:07:04.407Z",
+    "event": "DOCTOR_VERIFIED_CASE",
+    "details": "Case OPD-108 verified by Dr. Ananya Sharma, MD. Status: REVIEWED",
+    "actor": "Dr. Ananya Sharma, MD"
+  },
+  {
+    "id": "log_1789585610351_aex7",
+    "timestamp": "2026-09-16T19:06:50.351Z",
+    "event": "PATIENT_INTAKE_COMPLETED",
+    "details": "Consultation OPD-108 registered for Smt. Gangamma Gowda. Red flag status: false",
+    "actor": "Patient Kiosk Terminal"
+  },
+  {
     "id": "log_1789584743445_d0i2",
     "timestamp": "2026-09-16T18:52:23.445Z",
     "event": "EMERGENCY_INTAKE_COMPLETED",

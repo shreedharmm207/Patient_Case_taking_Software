@@ -2,7 +2,7 @@
 export const en = {
   appTitle: "MEDIKIOSK",
   appSubtitle: "AI-Powered Pre-Consultation & Patient Case-Taking Platform",
-  problemStatement: "Smart India Hackathon 2026 | PS ID: 26047 | Team CureCoders",
+  problemStatement: "Intelligent Patient Case-Taking & Clinical Pre-Consultation Platform",
   tagline: "Intelligently collects patient history, asks adaptive follow-ups, and delivers physician-ready case summaries.",
   
   // Roles
@@ -147,7 +147,7 @@ export const en = {
   kannadaUsage: "Kannada",
   auditTrail: "System Audit Trail",
   resetDemoBtn: "Reset Demo Data to Benchmark Cases",
-  seedSuccessful: "Demo data reset successfully to SIH 26047 benchmark cases.",
+  seedSuccessful: "Demo data reset successfully to standard clinical benchmark cases.",
 
   // Disclaimer
   legalDisclaimer: "LEGAL NOTICE: MEDIKIOSK is an AI-assisted clinical information collection and documentation tool. It is NOT an autonomous doctor and does NOT formulate independent diagnoses. The treating doctor retains full clinical responsibility."
