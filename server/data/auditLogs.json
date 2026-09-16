@@ -1,5 +1,54 @@
 [
   {
+    "id": "log_1789577787076_vh0j",
+    "timestamp": "2026-09-16T16:56:27.076Z",
+    "event": "EMERGENCY_INTAKE_COMPLETED",
+    "details": "Consultation OPD-106 [URGENT] registered for Smt. Gangamma Gowda. Red flag status: true",
+    "actor": "Patient Kiosk Terminal"
+  },
+  {
+    "id": "log_1789577763948_e7ox",
+    "timestamp": "2026-09-16T16:56:03.948Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789577762264_0r33",
+    "timestamp": "2026-09-16T16:56:02.264Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789577752281_z2sx",
+    "timestamp": "2026-09-16T16:55:52.281Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789577737463_ligi",
+    "timestamp": "2026-09-16T16:55:37.463Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789577724443_s02y",
+    "timestamp": "2026-09-16T16:55:24.443Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789577664725_158p",
+    "timestamp": "2026-09-16T16:54:24.726Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
     "id": "log_1789571238607_uqag",
     "timestamp": "2026-09-16T15:07:18.607Z",
     "event": "PATIENT_INTAKE_COMPLETED",
