@@ -1,0 +1,96 @@
+[
+  {
+    "id": "pat_001",
+    "abhaId": "91-8472-1029-4401",
+    "name": "Ravi Kumar",
+    "nameKn": "ರವಿ ಕುಮಾರ್",
+    "age": 34,
+    "gender": "Male",
+    "phone": "+91 98450 11234",
+    "preferredLanguage": "en",
+    "address": "Jayanagar, Bengaluru",
+    "pastConsultations": [
+      {
+        "date": "2026-07-12",
+        "complaint": "Seasonal Allergic Rhinitis",
+        "doctor": "Dr. Ananya Sharma",
+        "outcome": "Antihistamines prescribed, resolved"
+      },
+      {
+        "date": "2026-03-05",
+        "complaint": "Mild Gastritis",
+        "doctor": "Dr. Ramesh Patil",
+        "outcome": "Antacid therapy"
+      }
+    ]
+  },
+  {
+    "id": "pat_002",
+    "abhaId": "91-3829-5721-8932",
+    "name": "Smt. Gangamma Gowda",
+    "nameKn": "ಗಂಗಮ್ಮ ಗೌಡ",
+    "age": 58,
+    "gender": "Female",
+    "phone": "+91 94481 77290",
+    "preferredLanguage": "kn",
+    "address": "Mandya Rural, Karnataka",
+    "pastConsultations": [
+      {
+        "date": "2026-05-18",
+        "complaint": "Essential Hypertension Regular Review",
+        "doctor": "Dr. Priya Nair",
+        "outcome": "Amlodipine 5mg continued, BP 142/90"
+      },
+      {
+        "date": "2025-11-20",
+        "complaint": "Bilateral Knee Osteoarthritis",
+        "doctor": "Dr. Ramesh Patil",
+        "outcome": "Analgesic and physiotherapy"
+      }
+    ]
+  },
+  {
+    "id": "pat_003",
+    "abhaId": "91-5521-9832-1104",
+    "name": "Karthik Bhat",
+    "nameKn": "ಕಾರ್ತಿಕ್ ಭಟ್",
+    "age": 26,
+    "gender": "Male",
+    "phone": "+91 99002 44510",
+    "preferredLanguage": "kn",
+    "address": "Shivamogga, Karnataka",
+    "pastConsultations": [
+      {
+        "date": "2026-01-14",
+        "complaint": "Routine Health Checkup",
+        "doctor": "Dr. Ananya Sharma",
+        "outcome": "All vitals normal"
+      }
+    ]
+  },
+  {
+    "id": "pat_004",
+    "abhaId": "91-7742-3091-6623",
+    "name": "Sunita Devi",
+    "nameKn": "ಸುನೀತಾ ದೇವಿ",
+    "age": 52,
+    "gender": "Female",
+    "phone": "+91 98860 33901",
+    "preferredLanguage": "en",
+    "address": "Malleswaram, Bengaluru",
+    "pastConsultations": [
+      {
+        "date": "2026-06-14",
+        "complaint": "Type 2 Diabetes & Dyslipidemia Review",
+        "doctor": "Dr. Ananya Sharma",
+        "outcome": "Metformin 500mg BD, Telmisartan 40mg OD prescribed"
+      },
+      {
+        "date": "2026-02-10",
+        "complaint": "Lumbago / Back Pain",
+        "doctor": "Dr. Ramesh Patil",
+        "outcome": "Muscle relaxant and core exercises"
+      }
+    ]
+  }
+]

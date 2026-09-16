@@ -1,0 +1,44 @@
+[
+  {
+    "id": "log_1789571238607_uqag",
+    "timestamp": "2026-09-16T15:07:18.607Z",
+    "event": "PATIENT_INTAKE_COMPLETED",
+    "details": "Consultation OPD-105 registered for Ravi Kumar. Red flag status: false",
+    "actor": "Patient Kiosk Terminal"
+  },
+  {
+    "id": "log_1789570647643_8dud",
+    "timestamp": "2026-09-16T14:57:27.643Z",
+    "event": "DOCTOR_VERIFIED_CASE",
+    "details": "Case OPD-102 [URGENT] verified by Dr. Ananya Sharma, MD. Status: REVIEWED",
+    "actor": "Dr. Ananya Sharma, MD"
+  },
+  {
+    "id": "log_01",
+    "timestamp": "2026-09-16T10:15:00.000Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Red-flag ACS chest pain alert triggered for patient Smt. Gangamma Gowda (Token OPD-102)",
+    "actor": "MEDIKIOSK Clinical Scanner"
+  },
+  {
+    "id": "log_02",
+    "timestamp": "2026-09-16T10:14:00.000Z",
+    "event": "PATIENT_CONSENT_RECORDED",
+    "details": "Explicit digital informed consent granted by Smt. Gangamma Gowda under ABDM Guidelines",
+    "actor": "Patient Kiosk Terminal 01"
+  },
+  {
+    "id": "log_03",
+    "timestamp": "2026-09-15T15:00:00.000Z",
+    "event": "DOCTOR_VERIFICATION_ACCEPTED",
+    "details": "Dr. Ananya Sharma verified and amended case summary for patient Sunita Devi",
+    "actor": "Dr. Ananya Sharma (doc_101)"
+  },
+  {
+    "id": "log_04",
+    "timestamp": "2026-09-15T14:22:00.000Z",
+    "event": "OCR_EXTRACTION_COMPLETED",
+    "details": "Extracted 5 lab parameters from Diagnostic Report with 98% confidence score",
+    "actor": "Clinical OCR Engine"
+  }
+]

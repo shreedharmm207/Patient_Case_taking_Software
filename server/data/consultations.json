@@ -1,0 +1,891 @@
+[
+  {
+    "id": "cons_1789571238603_l532",
+    "tokenNumber": "OPD-105",
+    "patientId": "pat_1789571238589",
+    "patientName": "Ravi Kumar",
+    "patientAge": 34,
+    "patientGender": "Male",
+    "abhaId": "91-8472-1029-4401",
+    "language": "kn",
+    "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
+    "chiefComplaintKn": "",
+    "status": "PENDING_REVIEW",
+    "isRedFlag": false,
+    "urgencyLevel": "STANDARD",
+    "redFlagReport": {
+      "isRedFlag": false,
+      "flags": [],
+      "urgencyLevel": "STANDARD",
+      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+    },
+    "createdAt": "2026-09-16T15:07:18.603Z",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Fever (Pyrexia)",
+          "detectedWord": "fever",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        },
+        {
+          "canonicalName": "Cough",
+          "detectedWord": "cough",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        }
+      ],
+      "duration": null,
+      "severity": "Severe (Grade 3)",
+      "modifiers": []
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "fc_duration_temp",
+        "question": "ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ?",
+        "answer": "3 ರಿಂದ 5 ದಿನಗಳು (ತೀವ್ರ ಜ್ವರ >101°F)",
+        "rationale": "Duration helps determine whether this is an acute viral infection, bacterial pneumonia, or prolonged fever requiring tropical fever workup.",
+        "rationaleKn": "ಜ್ವರದ ಅವಧಿಯು ವೈದ್ಯರಿಗೆ ಇದು ಸಾಧಾರಣ ವೈರಲ್ ಸೋಂಕೇ ಅಥವಾ ನ್ಯುಮೋನಿಯಾ ಅಥವಾ ಡೆಂಗ್ಯೂ ಮುಂತಾದ ತೀವ್ರ ಸೋಂಕೇ ಎಂದು ತೀರ್ಮಾನಿಸಲು ನೆರವಾಗುತ್ತದೆ.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Hypertension (5 years)"
+      ],
+      "medications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [],
+    "ayushData": null,
+    "summary": {
+      "generatedAt": "2026-09-16T15:07:18.602Z",
+      "clinicalStatus": "PENDING_DOCTOR_REVIEW",
+      "isRedFlag": false,
+      "redFlagReport": {
+        "isRedFlag": false,
+        "flags": [],
+        "urgencyLevel": "STANDARD",
+        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+      },
+      "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
+      "presentingSymptoms": [
+        "Fever (Pyrexia)",
+        "Cough"
+      ],
+      "duration": "Recorded during intake",
+      "severity": "Severe (Grade 3)",
+      "historyOfPresentingIllness": "Patient presented with chief complaint of ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು. Reported severity: Severe (Grade 3). ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ? -> 3 ರಿಂದ 5 ದಿನಗಳು (ತೀವ್ರ ಜ್ವರ >101°F).",
+      "pastMedicalHistory": [
+        "Hypertension (5 years)"
+      ],
+      "currentMedications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Balanced regular diet",
+        "activity": "Moderate activity"
+      },
+      "documentFindings": [],
+      "ayushAssessment": null,
+      "clinicalObservations": [
+        "Vitals and triage recommended prior to clinical examination.",
+        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
+        "Attending physician verification required before prescribing or formulating clinical impression."
+      ],
+      "doctorVerification": {
+        "verified": false,
+        "verifiedBy": null,
+        "verificationTimestamp": null,
+        "doctorNotes": "",
+        "provisionalDiagnosis": "",
+        "suggestedInvestigations": [],
+        "prescriptions": []
+      }
+    },
+    "doctorVerification": {
+      "verified": false,
+      "verifiedBy": null,
+      "verificationTimestamp": null,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "suggestedInvestigations": [],
+      "prescriptions": []
+    }
+  },
+  {
+    "id": "cons_demo_01",
+    "tokenNumber": "OPD-101",
+    "patientId": "pat_001",
+    "patientName": "Ravi Kumar",
+    "patientAge": 34,
+    "patientGender": "Male",
+    "abhaId": "91-8472-1029-4401",
+    "language": "en",
+    "chiefComplaint": "High Fever and persistent productive cough for 4 days with chills",
+    "chiefComplaintKn": "4 ದಿನಗಳಿಂದ ಚಳಿಯೊಂದಿಗೆ ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕಫದ ಕೆಮ್ಮು",
+    "status": "PENDING_REVIEW",
+    "isRedFlag": false,
+    "urgencyLevel": "STANDARD",
+    "redFlagReport": {
+      "isRedFlag": false,
+      "flags": []
+    },
+    "createdAt": "2026-09-16T09:30:00.000Z",
+    "assignedDoctorId": "doc_101",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Fever (Pyrexia)",
+          "detectedWord": "fever",
+          "duration": "4 days",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Cough (Productive)",
+          "detectedWord": "cough",
+          "duration": "4 days",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Chills / Rigors",
+          "detectedWord": "chills",
+          "duration": "4 days",
+          "source": "Patient Voice"
+        }
+      ],
+      "duration": "4 days",
+      "severity": "Moderate (Grade 2)",
+      "modifiers": [
+        "Productive yellowish phlegm",
+        "Associated with body aches"
+      ]
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "fc_duration_temp",
+        "question": "How many days have you had the fever?",
+        "answer": "3 to 5 days (High fever >101°F)",
+        "rationale": "Assessing acute duration to differentiate uncomplicated viral vs bacterial illness.",
+        "source": "Touch Chip"
+      },
+      {
+        "id": "fc_cough_character",
+        "question": "Is your cough dry, or are you bringing up phlegm/mucus?",
+        "answer": "Productive with yellow or greenish thick phlegm",
+        "rationale": "Purulent sputum indicates lower respiratory tract involvement.",
+        "source": "Patient Voice"
+      },
+      {
+        "id": "fc_breathing",
+        "question": "Are you feeling breathless or hearing any wheezing?",
+        "answer": "Only when walking fast or coughing a lot (Mild)",
+        "rationale": "Excluding resting hypoxia or acute severe bronchospasm.",
+        "source": "Touch Chip"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Seasonal Bronchitis (2024)"
+      ],
+      "medications": [
+        "Paracetamol 650mg SOS taken yesterday"
+      ],
+      "allergies": [
+        "Penicillin (Mild skin rash in childhood)"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Father has Type 2 Diabetes"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Occasional social"
+    },
+    "documentExtractions": [],
+    "summary": {
+      "chiefComplaint": "High Fever and persistent productive cough for 4 days with chills",
+      "presentingSymptoms": [
+        "Fever (Pyrexia)",
+        "Cough (Productive)",
+        "Chills / Rigors"
+      ],
+      "duration": "4 days",
+      "severity": "Moderate (Grade 2)",
+      "historyOfPresentingIllness": "Patient presented with a 4-day history of moderate-to-high grade fever with chills and productive cough bringing up yellowish sputum. Symptoms worsen with physical exertion. No resting breathlessness or chest tightness reported.",
+      "pastMedicalHistory": [
+        "Seasonal Bronchitis (2024)"
+      ],
+      "currentMedications": [
+        "Paracetamol 650mg SOS"
+      ],
+      "allergies": [
+        "Penicillin (Allergy alert)"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Father has Type 2 Diabetes"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Occasional social",
+        "diet": "Regular",
+        "activity": "Moderate"
+      },
+      "clinicalObservations": [
+        "Productive purulent cough suggests secondary bacterial lower respiratory tract infection.",
+        "Check vitals: SpO2, Temperature, Respiratory Rate.",
+        "Penicillin allergy noted - avoid Beta-lactam / Amoxicillin class antibiotics."
+      ]
+    },
+    "doctorVerification": {
+      "verified": false,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "prescriptions": []
+    }
+  },
+  {
+    "id": "cons_demo_02",
+    "tokenNumber": "OPD-102 [URGENT]",
+    "patientId": "pat_002",
+    "patientName": "Smt. Gangamma Gowda",
+    "patientAge": 58,
+    "patientGender": "Female",
+    "abhaId": "91-3829-5721-8932",
+    "language": "kn",
+    "chiefComplaint": "Severe crushing retrosternal chest pain radiating to left arm and jaw with profuse cold sweating since 2 hours",
+    "chiefComplaintKn": "ಕಳೆದ 2 ಗಂಟೆಗಳಿಂದ ಎಡಗೈ ಮತ್ತು ದವಡೆಗೆ ಹರಡುತ್ತಿರುವ ತೀವ್ರ ಎದೆ ನೋವು ಮತ್ತು ತಣ್ಣನೆಯ ಬೆವರು",
+    "status": "REVIEWED",
+    "isRedFlag": true,
+    "urgencyLevel": "CRITICAL",
+    "redFlagReport": {
+      "isRedFlag": true,
+      "flags": [
+        {
+          "id": "acs_chest_pain",
+          "title": "Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+          "severity": "CRITICAL",
+          "triggerEvidence": "Severe crushing chest pain radiating to left arm & jaw with sweating",
+          "rationale": "Crushing retrosternal chest pain radiating to the left arm and jaw with diaphoresis is a classic hallmark of acute myocardial infarction.",
+          "actionRequired": "Immediate ECG (12-Lead) within 10 minutes, STAT Troponin I, Vitals & Immediate Cardiac Resuscitation Bed"
+        },
+        {
+          "id": "severe_dyspnea",
+          "title": "Associated Acute Breathlessness",
+          "severity": "HIGH",
+          "triggerEvidence": "Dyspnea on minimal movement",
+          "rationale": "Secondary respiratory compromise due to acute cardiac pump strain.",
+          "actionRequired": "High flow oxygen and continuous pulse oximetry monitoring."
+        }
+      ]
+    },
+    "createdAt": "2026-09-16T10:15:00.000Z",
+    "assignedDoctorId": "doc_103",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Chest Pain (Crushing retrosternal)",
+          "detectedWord": "chest pain",
+          "duration": "2 hours",
+          "source": "Patient Voice (Kannada)"
+        },
+        {
+          "canonicalName": "Pain Radiation to Left Arm & Jaw",
+          "detectedWord": "radiating left arm",
+          "duration": "2 hours",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Cold Sweating (Diaphoresis)",
+          "detectedWord": "sweating",
+          "duration": "2 hours",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Shortness of Breath",
+          "detectedWord": "dyspnea",
+          "duration": "2 hours",
+          "source": "Patient Touch Input"
+        }
+      ],
+      "duration": "2 hours (Acute sudden onset)",
+      "severity": "Extreme (9 / 10 Pain Scale)",
+      "modifiers": [
+        "Worse on walking",
+        "Crushing sensation",
+        "Accompanied by nausea"
+      ]
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "cp_onset_duration",
+        "question": "When did the chest pain start, and was it sudden?",
+        "answer": "Sudden onset 2 hours ago while sitting at home",
+        "rationale": "Acute onset indicates vascular event (ACS) rather than gradual musculoskeletal pain.",
+        "source": "Patient Voice (Kannada)"
+      },
+      {
+        "id": "cp_character",
+        "question": "How would you describe the feeling of the pain?",
+        "answer": "Heavy pressure / Crushing weight like a stone on chest (ಭಾರವಾದ ಒತ್ತಡ / ಎದೆ ಹಿಂಡಿದಂತೆ)",
+        "rationale": "Crushing pressure is classic for ischemic myocardial necrosis.",
+        "source": "Touch Chip"
+      },
+      {
+        "id": "cp_radiation",
+        "question": "Does the pain travel anywhere else?",
+        "answer": "Yes, radiates intensely into left arm and jaw",
+        "rationale": "Dermatomal C8-T1 nerve root referral characteristic of cardiac origin.",
+        "source": "Touch Chip"
+      },
+      {
+        "id": "cp_exertion",
+        "question": "Does the pain increase with physical movement?",
+        "answer": "Gets much worse with any movement; patient cannot walk",
+        "rationale": "Ischemia exacerbated by increased myocardial oxygen demand.",
+        "source": "Patient Voice"
+      },
+      {
+        "id": "cp_associated_symptoms",
+        "question": "Are you experiencing sweating or breathlessness?",
+        "answer": "Profuse cold sweat, shortness of breath, and feeling faint",
+        "rationale": "Sympathetic surge and hemodynamic instability warning sign.",
+        "source": "Touch Chip"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Essential Hypertension (5 years)",
+        "Borderline Dyslipidemia"
+      ],
+      "medications": [
+        "Tab. Amlodipine 5mg OD (Irregular adherence)"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "surgeries": [
+        "Tubectomy (1998)"
+      ],
+      "familyHistory": [
+        "Elder brother had Myocardial Infarction at age 54"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [
+      {
+        "id": "sample_cardiac_1",
+        "name": "Emergency Cardiac Biomarker Report - Troponin I",
+        "documentType": "LAB_REPORT",
+        "date": "2026-09-16",
+        "hospitalName": "Emergency Care Unit / Fortis Hospital",
+        "extractedDoctor": "Dr. S. Reddy, Emergency Medicine",
+        "imagePlaceholder": "cardiac_lab.png",
+        "rawText": "EMERGENCY CARE TRIAGE LAB\nSTAT REPORT\nPATIENT: Gangamma Gowda | AGE: 58 | GENDER: F\nDATE: 16-Sep-2026 18:30 IST\n\nTEST NAME                  OBSERVED VALUE    REFERENCE RANGE     STATUS\nHigh Sensitivity Troponin I 0.28 ng/mL        < 0.04 ng/mL        CRITICAL HIGH\nECG Interpretation         ST-segment Elevation in V2-V4         ACUTE INJURY\nSerum Potassium            4.2 mEq/L         3.5 - 5.0 mEq/L     NORMAL",
+        "extractedItems": [
+          {
+            "test": "High Sensitivity Troponin I",
+            "value": "0.28 ng/mL",
+            "reference": "< 0.04 ng/mL",
+            "isAbnormal": true,
+            "flag": "CRITICAL HIGH"
+          },
+          {
+            "test": "ECG Finding",
+            "value": "ST-Elevation in V2-V4",
+            "reference": "Normal Sinus",
+            "isAbnormal": true,
+            "flag": "ANTERIOR STEMI"
+          }
+        ],
+        "abnormalValues": [
+          {
+            "parameter": "Cardiac Troponin I",
+            "observed": "0.28 ng/mL",
+            "reference": "< 0.04 ng/mL",
+            "clinicalNote": "CRITICAL ALERT: Strongly indicative of acute myocardial infarction. Immediate Cath Lab triage required."
+          }
+        ],
+        "confidenceScore": 0.99
+      }
+    ],
+    "summary": {
+      "chiefComplaint": "Severe crushing retrosternal chest pain radiating to left arm and jaw with profuse cold sweating since 2 hours",
+      "presentingSymptoms": [
+        "Severe Chest Pain",
+        "Radiation to Left Arm & Jaw",
+        "Diaphoresis (Cold Sweating)",
+        "Dyspnea"
+      ],
+      "duration": "2 hours",
+      "severity": "Critical (9 / 10 Pain Scale)",
+      "historyOfPresentingIllness": "58-year-old female with known history of hypertension presenting with sudden onset acute crushing retrosternal chest pain since 2 hours. Radiating to left arm and angle of jaw. Accompanied by marked diaphoresis, nausea, and shortness of breath. Pain is unremitting and severe (9/10).",
+      "pastMedicalHistory": [
+        "Essential Hypertension (5 years)"
+      ],
+      "currentMedications": [
+        "Tab Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "previousSurgeries": [
+        "Tubectomy (1998)"
+      ],
+      "familyHistory": [
+        "Brother suffered MI at age 54"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "South Indian Vegetarian",
+        "activity": "Sedentary"
+      },
+      "clinicalObservations": [
+        "RED FLAG: HIGH PROBABILITY OF ACUTE CORONARY SYNDROME (STEMI/NSTEMI).",
+        "Uploaded Emergency Biomarker indicates High Sensitivity Troponin I = 0.28 ng/mL (Reference < 0.04 ng/mL).",
+        "IMMEDIATE ACTION: 12-lead ECG, Sublingual Nitrate, Aspirin 300mg + Clopidogrel 300mg loading dose per physician protocol, transfer to ICU/Cath Lab."
+      ]
+    },
+    "doctorVerification": {
+      "verified": true,
+      "verifiedBy": "Dr. Ananya Sharma, MD",
+      "verificationTimestamp": "2026-09-16T14:57:27.639Z",
+      "doctorNotes": "Immediate ECG done. Transferred to ICU.",
+      "provisionalDiagnosis": "",
+      "suggestedInvestigations": [],
+      "prescriptions": []
+    }
+  },
+  {
+    "id": "cons_demo_03",
+    "tokenNumber": "OPD-103 [URGENT]",
+    "patientId": "pat_003",
+    "patientName": "Karthik Bhat",
+    "patientAge": 26,
+    "patientGender": "Male",
+    "abhaId": "91-5521-9832-1104",
+    "language": "kn",
+    "chiefComplaint": "Sharp right lower abdomen pain since midnight, persistent nausea and low-grade fever",
+    "chiefComplaintKn": "ಮಧ್ಯರಾತ್ರಿಯಿಂದ ಹೊಟ್ಟೆಯ ಬಲ ಕೆಳಭಾಗದಲ್ಲಿ ತೀಕ್ಷ್ಣ ನೋವು ಮತ್ತು ವಾಕರಿಕೆ",
+    "status": "IMMEDIATE_ATTENTION",
+    "isRedFlag": true,
+    "urgencyLevel": "HIGH",
+    "redFlagReport": {
+      "isRedFlag": true,
+      "flags": [
+        {
+          "id": "acute_abdomen",
+          "title": "Acute Surgical Abdomen / Suspected Acute Appendicitis",
+          "severity": "HIGH",
+          "triggerEvidence": "Right lower quadrant abdominal pain with fever and intractable vomiting",
+          "rationale": "Peritoneal irritation in right iliac fossa (McBurney's point) with systemic inflammatory markers requires surgical assessment to rule out appendicular perforation.",
+          "actionRequired": "Surgical consultation, Abdominal Ultrasonography (USG), Complete Blood Count (CBC) STAT"
+        }
+      ]
+    },
+    "createdAt": "2026-09-16T11:00:00.000Z",
+    "assignedDoctorId": "doc_102",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Abdominal Pain (Right Lower Quadrant)",
+          "detectedWord": "stomach pain right side",
+          "duration": "12 hours",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Nausea & Vomiting",
+          "detectedWord": "vomiting",
+          "duration": "12 hours",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Low Grade Fever",
+          "detectedWord": "fever",
+          "duration": "8 hours",
+          "source": "Patient Input"
+        }
+      ],
+      "duration": "12 hours",
+      "severity": "Severe (8 / 10 Pain Scale)",
+      "modifiers": [
+        "Worse on coughing and walking",
+        "Started around navel, migrated to right lower quadrant"
+      ]
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "ab_location",
+        "question": "Where in your abdomen is the pain strongest?",
+        "answer": "Right lower side of belly (ಬಲ ಕೆಳಭಾಗದಲ್ಲಿ)",
+        "rationale": "Classic migration of visceral periumbilical pain to somatic parietal peritoneum at McBurney's point.",
+        "source": "Touch Chip"
+      },
+      {
+        "id": "ab_duration_type",
+        "question": "Is the pain continuous and steady?",
+        "answer": "Severe, continuous, and worsening with every hour",
+        "rationale": "Continuous severe pain indicates progressive localized peritonitis.",
+        "source": "Touch Chip"
+      },
+      {
+        "id": "ab_associated",
+        "question": "Do you have vomiting or fever?",
+        "answer": "Repeated vomiting twice this morning, cannot eat food",
+        "rationale": "Reflex autonomic vomiting associated with acute visceral inflammation.",
+        "source": "Patient Voice"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "None"
+      ],
+      "medications": [
+        "None"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Nil significant"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [],
+    "summary": {
+      "chiefComplaint": "Sharp right lower abdomen pain since midnight, persistent nausea and low-grade fever",
+      "presentingSymptoms": [
+        "Right Lower Quadrant Pain",
+        "Nausea",
+        "Vomiting",
+        "Low Grade Pyrexia"
+      ],
+      "duration": "12 hours",
+      "severity": "Severe (8/10)",
+      "historyOfPresentingIllness": "26-year-old previously healthy male presenting with acute abdominal pain starting periumbilically last night and localized to the right lower quadrant over the past 8 hours. Accompanied by anorexia, nausea, 2 episodes of non-bilious vomitus, and mild fever. Aggravated by coughing and walking.",
+      "pastMedicalHistory": [
+        "No chronic medical history"
+      ],
+      "currentMedications": [
+        "None"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Non-contributory"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Regular",
+        "activity": "Active"
+      },
+      "clinicalObservations": [
+        "RED FLAG: High clinical likelihood of Acute Appendicitis (Alvarado Score estimated 7-8).",
+        "Keep patient NPO (nil per os) pending surgical evaluation.",
+        "STAT Ultrasound abdomen and pelvis, CBC, CRP, and Serum Electrolytes."
+      ]
+    },
+    "doctorVerification": {
+      "verified": false,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "prescriptions": []
+    }
+  },
+  {
+    "id": "cons_demo_04",
+    "tokenNumber": "OPD-104",
+    "patientId": "pat_004",
+    "patientName": "Sunita Devi",
+    "patientAge": 52,
+    "patientGender": "Female",
+    "abhaId": "91-7742-3091-6623",
+    "language": "en",
+    "chiefComplaint": "Routine 3-month diabetes follow-up, generalized weakness and burning sensation in feet",
+    "chiefComplaintKn": "3 ತಿಂಗಳ ಮಧುಮೇಹ ತಪಾಸಣೆ, ಕಾಲುಗಳಲ್ಲಿ ಉರಿ ಮತ್ತು ನಿಶ್ಯಕ್ತಿ",
+    "status": "REVIEWED",
+    "isRedFlag": false,
+    "urgencyLevel": "STANDARD",
+    "redFlagReport": {
+      "isRedFlag": false,
+      "flags": []
+    },
+    "createdAt": "2026-09-15T14:20:00.000Z",
+    "assignedDoctorId": "doc_101",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Peripheral Neuropathy / Tingling in feet",
+          "detectedWord": "burning feet",
+          "duration": "1 month",
+          "source": "Patient Voice"
+        },
+        {
+          "canonicalName": "Fatigue & Malaise",
+          "detectedWord": "weakness",
+          "duration": "3 weeks",
+          "source": "Patient Voice"
+        }
+      ],
+      "duration": "1 month",
+      "severity": "Moderate",
+      "modifiers": [
+        "Night-time foot burning",
+        "Dry mouth in mornings"
+      ]
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "gen_onset",
+        "question": "How long have you been experiencing this main symptom?",
+        "answer": "A few weeks to a month",
+        "rationale": "Subacute onset of peripheral neuropathy symptoms in diabetic patient.",
+        "source": "Touch Chip"
+      },
+      {
+        "id": "gen_severity",
+        "question": "Severity of discomfort?",
+        "answer": "4-6: Moderate (interferes with sleep)",
+        "rationale": "Assessing impact on quality of life.",
+        "source": "Touch Chip"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Type 2 Diabetes Mellitus (6 years)",
+        "Essential Hypertension (4 years)"
+      ],
+      "medications": [
+        "Tab. Metformin 500mg BD",
+        "Tab. Telmisartan 40mg OD"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Mother had Diabetes and Chronic Kidney Disease"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [
+      {
+        "id": "sample_lab_1",
+        "name": "Diagnostic Lab Report - Blood Glucose & Lipid Panel",
+        "documentType": "LAB_REPORT",
+        "date": "2026-08-20",
+        "hospitalName": "Anand Diagnostic Laboratory / NABL Accredited",
+        "extractedDoctor": "Dr. K. V. Rao, Pathologist",
+        "imagePlaceholder": "lab_report.png",
+        "rawText": "ANAND DIAGNOSTIC LABORATORY\nNABL ACCREDITED LAB #MC-2018\nBIOCHEMISTRY TEST REPORT\nPATIENT: Smt. Sunita Devi | AGE: 52 | GENDER: Female\nDATE: 20-Aug-2026\n\nTEST NAME                  OBSERVED VALUE    REFERENCE RANGE     STATUS\nFasting Blood Sugar (FBS)  188 mg/dL         70 - 100 mg/dL      HIGH\nHbA1c (Glycated Hb)        9.2 %             < 5.7 % (Good)      HIGH\nSerum Creatinine           1.10 mg/dL        0.5 - 1.2 mg/dL     NORMAL\nTotal Cholesterol          242 mg/dL         < 200 mg/dL         HIGH\nSerum Triglycerides        210 mg/dL         < 150 mg/dL         HIGH\nWBC Total Count            7,800 /uL         4,000 - 11,000 /uL  NORMAL",
+        "extractedItems": [
+          {
+            "test": "Fasting Blood Sugar",
+            "value": "188 mg/dL",
+            "reference": "70 - 100 mg/dL",
+            "isAbnormal": true,
+            "flag": "HIGH"
+          },
+          {
+            "test": "HbA1c (Glycated Hemoglobin)",
+            "value": "9.2 %",
+            "reference": "< 5.7 %",
+            "isAbnormal": true,
+            "flag": "CRITICALLY HIGH"
+          },
+          {
+            "test": "Total Cholesterol",
+            "value": "242 mg/dL",
+            "reference": "< 200 mg/dL",
+            "isAbnormal": true,
+            "flag": "HIGH"
+          },
+          {
+            "test": "Serum Triglycerides",
+            "value": "210 mg/dL",
+            "reference": "< 150 mg/dL",
+            "isAbnormal": true,
+            "flag": "HIGH"
+          },
+          {
+            "test": "Serum Creatinine",
+            "value": "1.10 mg/dL",
+            "reference": "0.5 - 1.2 mg/dL",
+            "isAbnormal": false,
+            "flag": "NORMAL"
+          }
+        ],
+        "abnormalValues": [
+          {
+            "parameter": "HbA1c",
+            "observed": "9.2 %",
+            "reference": "< 5.7 %",
+            "clinicalNote": "Indicates uncontrolled glycemic control over the past 90 days."
+          },
+          {
+            "parameter": "Fasting Blood Sugar",
+            "observed": "188 mg/dL",
+            "reference": "70-100 mg/dL",
+            "clinicalNote": "Elevated fasting hyperglycemia."
+          },
+          {
+            "parameter": "Lipid Profile",
+            "observed": "Cholesterol 242 mg/dL",
+            "reference": "<200 mg/dL",
+            "clinicalNote": "Mixed dyslipidemia detected."
+          }
+        ],
+        "confidenceScore": 0.98
+      }
+    ],
+    "summary": {
+      "chiefComplaint": "Routine 3-month diabetes follow-up, generalized weakness and burning sensation in feet",
+      "presentingSymptoms": [
+        "Peripheral Neuropathy (Burning feet)",
+        "Generalized Fatigue"
+      ],
+      "duration": "1 month",
+      "severity": "Moderate",
+      "historyOfPresentingIllness": "52-year-old female with long-standing Type 2 Diabetes presenting for routine quarterly metabolic review. Reports bilateral distal tingling and burning sensation in toes and soles for 4 weeks. Reports compliance with oral hypoglycemic agents.",
+      "pastMedicalHistory": [
+        "Type 2 Diabetes (6 years)",
+        "Hypertension (4 years)"
+      ],
+      "currentMedications": [
+        "Tab. Metformin 500mg BD",
+        "Tab. Telmisartan 40mg OD"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Maternal history of diabetic nephropathy"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Vegetarian diabetic diet",
+        "activity": "Sedentary"
+      },
+      "documentFindings": [
+        {
+          "documentType": "LAB_REPORT",
+          "uploadedAt": "2026-08-20",
+          "keyFindings": [
+            {
+              "test": "Fasting Blood Sugar",
+              "value": "188 mg/dL",
+              "reference": "70 - 100 mg/dL",
+              "isAbnormal": true,
+              "flag": "HIGH"
+            },
+            {
+              "test": "HbA1c (Glycated Hemoglobin)",
+              "value": "9.2 %",
+              "reference": "< 5.7 %",
+              "isAbnormal": true,
+              "flag": "CRITICALLY HIGH"
+            },
+            {
+              "test": "Total Cholesterol",
+              "value": "242 mg/dL",
+              "reference": "< 200 mg/dL",
+              "isAbnormal": true,
+              "flag": "HIGH"
+            }
+          ],
+          "abnormalFlags": [
+            {
+              "parameter": "HbA1c",
+              "observed": "9.2 %",
+              "reference": "< 5.7 %",
+              "clinicalNote": "Suboptimal glycemic control. High risk of microvascular complications."
+            }
+          ]
+        }
+      ],
+      "clinicalObservations": [
+        "Uncontrolled glycemic status with HbA1c 9.2% and Fasting Blood Sugar 188 mg/dL.",
+        "Symptoms consistent with early Diabetic Peripheral Neuropathy.",
+        "Serum Creatinine is normal (1.10 mg/dL), indicating preserved gross renal function."
+      ]
+    },
+    "doctorVerification": {
+      "verified": true,
+      "verifiedBy": "Dr. Ananya Sharma",
+      "verificationTimestamp": "2026-09-15T15:00:00.000Z",
+      "doctorNotes": "Reviewed lab investigations. Intensified oral hypoglycemics. Added Dapagliflozin 10mg OD. Prescribed Methylcobalamin / Pregabalin for peripheral burning. Advised funduscopy and urine microalbumin.",
+      "provisionalDiagnosis": "Type 2 Diabetes Mellitus with Suboptimal Glycemic Control & Early Diabetic Sensory Neuropathy",
+      "suggestedInvestigations": [
+        "Urine Albumin Creatinine Ratio (UACR)",
+        "Dilated Fundoscopy",
+        "Lipid Profile repeat in 3 months"
+      ],
+      "prescriptions": [
+        {
+          "drug": "Tab. Metformin",
+          "dose": "1000mg",
+          "timing": "Twice daily after meals (BD)",
+          "duration": "90 days"
+        },
+        {
+          "drug": "Tab. Dapagliflozin",
+          "dose": "10mg",
+          "timing": "Once daily in morning (OD)",
+          "duration": "90 days"
+        },
+        {
+          "drug": "Tab. Pregabalin + Methylcobalamin",
+          "dose": "75mg/1500mcg",
+          "timing": "Once daily at bedtime (HS)",
+          "duration": "30 days"
+        }
+      ]
+    }
+  }
+]

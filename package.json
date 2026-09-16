@@ -1,0 +1,28 @@
+{
+  "name": "sih-26047-medikiosk",
+  "version": "1.0.0",
+  "description": "CureCoders MEDIKIOSK - Patient Case-Taking Software (SIH 26047)",
+  "type": "module",
+  "scripts": {
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
+    "build": "npm --prefix client run build"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^10.0.0"
+  },
+  "keywords": [
+    "SIH2026",
+    "CureCoders",
+    "MEDIKIOSK",
+    "Clinical-Intake",
+    "Healthcare-AI"
+  ],
+  "author": "CureCoders",
+  "license": "MIT"
+}
