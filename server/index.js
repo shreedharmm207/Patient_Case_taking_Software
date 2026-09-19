@@ -37,15 +37,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// API Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/patients", patientRoutes);
-app.use("/api/consultations", consultationRoutes);
-app.use("/api/ai", aiRoutes);
-app.use("/api/admin", adminRoutes);
+// API Routes (supports both direct /api/ and function stripped routes)
+app.use(["/api/auth", "/auth"], authRoutes);
+app.use(["/api/patients", "/patients"], patientRoutes);
+app.use(["/api/consultations", "/consultations"], consultationRoutes);
+app.use(["/api/ai", "/ai"], aiRoutes);
+app.use(["/api/admin", "/admin"], adminRoutes);
 
 // Health check endpoint
-app.get("/api/health", (req, res) => {
+app.get(["/api/health", "/health"], (req, res) => {
   res.json({
     status: "HEALTHY",
     service: "MEDIKIOSK Clinical Intake API",
@@ -65,7 +65,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
+const isServerless = !!(process.env.VERCEL || process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME);
+if (!isServerless) {
   app.listen(PORT, () => {
     console.log(`\n======================================================`);
     console.log(`🏥 MEDIKIOSK Clinical Server running on port ${PORT}`);

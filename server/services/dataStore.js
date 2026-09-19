@@ -9,10 +9,15 @@ import { runClinicalCrossVerification } from "./clinicalEngine.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.join(__dirname, "..", "data");
+const isServerless = !!(process.env.VERCEL || process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const DATA_DIR = isServerless ? path.join("/tmp", "medikiosk-data") : path.join(__dirname, "..", "data");
 
 if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  } catch (e) {
+    console.warn("Could not create DATA_DIR:", e.message);
+  }
 }
 
 const PATIENTS_FILE = path.join(DATA_DIR, "patients.json");
