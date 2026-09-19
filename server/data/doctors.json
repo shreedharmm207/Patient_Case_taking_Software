@@ -31,5 +31,27 @@
     "department": "Cardiac Emergency Triage",
     "avatar": "https://images.unsplash.com/photo-1594824813583-b9f1d07c08a9?w=150&auto=format&fit=crop&q=80",
     "email": "priya@medikiosk.gov.in"
+  },
+  {
+    "id": "doc_ayur_101",
+    "name": "Dr. Vaidya Shreedhara Hegde",
+    "degree": "BAMS, MD (Ayurveda - Kayachikitsa)",
+    "specialty": "Kayachikitsa & Metabolic Health",
+    "regNo": "AYUSH-KA-11082",
+    "hospital": "Sri Jayachamarajendra Govt Ayurvedic Hospital",
+    "department": "Ayurveda Kayachikitsa OPD",
+    "avatar": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&auto=format&fit=crop&q=80",
+    "email": "vaidya.shreedhara@medikiosk.gov.in"
+  },
+  {
+    "id": "doc_ayur_102",
+    "name": "Dr. Ananya K. Sharma",
+    "degree": "BAMS, MD (Ayurveda - Panchakarma)",
+    "specialty": "Panchakarma & Musculoskeletal Care",
+    "regNo": "AYUSH-KA-09481",
+    "hospital": "National Institute of Ayurveda & AYUSH Center",
+    "department": "Ayurveda Panchakarma Wing",
+    "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&auto=format&fit=crop&q=80",
+    "email": "ananya.ayur@medikiosk.gov.in"
   }
 ]

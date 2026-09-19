@@ -72,12 +72,12 @@ export default function AdminDashboard({ onDemoResetSuccess }) {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>
+            <h1 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.3rem)', fontWeight: 900, color: '#ffffff', margin: 0 }}>
               {t('adminTitle')}
             </h1>
-            <span className="badge badge-success">CLINICAL OPD NODE</span>
+            <span className="badge badge-success">HOSPITAL OPERATIONS NODE</span>
           </div>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.2rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.35rem', margin: 0 }}>
             {t('adminSubtitle')}
           </p>
         </div>

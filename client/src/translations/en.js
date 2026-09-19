@@ -2,7 +2,7 @@
 export const en = {
   appTitle: "MEDIKIOSK",
   appSubtitle: "AI-Powered Pre-Consultation & Patient Case-Taking Platform",
-  problemStatement: "Intelligent Patient Case-Taking & Clinical Pre-Consultation Platform",
+  problemStatement: "Intelligent Patient Case-Taking & Medical Pre-Consultation Platform",
   tagline: "Intelligently collects patient history, asks adaptive follow-ups, and delivers physician-ready case summaries.",
   
   // Roles
@@ -21,8 +21,8 @@ export const en = {
   chooseLanguage: "Select Your Preferred Language",
   chooseLanguageDesc: "Choose the language you are most comfortable speaking or reading.",
   consentTitle: "Digital Health Consent (ABDM Framework)",
-  consentDesc: "Please read or listen to the information below before proceeding with clinical intake.",
-  consentNotice: "By tapping 'I Agree & Grant Consent', you allow MEDIKIOSK to collect your presenting symptoms, convert spoken words into clinical text, and generate a pre-consultation summary for your attending doctor. This system is an information collection tool and does NOT provide an autonomous diagnosis.",
+  consentDesc: "Please read or listen to the information below before proceeding with patient intake.",
+  consentNotice: "By tapping 'I Agree & Grant Consent', you allow MEDIKIOSK to collect your presenting symptoms, convert spoken words into medical text, and generate a pre-consultation summary for your attending doctor. This system is an information collection tool and does NOT provide an autonomous diagnosis.",
   consentButton: "I Agree & Grant Consent",
   consentAudioListen: "Listen to Consent Explanation",
 
@@ -38,7 +38,7 @@ export const en = {
   genderOther: "Other",
   phoneNumber: "Contact Phone Number",
   abhaIdLabel: "ABHA ID / National Health ID",
-  startIntakeBtn: "Start Clinical Intake",
+  startIntakeBtn: "Start Medical Intake",
 
   // Chief Complaint
   chiefComplaintTitle: "What brings you to the hospital today?",
@@ -58,7 +58,7 @@ export const en = {
   // Adaptive Questioning
   adaptiveQuestionHeader: "AI Adaptive Follow-up Question",
   whyAsking: "Why are we asking this?",
-  clinicalRationale: "Clinical Rationale",
+  clinicalRationale: "Medical Intent",
   progressText: "Intake Progress",
   step: "Step",
   of: "of",
@@ -108,16 +108,16 @@ export const en = {
   intakeCompleteMsg: "Your case has been summarized and queued for the doctor! Token Number: ",
 
   // Doctor Dashboard
-  doctorDashboardTitle: "OPD Clinical Pre-Consultation Queue",
+  doctorDashboardTitle: "OPD Patient Consultation Queue",
   filterAll: "All Patients",
-  filterUrgent: "Immediate Attention (Red Flags)",
+  filterUrgent: "Immediate Attention (Priority Flags)",
   filterPending: "Pending Review",
   filterReviewed: "Completed / Reviewed",
   searchPlaceholder: "Search by Patient Name, ABHA ID, or Symptom...",
   patientQueue: "Patient Queue",
   queueSummary: "AI Pre-Intake Summary Available",
   viewCaseBtn: "Open Case Sheet",
-  caseSheetTitle: "Physician Clinical Case Sheet",
+  caseSheetTitle: "Physician Medical Case Sheet",
   physicianSummaryBadge: "AI-Synthesized Draft — Physician Verification Required",
   socratesHpi: "History of Presenting Illness (HPI)",
   presentingSymptoms: "Presenting Symptoms",
@@ -127,21 +127,21 @@ export const en = {
   abnormalFindings: "Flagged Abnormal Investigation Values",
   patientTimelineTitle: "Chronological Patient History Timeline",
   doctorNotesHeading: "Attending Physician Assessment & Plan",
-  provisionalDiagnosisLabel: "Provisional Clinical Impression",
+  provisionalDiagnosisLabel: "Provisional Medical Impression",
   investigationsOrderedLabel: "Recommended Investigations / Workup",
   prescriptionsLabel: "Prescriptions & Dosage",
-  doctorNotesPlaceholder: "Type physician observations, clinical findings, and treatment plan...",
+  doctorNotesPlaceholder: "Type physician observations, examination findings, and treatment plan...",
   verifyAndApproveBtn: "Verify & Approve Case Sheet",
   printCaseSheetBtn: "Print / Export Case Sheet",
   closeModal: "Close",
 
   // Admin Module
   adminTitle: "MEDIKIOSK Hospital Administration Console",
-  adminSubtitle: "System throughput, clinical triage distribution, and operational metrics",
+  adminSubtitle: "System throughput, triage distribution, and operational metrics",
   totalIntakes: "Total Intakes",
-  urgentCasesCount: "Immediate Attention (Red Flags)",
+  urgentCasesCount: "Immediate Attention (Priority Flags)",
   avgIntakeTime: "Avg Intake Time",
-  timeSavedMetric: "Clinical Time Saved vs Manual",
+  timeSavedMetric: "Doctor Time Saved vs Manual",
   languageRatio: "Intake Language Split",
   englishUsage: "English",
   kannadaUsage: "Kannada",

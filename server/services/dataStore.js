@@ -76,6 +76,28 @@ const INITIAL_DOCTORS = [
     department: "Cardiac Emergency Triage",
     avatar: "https://images.unsplash.com/photo-1594824813583-b9f1d07c08a9?w=150&auto=format&fit=crop&q=80",
     email: "priya@medikiosk.gov.in"
+  },
+  {
+    id: "doc_ayur_101",
+    name: "Dr. Vaidya Shreedhara Hegde",
+    degree: "BAMS, MD (Ayurveda - Kayachikitsa)",
+    specialty: "Kayachikitsa & Metabolic Health",
+    regNo: "AYUSH-KA-11082",
+    hospital: "Sri Jayachamarajendra Govt Ayurvedic Hospital",
+    department: "Ayurveda Kayachikitsa OPD",
+    avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&auto=format&fit=crop&q=80",
+    email: "vaidya.shreedhara@medikiosk.gov.in"
+  },
+  {
+    id: "doc_ayur_102",
+    name: "Dr. Ananya K. Sharma",
+    degree: "BAMS, MD (Ayurveda - Panchakarma)",
+    specialty: "Panchakarma & Musculoskeletal Care",
+    regNo: "AYUSH-KA-09481",
+    hospital: "National Institute of Ayurveda & AYUSH Center",
+    department: "Ayurveda Panchakarma Wing",
+    avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&auto=format&fit=crop&q=80",
+    email: "ananya.ayur@medikiosk.gov.in"
   }
 ];
 
@@ -551,6 +573,105 @@ const INITIAL_CONSULTATIONS = [
         { drug: "Tab. Dapagliflozin", dose: "10mg", timing: "Once daily in morning (OD)", duration: "90 days" },
         { drug: "Tab. Pregabalin + Methylcobalamin", dose: "75mg/1500mcg", timing: "Once daily at bedtime (HS)", duration: "30 days" }
       ]
+    }
+  },
+
+  // Demo Case 5: Ayurveda Care Pathway Case (Chronic Hyperacidity & Lifestyle Intake)
+  {
+    id: "cons_demo_05",
+    tokenNumber: "AYUR-105",
+    patientId: "pat_005",
+    patientName: "Smt. Parvathi Rao",
+    patientAge: 46,
+    patientGender: "Female",
+    abhaId: "91-6284-9102-3371",
+    language: "en",
+    chiefComplaint: "Chronic burning sensation in chest and throat (hyperacidity), bloating after meals, disturbed sleep since 3 months",
+    chiefComplaintKn: "ಎದೆಯಲ್ಲಿ ಉರಿ, ಊಟದ ನಂತರ ಹೊಟ್ಟೆ ಉಬ್ಬರ ಮತ್ತು ನಿದ್ರಾಹೀನತೆ",
+    status: "PENDING_REVIEW",
+    carePathway: "ayurveda",
+    isRedFlag: false,
+    urgencyLevel: "STANDARD",
+    redFlagReport: { isRedFlag: false, flags: [] },
+    createdAt: "2026-09-17T09:40:00.000Z",
+    assignedDoctorId: "doc_ayur_101",
+    extractedEntities: {
+      symptoms: [
+        { canonicalName: "Amlapitta / Hyperacidity", detectedWord: "burning chest and throat", duration: "3 months", source: "Patient Intake" },
+        { canonicalName: "Adhmana / Abdominal Distension", detectedWord: "bloating", duration: "3 months", source: "Patient Intake" },
+        { canonicalName: "Anidra / Disturbed Sleep", detectedWord: "sleep disturbance", duration: "2 months", source: "Patient Intake" }
+      ],
+      duration: "3 months (Chronic progressive)",
+      severity: "Moderate (Grade 2)",
+      modifiers: ["Worse after spicy/late-night meals", "Relieved temporarily by cool water"]
+    },
+    adaptiveAnswers: [
+      {
+        id: "ayur_digestion",
+        question: "Describe your digestive comfort and appetite timing",
+        answer: "Tikshnagni (intense erratic hunger, severe sour burping if meal delayed by 1 hour)",
+        rationale: "Classic Pitta aggravation manifesting as Amlapitta.",
+        source: "Patient Intake Flow"
+      },
+      {
+        id: "ayur_sleep",
+        question: "How is your sleep quality?",
+        answer: "Broken sleep, wake up at 2:00 AM with chest warmth",
+        rationale: "Pitta peak time (10 PM - 2 AM) aggravation impacting restfulness.",
+        source: "Patient Intake Flow"
+      }
+    ],
+    medicalHistory: {
+      conditions: ["Mild Dyslipidemia", "GERD"],
+      medications: ["Cap. Omeprazole 20mg PRN"],
+      allergies: ["NKDA"],
+      surgeries: ["None"],
+      familyHistory: ["Mother had chronic acid peptic disease"],
+      smoking: "Non-smoker",
+      alcohol: "Non-drinker"
+    },
+    ayurvedaSpecificInfo: {
+      lifestyle: "Sedentary software desk job with prolonged sitting (8-10 hours/day)",
+      diet: "Vegetarian with frequent tea/coffee (3-4 cups), irregular meal hours, occasional deep-fried evening snacks",
+      sleep: "Disturbed, 5-6 hours average, difficulties staying asleep during Pitta kala (midnight-2 AM)",
+      dailyRoutine: "Late morning waking (07:30 AM), minimal physical exercise, high cognitive work-related stress",
+      generalSymptoms: "Substernal heartburn, sour belching, epigastric heaviness after meals, morning fatigue",
+      previousTreatments: "Antacids and Proton Pump Inhibitors (Omeprazole) with temporary relief and recurrence on cessation",
+      patientConsentConfirmed: true,
+      clinicalReviewStatus: "PENDING_AYURVEDA_PHYSICIAN_EVALUATION"
+    },
+    ayurvedaCareRequest: {
+      requestedDoctorId: "doc_ayur_101",
+      requestedDoctorName: "Dr. Vaidya Shreedhara Hegde",
+      specialization: "Kayachikitsa & Metabolic Health",
+      hospital: "Sri Jayachamarajendra Govt Ayurvedic Hospital, Bangalore",
+      patientConsentForAyurveda: true,
+      requestedAt: "2026-09-17T09:42:00.000Z"
+    },
+    documentExtractions: [],
+    summary: {
+      chiefComplaint: "Chronic burning sensation in chest and throat (hyperacidity), bloating after meals, disturbed sleep since 3 months",
+      presentingSymptoms: ["Retrosternal Burning", "Sour Eructation", "Postprandial Bloating", "Interrupted Sleep"],
+      duration: "3 months",
+      severity: "Moderate",
+      historyOfPresentingIllness: "46-year-old female presenting for holistic Ayurvedic consultation regarding 3-month history of burning in epigastrium and throat, aggravated by irregular eating hours and excessive caffeine. Temporary relief with PPIs followed by rebound symptoms.",
+      pastMedicalHistory: ["GERD (1 year)", "Borderline Cholesterol"],
+      currentMedications: ["Omeprazole 20mg PRN"],
+      allergies: ["NKDA"],
+      previousSurgeries: ["None"],
+      familyHistory: ["Maternal history of peptic symptoms"],
+      lifestyleInformation: { smoking: "Non-smoker", alcohol: "Non-drinker", diet: "High caffeine, irregular timings", activity: "Sedentary" },
+      clinicalObservations: [
+        "Presenting symptoms clinically consistent with classical Amlapitta / Vidagdha Jeerna.",
+        "Patient consented to holistic Ayurveda lifestyle and dietetic protocol (Ahara-Vihara).",
+        "Clinical diagnosis and therapeutic prescription pending evaluation by licensed BAMS/MD Ayurvedic practitioner."
+      ]
+    },
+    doctorVerification: {
+      verified: false,
+      doctorNotes: "",
+      provisionalDiagnosis: "",
+      prescriptions: []
     }
   }
 ];

@@ -1,739 +1,5 @@
 [
   {
-    "id": "cons_1789585610343_kwa7",
-    "tokenNumber": "OPD-108",
-    "patientId": "pat_1789585610302",
-    "patientName": "Smt. Gangamma Gowda",
-    "patientAge": 58,
-    "patientGender": "Female",
-    "abhaId": "91-3829-5721-8932",
-    "language": "kn",
-    "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
-    "chiefComplaintKn": "",
-    "status": "REVIEWED",
-    "isRedFlag": false,
-    "urgencyLevel": "STANDARD",
-    "redFlagReport": {
-      "isRedFlag": false,
-      "flags": [],
-      "urgencyLevel": "STANDARD",
-      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-    },
-    "createdAt": "2026-09-16T19:06:50.343Z",
-    "extractedEntities": {
-      "symptoms": [
-        {
-          "canonicalName": "Fever (Pyrexia)",
-          "detectedWord": "fever",
-          "duration": "Unspecified",
-          "source": "Patient Voice / Text Natural Language"
-        },
-        {
-          "canonicalName": "Cough",
-          "detectedWord": "cough",
-          "duration": "Unspecified",
-          "source": "Patient Voice / Text Natural Language"
-        }
-      ],
-      "duration": null,
-      "severity": "Severe (Grade 3)",
-      "modifiers": []
-    },
-    "adaptiveAnswers": [
-      {
-        "id": "fc_duration_temp",
-        "question": "ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ?",
-        "answer": "3 to 5 days (High fever >101°F)",
-        "rationale": "Duration helps determine whether this is an acute viral infection, bacterial pneumonia, or prolonged fever requiring tropical fever workup.",
-        "rationaleKn": "ಜ್ವರದ ಅವಧಿಯು ವೈದ್ಯರಿಗೆ ಇದು ಸಾಧಾರಣ ವೈರಲ್ ಸೋಂಕೇ ಅಥವಾ ನ್ಯುಮೋನಿಯಾ ಅಥವಾ ಡೆಂಗ್ಯೂ ಮುಂತಾದ ತೀವ್ರ ಸೋಂಕೇ ಎಂದು ತೀರ್ಮಾನಿಸಲು ನೆರವಾಗುತ್ತದೆ.",
-        "isAlert": true,
-        "source": "Patient Touch / Voice"
-      },
-      {
-        "id": "fc_cough_character",
-        "question": "ನಿಮ್ಮ ಕೆಮ್ಮು ಒಣ ಕೆಮ್ಮೇ ಅಥವಾ ಕಫ (ಕಫ ಬರುವುದು) ಇದೆಯೇ?",
-        "answer": "Yellow or greenish thick phlegm",
-        "rationale": "Purulent (yellow/green) sputum or blood streaks points towards bacterial lower respiratory infection or tuberculosis requiring targeted sputum workup.",
-        "rationaleKn": "ಹಳದಿ/ಹಸಿರು ಕಫ ಅಥವಾ ರಕ್ತದ ಅಂಶ ಶ್ವಾಸಕೋಶದ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಸೋಂಕನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಇದಕ್ಕೆ ಆಂಟಿಬಯೋಟಿಕ್ ಅಥವಾ ಎಕ್ಸ್‌ರೇ ಅಗತ್ಯವಿರಬಹುದು.",
-        "isAlert": false,
-        "source": "Patient Touch / Voice"
-      }
-    ],
-    "medicalHistory": {
-      "conditions": [
-        "Hypertension (5 years)"
-      ],
-      "medications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "surgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "smoking": "Non-smoker",
-      "alcohol": "Non-drinker"
-    },
-    "documentExtractions": [],
-    "ayushData": null,
-    "summary": {
-      "generatedAt": "2026-09-16T19:06:50.343Z",
-      "clinicalStatus": "PENDING_DOCTOR_REVIEW",
-      "isRedFlag": false,
-      "redFlagReport": {
-        "isRedFlag": false,
-        "flags": [],
-        "urgencyLevel": "STANDARD",
-        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-      },
-      "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
-      "presentingSymptoms": [
-        "Fever (Pyrexia)",
-        "Cough"
-      ],
-      "duration": "Recorded during intake",
-      "severity": "Severe (Grade 3)",
-      "historyOfPresentingIllness": "Patient presented with chief complaint of ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು. Reported severity: Severe (Grade 3). ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ? -> 3 to 5 days (High fever >101°F). ನಿಮ್ಮ ಕೆಮ್ಮು ಒಣ ಕೆಮ್ಮೇ ಅಥವಾ ಕಫ (ಕಫ ಬರುವುದು) ಇದೆಯೇ? -> Yellow or greenish thick phlegm.",
-      "pastMedicalHistory": [
-        "Hypertension (5 years)"
-      ],
-      "currentMedications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "previousSurgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "lifestyleInformation": {
-        "smoking": "Non-smoker",
-        "alcohol": "Non-drinker",
-        "diet": "Balanced regular diet",
-        "activity": "Moderate activity"
-      },
-      "documentFindings": [],
-      "ayushAssessment": null,
-      "clinicalObservations": [
-        "Vitals and triage recommended prior to clinical examination.",
-        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
-        "Attending physician verification required before prescribing or formulating clinical impression."
-      ],
-      "crossVerificationReport": {
-        "verifiedAt": "2026-09-16T19:06:50.343Z",
-        "totalAlerts": 1,
-        "alerts": [
-          {
-            "type": "MEDICATION_DISCREPANCY",
-            "severity": "HIGH",
-            "title": "Medication Adherence Gap: Antihypertensive Therapy",
-            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-            "evidenceSource": "Intake History & Medication Audit",
-            "status": "REQUIRES_PHYSICIAN_REVIEW"
-          }
-        ],
-        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-      },
-      "doctorVerification": {
-        "verified": false,
-        "verifiedBy": null,
-        "verificationTimestamp": null,
-        "doctorNotes": "",
-        "provisionalDiagnosis": "",
-        "suggestedInvestigations": [],
-        "prescriptions": []
-      }
-    },
-    "doctorVerification": {
-      "verified": true,
-      "verifiedBy": "Dr. Ananya Sharma, MD",
-      "verificationTimestamp": "2026-09-16T19:07:04.389Z",
-      "doctorNotes": "",
-      "provisionalDiagnosis": "",
-      "suggestedInvestigations": [],
-      "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T19:07:04.389Z",
-      "totalAlerts": 1,
-      "alerts": [
-        {
-          "type": "MEDICATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Medication Adherence Gap: Antihypertensive Therapy",
-          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-          "evidenceSource": "Intake History & Medication Audit",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-    }
-  },
-  {
-    "id": "cons_1789584743438_7pcx",
-    "tokenNumber": "OPD-107 [URGENT]",
-    "patientId": "pat_1789584743426",
-    "patientName": "Smt. Gangamma Gowda",
-    "patientAge": 58,
-    "patientGender": "Female",
-    "abhaId": "91-3829-5721-8932",
-    "language": "kn",
-    "chiefComplaint": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು",
-    "chiefComplaintKn": "",
-    "status": "IMMEDIATE_ATTENTION",
-    "isRedFlag": true,
-    "urgencyLevel": "HIGH",
-    "redFlagReport": {
-      "isRedFlag": true,
-      "flags": [
-        {
-          "id": "acute_abdomen",
-          "title": "Acute Surgical Abdomen / Suspected Appendicitis or Perforation",
-          "severity": "HIGH",
-          "triggerEvidence": "Clinical answer pattern",
-          "rationale": "Acute localized or generalized severe abdominal pain with guarding or rebound tenderness requires prompt surgical review.",
-          "rationaleKn": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು ಮತ್ತು ತಡೆಯಲಾಗದ ಬಾಧೆಯು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ತಕ್ಷಣದ ಪರೀಕ್ಷೆಯನ್ನು ಬಯಸುತ್ತದೆ.",
-          "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
-        }
-      ],
-      "urgencyLevel": "HIGH",
-      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-    },
-    "createdAt": "2026-09-16T18:52:23.438Z",
-    "extractedEntities": {
-      "symptoms": [
-        {
-          "canonicalName": "Abdominal Pain",
-          "detectedWord": "abdominal_pain",
-          "duration": "Unspecified",
-          "source": "Patient Voice / Text Natural Language"
-        }
-      ],
-      "duration": null,
-      "severity": "Severe (Grade 3)",
-      "modifiers": []
-    },
-    "adaptiveAnswers": [],
-    "medicalHistory": {
-      "conditions": [
-        "Hypertension (5 years)"
-      ],
-      "medications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "surgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "smoking": "Non-smoker",
-      "alcohol": "Non-drinker"
-    },
-    "documentExtractions": [],
-    "ayushData": null,
-    "summary": {
-      "generatedAt": "2026-09-16T18:52:23.438Z",
-      "clinicalStatus": "IMMEDIATE_ATTENTION",
-      "isRedFlag": true,
-      "redFlagReport": {
-        "isRedFlag": true,
-        "flags": [
-          {
-            "id": "acute_abdomen",
-            "title": "Acute Surgical Abdomen / Suspected Appendicitis or Perforation",
-            "severity": "HIGH",
-            "triggerEvidence": "Clinical answer pattern",
-            "rationale": "Acute localized or generalized severe abdominal pain with guarding or rebound tenderness requires prompt surgical review.",
-            "rationaleKn": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು ಮತ್ತು ತಡೆಯಲಾಗದ ಬಾಧೆಯು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ತಕ್ಷಣದ ಪರೀಕ್ಷೆಯನ್ನು ಬಯಸುತ್ತದೆ.",
-            "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
-          }
-        ],
-        "urgencyLevel": "HIGH",
-        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-      },
-      "chiefComplaint": "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು",
-      "presentingSymptoms": [
-        "Abdominal Pain"
-      ],
-      "duration": "Recorded during intake",
-      "severity": "Severe (Grade 3)",
-      "historyOfPresentingIllness": "Patient presented with chief complaint of ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು. Reported severity: Severe (Grade 3).",
-      "pastMedicalHistory": [
-        "Hypertension (5 years)"
-      ],
-      "currentMedications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "previousSurgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "lifestyleInformation": {
-        "smoking": "Non-smoker",
-        "alcohol": "Non-drinker",
-        "diet": "Balanced regular diet",
-        "activity": "Moderate activity"
-      },
-      "documentFindings": [],
-      "ayushAssessment": null,
-      "clinicalObservations": [
-        "PRIORITY: Urgent red-flag symptoms detected during intake. Immediate vitals & triage advised.",
-        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
-        "Attending physician verification required before prescribing or formulating clinical impression."
-      ],
-      "crossVerificationReport": {
-        "verifiedAt": "2026-09-16T18:52:23.438Z",
-        "totalAlerts": 1,
-        "alerts": [
-          {
-            "type": "MEDICATION_DISCREPANCY",
-            "severity": "HIGH",
-            "title": "Medication Adherence Gap: Antihypertensive Therapy",
-            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-            "evidenceSource": "Intake History & Medication Audit",
-            "status": "REQUIRES_PHYSICIAN_REVIEW"
-          }
-        ],
-        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-      },
-      "doctorVerification": {
-        "verified": false,
-        "verifiedBy": null,
-        "verificationTimestamp": null,
-        "doctorNotes": "",
-        "provisionalDiagnosis": "",
-        "suggestedInvestigations": [],
-        "prescriptions": []
-      }
-    },
-    "doctorVerification": {
-      "verified": false,
-      "verifiedBy": null,
-      "verificationTimestamp": null,
-      "doctorNotes": "",
-      "provisionalDiagnosis": "",
-      "suggestedInvestigations": [],
-      "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T19:06:50.345Z",
-      "totalAlerts": 1,
-      "alerts": [
-        {
-          "type": "MEDICATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Medication Adherence Gap: Antihypertensive Therapy",
-          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-          "evidenceSource": "Intake History & Medication Audit",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-    }
-  },
-  {
-    "id": "cons_1789577787073_fyvu",
-    "tokenNumber": "OPD-106 [URGENT]",
-    "patientId": "pat_1789577787058",
-    "patientName": "Smt. Gangamma Gowda",
-    "patientAge": 58,
-    "patientGender": "Female",
-    "abhaId": "91-3829-5721-8932",
-    "language": "en",
-    "chiefComplaint": "Severe Chest Pain",
-    "chiefComplaintKn": "",
-    "status": "IMMEDIATE_ATTENTION",
-    "isRedFlag": true,
-    "urgencyLevel": "CRITICAL",
-    "redFlagReport": {
-      "isRedFlag": true,
-      "flags": [
-        {
-          "id": "acs_chest_pain",
-          "title": "Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
-          "severity": "CRITICAL",
-          "triggerEvidence": "chest pain",
-          "rationale": "Chest pain especially with radiation to the arm, jaw, or accompanied by diaphoresis and shortness of breath requires immediate clinical evaluation to rule out acute myocardial infarction.",
-          "rationaleKn": "ಎದೆ ನೋವು ಕೈಗೆ ಅಥವಾ ದವಡೆಗೆ ಹರಡುವುದು ಮತ್ತು ಬೆವರುವಿಕೆ ಕಾಣಿಸಿಕೊಂಡಿರುವುದು ತಕ್ಷಣದ ವೈದ್ಯಕೀಯ ತಪಾಸಣೆಗೆ ಒಳಪಡಿಸಬೇಕಾಗಿದೆ.",
-          "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
-        }
-      ],
-      "urgencyLevel": "CRITICAL",
-      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-    },
-    "createdAt": "2026-09-16T16:56:27.073Z",
-    "extractedEntities": {
-      "symptoms": [
-        {
-          "canonicalName": "Chest Pain / Discomfort",
-          "detectedWord": "chest_pain",
-          "duration": "Unspecified",
-          "source": "Patient Voice / Text Natural Language"
-        }
-      ],
-      "duration": null,
-      "severity": "Severe (Grade 3)",
-      "modifiers": []
-    },
-    "adaptiveAnswers": [
-      {
-        "id": "cp_onset_duration",
-        "question": "When exactly did the chest pain start, and was it sudden or gradual?",
-        "answer": "Sudden (Within 2 hours)",
-        "rationale": "Knowing the exact onset helps clinicians distinguish acute time-critical emergencies like a heart attack from chronic muscular or digestive pain.",
-        "rationaleKn": "ನೋವು ಯಾವಾಗ ಪ್ರಾರಂಭವಾಯಿತು ಎಂಬುದನ್ನು ತಿಳಿಯುವುದರಿಂದ ಹೃದಯಾಘಾತದಂತಹ ತುರ್ತು ಪರಿಸ್ಥಿತಿಗಳನ್ನು ಸ್ನಾಯು ನೋವಿನಿಂದ ಬೇರ್ಪಡಿಸಲು ವೈದ್ಯರಿಗೆ ಸಹಾಯವಾಗುತ್ತದೆ.",
-        "isAlert": false,
-        "source": "Patient Touch / Voice"
-      },
-      {
-        "id": "cp_character",
-        "question": "How would you describe the feeling of the pain?",
-        "answer": "Burning sensation (Heartburn)",
-        "rationale": "Crushing, heavy pressure is characteristic of cardiac ischemia, whereas sharp stabbing pain may relate to pleural inflammation or chest wall strain.",
-        "rationaleKn": "ಭಾರವಾದ ಎದೆಭಾರವು ಹೃದಯ ರಕ್ತಪರಿಚಲನೆಯ ಕೊರತೆಯನ್ನು ಸೂಚಿಸಬಲ್ಲದು, ಆದರೆ ಚುಚ್ಚುವ ನೋವು ಸ್ನಾಯು ಅಥವಾ ಶ್ವಾಸಕೋಶದ ಸಮಸ್ಯೆಯನ್ನು ಸೂಚಿಸಬಹುದು.",
-        "isAlert": false,
-        "source": "Patient Touch / Voice"
-      },
-      {
-        "id": "cp_radiation",
-        "question": "Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)?",
-        "answer": "Yes, spreads to left arm or shoulder",
-        "rationale": "Radiation of pain to the left arm or jaw is a classic dermatomal referral sign of myocardial ischemia.",
-        "rationaleKn": "ಎಡಗೈ ಅಥವಾ ದವಡೆಗೆ ನೋವು ಹರಡುವುದು ಹೃದಯಾಘಾತದ ಪ್ರಮುಖ ಲಕ್ಷಣವಾಗಿದ್ದು, ತಕ್ಷಣದ ಎಚ್ಚರಿಕೆಯನ್ನು ನೀಡುತ್ತದೆ.",
-        "isAlert": true,
-        "source": "Patient Touch / Voice"
-      },
-      {
-        "id": "cp_exertion",
-        "question": "Does the pain increase when walking, climbing stairs, or doing physical effort?",
-        "answer": "Worse when taking deep breaths or pressing chest",
-        "rationale": "Exertional angina typically worsens with cardiac workload, helping the doctor prioritize immediate cardiac monitoring.",
-        "rationaleKn": "ಶ್ರಮಪಟ್ಟಾಗ ಹೆಚ್ಚಾಗುವ ಎದೆನೋವು ಹೃದಯಕ್ಕೆ ಆಮ್ಲಜನಕದ ಕೊರತೆಯನ್ನು ತೋರಿಸಬಹುದು, ಆದ್ದರಿಂದ ವೈದ್ಯರು ಇಸಿಜಿ ಪರೀಕ್ಷಿಸಲು ಆದ್ಯತೆ ನೀಡುತ್ತಾರೆ.",
-        "isAlert": false,
-        "source": "Patient Touch / Voice"
-      },
-      {
-        "id": "cp_associated_symptoms",
-        "question": "Are you experiencing any of these other symptoms along with the chest pain?",
-        "answer": "None of these",
-        "rationale": "Associated diaphoresis (sweating) and breathlessness significantly elevate the urgency of evaluating for myocardial infarction.",
-        "rationaleKn": "ಬೆವರು ಮತ್ತು ಉಸಿರುಕಟ್ಟುವಿಕೆ ಎದೆನೋವಿನ ಜೊತೆಯಲ್ಲಿದ್ದರೆ ಅದು ತುರ್ತು ಹೃದಯ ಸಂಬಂಧಿ ಪರೀಕ್ಷೆಗೆ ಅತ್ಯಗತ್ಯ ಸೂಚನೆಯಾಗಿದೆ.",
-        "isAlert": false,
-        "source": "Patient Touch / Voice"
-      }
-    ],
-    "medicalHistory": {
-      "conditions": [
-        "Hypertension (5 years)"
-      ],
-      "medications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "surgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "smoking": "Non-smoker",
-      "alcohol": "Non-drinker"
-    },
-    "documentExtractions": [],
-    "ayushData": null,
-    "summary": {
-      "generatedAt": "2026-09-16T16:56:27.073Z",
-      "clinicalStatus": "IMMEDIATE_ATTENTION",
-      "isRedFlag": true,
-      "redFlagReport": {
-        "isRedFlag": true,
-        "flags": [
-          {
-            "id": "acs_chest_pain",
-            "title": "Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
-            "severity": "CRITICAL",
-            "triggerEvidence": "chest pain",
-            "rationale": "Chest pain especially with radiation to the arm, jaw, or accompanied by diaphoresis and shortness of breath requires immediate clinical evaluation to rule out acute myocardial infarction.",
-            "rationaleKn": "ಎದೆ ನೋವು ಕೈಗೆ ಅಥವಾ ದವಡೆಗೆ ಹರಡುವುದು ಮತ್ತು ಬೆವರುವಿಕೆ ಕಾಣಿಸಿಕೊಂಡಿರುವುದು ತಕ್ಷಣದ ವೈದ್ಯಕೀಯ ತಪಾಸಣೆಗೆ ಒಳಪಡಿಸಬೇಕಾಗಿದೆ.",
-            "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
-          }
-        ],
-        "urgencyLevel": "CRITICAL",
-        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-      },
-      "chiefComplaint": "Severe Chest Pain",
-      "presentingSymptoms": [
-        "Chest Pain / Discomfort"
-      ],
-      "duration": "Recorded during intake",
-      "severity": "Severe (Grade 3)",
-      "historyOfPresentingIllness": "Patient presented with chief complaint of Severe Chest Pain. Reported severity: Severe (Grade 3). When exactly did the chest pain start, and was it sudden or gradual? -> Sudden (Within 2 hours). How would you describe the feeling of the pain? -> Burning sensation (Heartburn). Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)? -> Yes, spreads to left arm or shoulder. Does the pain increase when walking, climbing stairs, or doing physical effort? -> Worse when taking deep breaths or pressing chest. Are you experiencing any of these other symptoms along with the chest pain? -> None of these.",
-      "pastMedicalHistory": [
-        "Hypertension (5 years)"
-      ],
-      "currentMedications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "previousSurgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "lifestyleInformation": {
-        "smoking": "Non-smoker",
-        "alcohol": "Non-drinker",
-        "diet": "Balanced regular diet",
-        "activity": "Moderate activity"
-      },
-      "documentFindings": [],
-      "ayushAssessment": null,
-      "clinicalObservations": [
-        "PRIORITY: Urgent red-flag symptoms detected during intake. Immediate vitals & triage advised.",
-        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
-        "Attending physician verification required before prescribing or formulating clinical impression."
-      ],
-      "crossVerificationReport": {
-        "verifiedAt": "2026-09-16T16:56:27.073Z",
-        "totalAlerts": 2,
-        "alerts": [
-          {
-            "type": "MEDICATION_DISCREPANCY",
-            "severity": "HIGH",
-            "title": "Medication Adherence Gap: Antihypertensive Therapy",
-            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-            "evidenceSource": "Intake History & Medication Audit",
-            "status": "REQUIRES_PHYSICIAN_REVIEW"
-          },
-          {
-            "type": "CLINICAL_ESCALATION",
-            "severity": "CRITICAL",
-            "title": "Escalation Warning: Vascular Risk Correlation",
-            "finding": "Patient with pre-existing vascular risk (Hypertension) presents with acute chest pain radiating to extremity. Immediate 12-lead ECG and troponin monitoring indicated.",
-            "evidenceSource": "Cross-comparison: Past History vs Presenting Complaint",
-            "status": "REQUIRES_PHYSICIAN_REVIEW"
-          }
-        ],
-        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-      },
-      "doctorVerification": {
-        "verified": false,
-        "verifiedBy": null,
-        "verificationTimestamp": null,
-        "doctorNotes": "",
-        "provisionalDiagnosis": "",
-        "suggestedInvestigations": [],
-        "prescriptions": []
-      }
-    },
-    "doctorVerification": {
-      "verified": false,
-      "verifiedBy": null,
-      "verificationTimestamp": null,
-      "doctorNotes": "",
-      "provisionalDiagnosis": "",
-      "suggestedInvestigations": [],
-      "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T18:52:23.441Z",
-      "totalAlerts": 2,
-      "alerts": [
-        {
-          "type": "MEDICATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Medication Adherence Gap: Antihypertensive Therapy",
-          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-          "evidenceSource": "Intake History & Medication Audit",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        },
-        {
-          "type": "CLINICAL_ESCALATION",
-          "severity": "CRITICAL",
-          "title": "Escalation Warning: Vascular Risk Correlation",
-          "finding": "Patient with pre-existing vascular risk (Hypertension) presents with acute chest pain radiating to extremity. Immediate 12-lead ECG and troponin monitoring indicated.",
-          "evidenceSource": "Cross-comparison: Past History vs Presenting Complaint",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-    }
-  },
-  {
-    "id": "cons_1789571238603_l532",
-    "tokenNumber": "OPD-105",
-    "patientId": "pat_1789571238589",
-    "patientName": "Ravi Kumar",
-    "patientAge": 34,
-    "patientGender": "Male",
-    "abhaId": "91-8472-1029-4401",
-    "language": "kn",
-    "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
-    "chiefComplaintKn": "",
-    "status": "PENDING_REVIEW",
-    "isRedFlag": false,
-    "urgencyLevel": "STANDARD",
-    "redFlagReport": {
-      "isRedFlag": false,
-      "flags": [],
-      "urgencyLevel": "STANDARD",
-      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-    },
-    "createdAt": "2026-09-16T15:07:18.603Z",
-    "extractedEntities": {
-      "symptoms": [
-        {
-          "canonicalName": "Fever (Pyrexia)",
-          "detectedWord": "fever",
-          "duration": "Unspecified",
-          "source": "Patient Voice / Text Natural Language"
-        },
-        {
-          "canonicalName": "Cough",
-          "detectedWord": "cough",
-          "duration": "Unspecified",
-          "source": "Patient Voice / Text Natural Language"
-        }
-      ],
-      "duration": null,
-      "severity": "Severe (Grade 3)",
-      "modifiers": []
-    },
-    "adaptiveAnswers": [
-      {
-        "id": "fc_duration_temp",
-        "question": "ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ?",
-        "answer": "3 ರಿಂದ 5 ದಿನಗಳು (ತೀವ್ರ ಜ್ವರ >101°F)",
-        "rationale": "Duration helps determine whether this is an acute viral infection, bacterial pneumonia, or prolonged fever requiring tropical fever workup.",
-        "rationaleKn": "ಜ್ವರದ ಅವಧಿಯು ವೈದ್ಯರಿಗೆ ಇದು ಸಾಧಾರಣ ವೈರಲ್ ಸೋಂಕೇ ಅಥವಾ ನ್ಯುಮೋನಿಯಾ ಅಥವಾ ಡೆಂಗ್ಯೂ ಮುಂತಾದ ತೀವ್ರ ಸೋಂಕೇ ಎಂದು ತೀರ್ಮಾನಿಸಲು ನೆರವಾಗುತ್ತದೆ.",
-        "isAlert": true,
-        "source": "Patient Touch / Voice"
-      }
-    ],
-    "medicalHistory": {
-      "conditions": [
-        "Hypertension (5 years)"
-      ],
-      "medications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "surgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "smoking": "Non-smoker",
-      "alcohol": "Non-drinker"
-    },
-    "documentExtractions": [],
-    "ayushData": null,
-    "summary": {
-      "generatedAt": "2026-09-16T15:07:18.602Z",
-      "clinicalStatus": "PENDING_DOCTOR_REVIEW",
-      "isRedFlag": false,
-      "redFlagReport": {
-        "isRedFlag": false,
-        "flags": [],
-        "urgencyLevel": "STANDARD",
-        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
-      },
-      "chiefComplaint": "ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು",
-      "presentingSymptoms": [
-        "Fever (Pyrexia)",
-        "Cough"
-      ],
-      "duration": "Recorded during intake",
-      "severity": "Severe (Grade 3)",
-      "historyOfPresentingIllness": "Patient presented with chief complaint of ತೀವ್ರ ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು. Reported severity: Severe (Grade 3). ನಿಮಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು? ಮತ್ತು ತಾಪಮಾನ ಅಳತೆ ಮಾಡಿದ್ದೀರಾ? -> 3 ರಿಂದ 5 ದಿನಗಳು (ತೀವ್ರ ಜ್ವರ >101°F).",
-      "pastMedicalHistory": [
-        "Hypertension (5 years)"
-      ],
-      "currentMedications": [
-        "Tab. Amlodipine 5mg OD"
-      ],
-      "allergies": [
-        "NKDA (No Known Drug Allergies)"
-      ],
-      "previousSurgeries": [
-        "None"
-      ],
-      "familyHistory": [
-        "Brother had heart attack at age 54"
-      ],
-      "lifestyleInformation": {
-        "smoking": "Non-smoker",
-        "alcohol": "Non-drinker",
-        "diet": "Balanced regular diet",
-        "activity": "Moderate activity"
-      },
-      "documentFindings": [],
-      "ayushAssessment": null,
-      "clinicalObservations": [
-        "Vitals and triage recommended prior to clinical examination.",
-        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
-        "Attending physician verification required before prescribing or formulating clinical impression."
-      ],
-      "doctorVerification": {
-        "verified": false,
-        "verifiedBy": null,
-        "verificationTimestamp": null,
-        "doctorNotes": "",
-        "provisionalDiagnosis": "",
-        "suggestedInvestigations": [],
-        "prescriptions": []
-      }
-    },
-    "doctorVerification": {
-      "verified": false,
-      "verifiedBy": null,
-      "verificationTimestamp": null,
-      "doctorNotes": "",
-      "provisionalDiagnosis": "",
-      "suggestedInvestigations": [],
-      "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T16:56:27.074Z",
-      "totalAlerts": 1,
-      "alerts": [
-        {
-          "type": "MEDICATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Medication Adherence Gap: Antihypertensive Therapy",
-          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-          "evidenceSource": "Intake History & Medication Audit",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
-    }
-  },
-  {
     "id": "cons_demo_01",
     "tokenNumber": "OPD-101",
     "patientId": "pat_001",
@@ -866,21 +132,6 @@
       "doctorNotes": "",
       "provisionalDiagnosis": "",
       "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T16:56:27.074Z",
-      "totalAlerts": 1,
-      "alerts": [
-        {
-          "type": "ALLERGY_CONFLICT",
-          "severity": "CRITICAL",
-          "title": "Allergy Conflict: Penicillin Class Contraindication",
-          "finding": "Patient has documented Penicillin allergy. Beta-lactam antibiotics (Amoxicillin, Augmentin, Ampicillin) are strictly contraindicated.",
-          "evidenceSource": "Patient Medical History (Documented Allergies)",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -894,7 +145,7 @@
     "language": "kn",
     "chiefComplaint": "Severe crushing retrosternal chest pain radiating to left arm and jaw with profuse cold sweating since 2 hours",
     "chiefComplaintKn": "ಕಳೆದ 2 ಗಂಟೆಗಳಿಂದ ಎಡಗೈ ಮತ್ತು ದವಡೆಗೆ ಹರಡುತ್ತಿರುವ ತೀವ್ರ ಎದೆ ನೋವು ಮತ್ತು ತಣ್ಣನೆಯ ಬೆವರು",
-    "status": "REVIEWED",
+    "status": "IMMEDIATE_ATTENTION",
     "isRedFlag": true,
     "urgencyLevel": "CRITICAL",
     "redFlagReport": {
@@ -1088,44 +339,10 @@
       ]
     },
     "doctorVerification": {
-      "verified": true,
-      "verifiedBy": "Dr. Ananya Sharma, MD",
-      "verificationTimestamp": "2026-09-16T14:57:27.639Z",
-      "doctorNotes": "Immediate ECG done. Transferred to ICU.",
+      "verified": false,
+      "doctorNotes": "",
       "provisionalDiagnosis": "",
-      "suggestedInvestigations": [],
       "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T16:56:27.074Z",
-      "totalAlerts": 3,
-      "alerts": [
-        {
-          "type": "MEDICATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Medication Adherence Gap: Antihypertensive Therapy",
-          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
-          "evidenceSource": "Intake History & Medication Audit",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        },
-        {
-          "type": "CLINICAL_ESCALATION",
-          "severity": "CRITICAL",
-          "title": "Escalation Warning: Vascular Risk Correlation",
-          "finding": "Patient with pre-existing vascular risk (Hypertension) presents with acute chest pain radiating to extremity. Immediate 12-lead ECG and troponin monitoring indicated.",
-          "evidenceSource": "Cross-comparison: Past History vs Presenting Complaint",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        },
-        {
-          "type": "INVESTIGATION_DISCREPANCY",
-          "severity": "CRITICAL",
-          "title": "Abnormal Lab Correlation: Cardiac Troponin I",
-          "finding": "Cardiac Troponin I observed at 0.28 ng/mL (Reference: < 0.04 ng/mL). CRITICAL ALERT: Strongly indicative of acute myocardial infarction. Immediate Cath Lab triage required.",
-          "evidenceSource": "Uploaded LAB_REPORT (Emergency Cardiac Biomarker Report - Troponin I)",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -1271,21 +488,6 @@
       "doctorNotes": "",
       "provisionalDiagnosis": "",
       "prescriptions": []
-    },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T16:56:27.074Z",
-      "totalAlerts": 0,
-      "alerts": [
-        {
-          "type": "VERIFIED_CLEAR",
-          "severity": "STANDARD",
-          "title": "Cross-Verification: No Active Drug-Allergy or Adherence Conflicts",
-          "finding": "Current presenting symptoms and reported medications show no direct adverse cross-reactions with documented baseline history.",
-          "evidenceSource": "Cross-Verification Rule Engine",
-          "status": "VERIFIED_OK"
-        }
-      ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -1543,37 +745,156 @@
           "duration": "30 days"
         }
       ]
+    }
+  },
+  {
+    "id": "cons_demo_05",
+    "tokenNumber": "AYUR-105",
+    "patientId": "pat_005",
+    "patientName": "Smt. Parvathi Rao",
+    "patientAge": 46,
+    "patientGender": "Female",
+    "abhaId": "91-6284-9102-3371",
+    "language": "en",
+    "chiefComplaint": "Chronic burning sensation in chest and throat (hyperacidity), bloating after meals, disturbed sleep since 3 months",
+    "chiefComplaintKn": "ಎದೆಯಲ್ಲಿ ಉರಿ, ಊಟದ ನಂತರ ಹೊಟ್ಟೆ ಉಬ್ಬರ ಮತ್ತು ನಿದ್ರಾಹೀನತೆ",
+    "status": "PENDING_REVIEW",
+    "carePathway": "ayurveda",
+    "isRedFlag": false,
+    "urgencyLevel": "STANDARD",
+    "redFlagReport": {
+      "isRedFlag": false,
+      "flags": []
     },
-    "crossVerificationReport": {
-      "verifiedAt": "2026-09-16T16:56:27.074Z",
-      "totalAlerts": 3,
-      "alerts": [
+    "createdAt": "2026-09-17T09:40:00.000Z",
+    "assignedDoctorId": "doc_ayur_101",
+    "extractedEntities": {
+      "symptoms": [
         {
-          "type": "INVESTIGATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Abnormal Lab Correlation: HbA1c",
-          "finding": "HbA1c observed at 9.2 % (Reference: < 5.7 %). Indicates uncontrolled glycemic control over the past 90 days.",
-          "evidenceSource": "Uploaded LAB_REPORT (Diagnostic Lab Report - Blood Glucose & Lipid Panel)",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
+          "canonicalName": "Amlapitta / Hyperacidity",
+          "detectedWord": "burning chest and throat",
+          "duration": "3 months",
+          "source": "Patient Intake"
         },
         {
-          "type": "INVESTIGATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Abnormal Lab Correlation: Fasting Blood Sugar",
-          "finding": "Fasting Blood Sugar observed at 188 mg/dL (Reference: 70-100 mg/dL). Elevated fasting hyperglycemia.",
-          "evidenceSource": "Uploaded LAB_REPORT (Diagnostic Lab Report - Blood Glucose & Lipid Panel)",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
+          "canonicalName": "Adhmana / Abdominal Distension",
+          "detectedWord": "bloating",
+          "duration": "3 months",
+          "source": "Patient Intake"
         },
         {
-          "type": "INVESTIGATION_DISCREPANCY",
-          "severity": "HIGH",
-          "title": "Abnormal Lab Correlation: Lipid Profile",
-          "finding": "Lipid Profile observed at Cholesterol 242 mg/dL (Reference: <200 mg/dL). Mixed dyslipidemia detected.",
-          "evidenceSource": "Uploaded LAB_REPORT (Diagnostic Lab Report - Blood Glucose & Lipid Panel)",
-          "status": "REQUIRES_PHYSICIAN_REVIEW"
+          "canonicalName": "Anidra / Disturbed Sleep",
+          "detectedWord": "sleep disturbance",
+          "duration": "2 months",
+          "source": "Patient Intake"
         }
       ],
-      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+      "duration": "3 months (Chronic progressive)",
+      "severity": "Moderate (Grade 2)",
+      "modifiers": [
+        "Worse after spicy/late-night meals",
+        "Relieved temporarily by cool water"
+      ]
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "ayur_digestion",
+        "question": "Describe your digestive comfort and appetite timing",
+        "answer": "Tikshnagni (intense erratic hunger, severe sour burping if meal delayed by 1 hour)",
+        "rationale": "Classic Pitta aggravation manifesting as Amlapitta.",
+        "source": "Patient Intake Flow"
+      },
+      {
+        "id": "ayur_sleep",
+        "question": "How is your sleep quality?",
+        "answer": "Broken sleep, wake up at 2:00 AM with chest warmth",
+        "rationale": "Pitta peak time (10 PM - 2 AM) aggravation impacting restfulness.",
+        "source": "Patient Intake Flow"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Mild Dyslipidemia",
+        "GERD"
+      ],
+      "medications": [
+        "Cap. Omeprazole 20mg PRN"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Mother had chronic acid peptic disease"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "ayurvedaSpecificInfo": {
+      "lifestyle": "Sedentary software desk job with prolonged sitting (8-10 hours/day)",
+      "diet": "Vegetarian with frequent tea/coffee (3-4 cups), irregular meal hours, occasional deep-fried evening snacks",
+      "sleep": "Disturbed, 5-6 hours average, difficulties staying asleep during Pitta kala (midnight-2 AM)",
+      "dailyRoutine": "Late morning waking (07:30 AM), minimal physical exercise, high cognitive work-related stress",
+      "generalSymptoms": "Substernal heartburn, sour belching, epigastric heaviness after meals, morning fatigue",
+      "previousTreatments": "Antacids and Proton Pump Inhibitors (Omeprazole) with temporary relief and recurrence on cessation",
+      "patientConsentConfirmed": true,
+      "clinicalReviewStatus": "PENDING_AYURVEDA_PHYSICIAN_EVALUATION"
+    },
+    "ayurvedaCareRequest": {
+      "requestedDoctorId": "doc_ayur_101",
+      "requestedDoctorName": "Dr. Vaidya Shreedhara Hegde",
+      "specialization": "Kayachikitsa & Metabolic Health",
+      "hospital": "Sri Jayachamarajendra Govt Ayurvedic Hospital, Bangalore",
+      "patientConsentForAyurveda": true,
+      "requestedAt": "2026-09-17T09:42:00.000Z"
+    },
+    "documentExtractions": [],
+    "summary": {
+      "chiefComplaint": "Chronic burning sensation in chest and throat (hyperacidity), bloating after meals, disturbed sleep since 3 months",
+      "presentingSymptoms": [
+        "Retrosternal Burning",
+        "Sour Eructation",
+        "Postprandial Bloating",
+        "Interrupted Sleep"
+      ],
+      "duration": "3 months",
+      "severity": "Moderate",
+      "historyOfPresentingIllness": "46-year-old female presenting for holistic Ayurvedic consultation regarding 3-month history of burning in epigastrium and throat, aggravated by irregular eating hours and excessive caffeine. Temporary relief with PPIs followed by rebound symptoms.",
+      "pastMedicalHistory": [
+        "GERD (1 year)",
+        "Borderline Cholesterol"
+      ],
+      "currentMedications": [
+        "Omeprazole 20mg PRN"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Maternal history of peptic symptoms"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "High caffeine, irregular timings",
+        "activity": "Sedentary"
+      },
+      "clinicalObservations": [
+        "Presenting symptoms clinically consistent with classical Amlapitta / Vidagdha Jeerna.",
+        "Patient consented to holistic Ayurveda lifestyle and dietetic protocol (Ahara-Vihara).",
+        "Clinical diagnosis and therapeutic prescription pending evaluation by licensed BAMS/MD Ayurvedic practitioner."
+      ]
+    },
+    "doctorVerification": {
+      "verified": false,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "prescriptions": []
     }
   }
 ]

@@ -260,6 +260,296 @@ export const CLINICAL_QUESTION_FLOWS = {
     ]
   },
 
+  "acid_peptic_gi": {
+    category: "Gastroenterology / Acid Peptic",
+    chiefComplaintKey: "Acid Peptic / GERD / Gastric Burning / ಎದೆಯುರಿ",
+    questions: [
+      {
+        id: "ap_timing_relation",
+        questionEn: "When does the burning sensation or stomach discomfort bother you the most?",
+        questionKn: "ಎದೆಯುರಿ ಅಥವಾ ಹೊಟ್ಟೆಯಲ್ಲಿ ಉರಿಯುವುದು ಯಾವ ಸಮಯದಲ್ಲಿ ಹೆಚ್ಚಾಗಿ ಕಾಡುತ್ತದೆ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Right after meals (Postprandial)", kn: "ಊಟವಾದ ತಕ್ಷಣ", tag: "Postprandial" },
+          { en: "At night when lying down in bed", kn: "ರಾತ್ರಿ ಮಲಗಿದಾಗ", tag: "Nocturnal reflux", isAlert: true },
+          { en: "On empty stomach / hungry", kn: "ಹಸಿದಿದ್ದಾಗ / ಖಾಲಿ ಹೊಟ್ಟೆಯಲ್ಲಿ", tag: "Fasting burning" },
+          { en: "Constant throughout the whole day", kn: "ದಿನವಿಡೀ ನಿರಂತರವಾಗಿರುತ್ತದೆ", tag: "Constant" }
+        ],
+        explainabilityEn: "Postprandial and nocturnal reflux indicate lower esophageal sphincter incompetence, whereas fasting epigastric burning points to duodenal peptic ulceration.",
+        explainabilityKn: "ರಾತ್ರಿ ಮಲಗಿದಾಗ ಹೆಚ್ಚಾಗುವ ಎದೆಯುರಿ ಆಸಿಡ್ ಹಿಮ್ಮುಖ ಹರಿವನ್ನು ತೋರಿಸುತ್ತದೆ, ಖಾಲಿ ಹೊಟ್ಟೆಯಲ್ಲಿ ಕಾಡುವುದು ಕರುಳಿನ ಹುಣ್ಣನ್ನು (ಅಲ್ಸರ್) ಸೂಚಿಸುತ್ತದೆ."
+      },
+      {
+        id: "ap_triggers",
+        questionEn: "Does the discomfort worsen with spicy foods, painkillers (like brufen/aspirin), or tea/coffee?",
+        questionKn: "ಖಾರವಾದ ಆಹಾರ, ನೋವು ನಿವಾರಕ ಮಾತ್ರೆಗಳು (ಬ್ರೂಫೆನ್/ಆಸ್ಪಿರಿನ್) ಅಥವಾ ಚಹಾ/ಕಾಫಿ ಸೇವಿಸಿದಾಗ ನೋವು ಹೆಚ್ಚಾಗುತ್ತದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Yes, worse after spicy food or tea", kn: "ಹೌದು, ಖಾರ ಅಥವಾ ಚಹಾ ಸೇವನೆಯ ನಂತರ", tag: "Dietary trigger" },
+          { en: "Yes, flared up after taking painkiller tablets", kn: "ಹೌದು, ನೋವು ನಿವಾರಕ ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡ ನಂತರ", tag: "NSAID-induced gastritis", isAlert: true },
+          { en: "Relieved immediately by cold milk or antacid", kn: "ತಣ್ಣನೆಯ ಹಾಲು ಅಥವಾ ಆಂಟಾಸಿಡ್ ಕುಡಿದಾಗ ಕಡಿಮೆಯಾಗುತ್ತದೆ", tag: "Antacid responsive" },
+          { en: "No specific relation to food or medicine", kn: "ಯಾವುದೇ ಆಹಾರಕ್ಕೆ ಸಂಬಂಧವಿಲ್ಲ", tag: "Non-specific" }
+        ],
+        explainabilityEn: "NSAID-induced mucosal erosions are a prime cause of acute upper GI bleeding and require discontinuation of anti-inflammatory drugs.",
+        explainabilityKn: "ನೋವು ನಿವಾರಕ ಮಾತ್ರೆಗಳಿಂದ ಹೊಟ್ಟೆಯಲ್ಲಿ ಅಲ್ಸರ್ ಉಂಟಾಗುವ ಸಾಧ್ಯತೆ ಇರುತ್ತದೆ, ಇದನ್ನು ವೈದ್ಯರು ಮುನ್ನೆಚ್ಚರಿಕೆಯಾಗಿ ತಪಾಸಿಸುತ್ತಾರೆ."
+      },
+      {
+        id: "ap_red_flags",
+        questionEn: "Have you noticed difficulty swallowing food, vomiting blood, black-colored stools, or severe weight loss?",
+        questionKn: "ಆಹಾರ ನುಂಗಲು ಕಷ್ಟವಾಗುವುದು, ರಕ್ತ ವಾಂತಿ, ಕಪ್ಪು ಬಣ್ಣದ ಮಲ ಅಥವಾ ತೀವ್ರ ತೂಕ ಇಳಿಕೆ ಉಂಟಾಗಿದೆಯೇ?",
+        inputType: "multi_chips",
+        options: [
+          { en: "Difficulty swallowing food (Dysphagia)", kn: "ಆಹಾರ ನುಂಗಲು ಕಷ್ಟ (ಗಂಟಲಿನಲ್ಲಿ ಸಿಲುಕಿದಂತೆ)", tag: "Dysphagia", isAlert: true },
+          { en: "Black tarry stools (Melena)", kn: "ಕಪ್ಪು ಬಣ್ಣದ ಜಿಗುಟು ಮಲ", tag: "Melena", isAlert: true },
+          { en: "Vomited coffee-ground or bloody fluid", kn: "ರಕ್ತ ಮಿಶ್ರಿತ ಅಥವಾ ಕಾಫಿ ಬಣ್ಣದ ವಾಂತಿ", tag: "Hematemesis", isAlert: true },
+          { en: "Noticeable unintentional weight loss", kn: "ಗಮನಾರ್ಹ ತೂಕ ಇಳಿಕೆ", tag: "Weight loss", isAlert: true },
+          { en: "None of these alarm symptoms", kn: "ಯಾವುದೂ ಇಲ್ಲ", tag: "None" }
+        ],
+        explainabilityEn: "Dysphagia, melena, and unexplained weight loss are critical gastrointestinal red flags requiring urgent diagnostic endoscopy to rule out malignancy or bleed.",
+        explainabilityKn: "ನುಂಗಲು ಕಷ್ಟ ಮತ್ತು ಕಪ್ಪು ಮಲ ಬರುವುದು ಹೊಟ್ಟೆಯಲ್ಲಿ ರಕ್ತಸ್ರಾವವನ್ನು ಸೂಚಿಸುವುದರಿಂದ ತುರ್ತು ಎಂಡೋಸ್ಕೋಪಿ ಪರೀಕ್ಷೆಯನ್ನು ಬಯಸುತ್ತದೆ."
+      }
+    ]
+  },
+
+  "joint_pain_arthritis": {
+    category: "Rheumatology & Orthopedics",
+    chiefComplaintKey: "Joint Pain / Arthritis / ಕೀಲು ನೋವು",
+    questions: [
+      {
+        id: "jp_stiffness_duration",
+        questionEn: "Do you wake up with joint stiffness in the morning, and how long does it take to ease?",
+        questionKn: "ಬೆಳಿಗ್ಗೆ ಎದ್ದಾಗ ಕೀಲುಗಳು ಬಿಗಿಯಾಗಿ (ಹಿಡಿದಂತೆ) ಇರುತ್ತವೆಯೇ? ಇದು ಸಡಿಲವಾಗಲು ಎಷ್ಟು ಸಮಯ ಬೇಕಾಗುತ್ತದೆ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Prolonged stiffness lasting more than 30-60 minutes", kn: "30-60 ನಿಮಿಷಗಳಿಗಿಂತ ಹೆಚ್ಚು ಕಾಲದ ತೀವ್ರ ಬಿಗಿತ", tag: "Morning stiffness >30m", isAlert: true },
+          { en: "Brief stiffness lasting under 15-20 minutes", kn: "15-20 ನಿಮಿಷಗಳಿಗಿಂತ ಕಡಿಮೆ ಅವಧಿ", tag: "Brief stiffness <15m" },
+          { en: "Worse at night after a long day of walking", kn: "ದಿನವಿಡೀ ಕೆಲಸ ಮಾಡಿದ ನಂತರ ರಾತ್ರಿ ಹೆಚ್ಚು", tag: "Mechanical fatigue" },
+          { en: "No morning stiffness noticed", kn: "ಯಾವುದೇ ಬೆಳಗಿನ ಬಿಗಿತವಿಲ್ಲ", tag: "No stiffness" }
+        ],
+        explainabilityEn: "Morning stiffness exceeding 30-60 minutes strongly points to inflammatory arthritis (like Rheumatoid), whereas brief stiffness relates to mechanical Osteoarthritis.",
+        explainabilityKn: "ಬೆಳಿಗ್ಗೆ 30 ನಿಮಿಷಕ್ಕಿಂತ ಹೆಚ್ಚು ಕಾಲ ಕೀಲು ಹಿಡಿದುಕೊಳ್ಳುವುದು ರುಮಟಾಯ್ಡ್ ಆರ್ಥ್ರೈಟಿಸ್‌ನ ಲಕ್ಷಣವಾಗಿದ್ದು, ರಕ್ತ ಪರೀಕ್ಷೆ ಅಗತ್ಯವಿರುತ್ತದೆ."
+      },
+      {
+        id: "jp_joints_affected",
+        questionEn: "Which joints are primarily involved, and is it on both sides symmetrically?",
+        questionKn: "ಮುಖ್ಯವಾಗಿ ಯಾವ ಕೀಲುಗಳಲ್ಲಿ ನೋವಿದೆ? ಮತ್ತು ಎರಡೂ ಬದಿಗಳಲ್ಲಿ ಸಮಾನವಾಗಿದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Small joints of fingers, hands, and wrists symmetrically", kn: "ಎರಡೂ ಕೈಗಳ ಬೆರಳುಗಳು ಮತ್ತು ಮಣಿಕಟ್ಟು", tag: "Symmetric small joints", isAlert: true },
+          { en: "Weight-bearing knee joints or hips", kn: "ಮಂಡಿ ಅಥವಾ ಸೊಂಟದ ಕೀಲುಗಳು", tag: "Knee/Hip joints" },
+          { en: "Single acute swollen hot joint (like big toe)", kn: "ಒಂದೇ ಕೀಲು ಊದಿಕೊಂಡು ಕೆಂಪಾಗಿದೆ (ಹೆಬ್ಬೆರಳು)", tag: "Monoarthritis / Gout", isAlert: true },
+          { en: "Lower back and spine stiffness", kn: "ಬೆನ್ನಿನ ಕೆಳಭಾಗ ಮತ್ತು ಬೆನ್ನೆಲುಬು", tag: "Axial spondyloarthritis" }
+        ],
+        explainabilityEn: "Symmetric small joint involvement is classic for autoimmune arthritis, while acute single joint podagra suggests crystal-induced gout.",
+        explainabilityKn: "ಕೈಬೆರಳುಗಳ ಸಣ್ಣ ಕೀಲುಗಳು ಬಾಧಿತವಾಗುವುದು ಆಟೋಇಮ್ಯೂನ್ ಸಮಸ್ಯೆಯಾಗಿದ್ದು, ಹೆಬ್ಬೆರಳು ಊದುವುದು ಯೂರಿಕ್ ಆಸಿಡ್ (ಗೌಟ್) ಹೆಚ್ಚಳವನ್ನು ತೋರಿಸಬಹುದು."
+      },
+      {
+        id: "jp_swelling_heat",
+        questionEn: "Is there visible swelling, warmth to touch, or redness around the affected joints?",
+        questionKn: "ಕೀಲುಗಳ ಸುತ್ತಲೂ ಊತ, ಮುಟ್ಟಿದರೆ ಬಿಸಿ ಅಥವಾ ಕೆಂಪು ಬಣ್ಣ ಇದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Yes, visibly swollen and warm to touch", kn: "ಹೌದು, ಊತ ಮತ್ತು ಬಿಸಿಯಾಗಿದೆ", tag: "Active synovitis", isAlert: true },
+          { en: "Crackling or popping sounds with movement (Crepitus)", kn: "ಕೀಲು ಕದಲಿಸಿದಾಗ ಶಬ್ದ ಬರುತ್ತದೆ (ಕ್ರೆಪಿಟಸ್)", tag: "Crepitus" },
+          { en: "Mild swelling only after walking long distances", kn: "ದೂರ ನಡೆದಾಗ ಮಾತ್ರ ಸ್ವಲ್ಪ ಊತ", tag: "Exertional swelling" },
+          { en: "No swelling or warmth", kn: "ಯಾವುದೇ ಊತ ಅಥವಾ ಕೆಂಪು ಬಣ್ಣವಿಲ್ಲ", tag: "No synovitis" }
+        ],
+        explainabilityEn: "Active warmth and effusion indicate acute synovitis or septic arthritis requiring immediate joint preservation care.",
+        explainabilityKn: "ಕೀಲು ಬಿಸಿಯಾಗಿ ಊದಿಕೊಂಡಿದ್ದರೆ ಒಳಗಡೆ ನೀರು ಅಥವಾ ಉರಿಯೂತ ಇರಬಹುದು, ಇದನ್ನು ವೈದ್ಯರು ಪರೀಕ್ಷಿಸಬೇಕು."
+      }
+    ]
+  },
+
+  "headache_migraine": {
+    category: "Neurology",
+    chiefComplaintKey: "Headache / Migraine / ತಲೆನೋವು",
+    questions: [
+      {
+        id: "ha_character_location",
+        questionEn: "How does the headache feel, and where is the pain located?",
+        questionKn: "ತಲೆನೋವಿನ ಲಕ್ಷಣ ಹೇಗಿದೆ ಮತ್ತು ತಲೆಯ ಯಾವ ಭಾಗದಲ್ಲಿದೆ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Throbbing/Pulsating pain on one side of head", kn: "ತಲೆಯ ಒಂದು ಬದಿಯಲ್ಲಿ ಬಡಿದುಕೊಳ್ಳುವ ನೋವು", tag: "Unilateral throbbing", isAlert: true },
+          { en: "Tight band-like squeezing pressure around whole head", kn: "ತಲೆಯ ಸುತ್ತಲೂ ಬಿಗಿಯಾದ ಪಟ್ಟಿಯಂತೆ ಒತ್ತಡ", tag: "Tension type" },
+          { en: "Sharp piercing pain behind one eye", kn: "ಒಂದು ಕಣ್ಣಿನ ಹಿಂದೆ ತೀಕ್ಷ್ಣವಾದ ಚುಚ್ಚುವ ನೋವು", tag: "Cluster / Trigeminal" },
+          { en: "Explosive, sudden onset within seconds (Thunderclap)", kn: "ಹಠಾತ್ತನೆ ಸಿಡಿದಂತೆ ಬಂದ ತೀವ್ರ ನೋವು", tag: "Thunderclap onset", isAlert: true }
+        ],
+        explainabilityEn: "Sudden thunderclap headache suggests subarachnoid hemorrhage (medical emergency), whereas unilateral throbbing indicates migraine.",
+        explainabilityKn: "ಹಠಾತ್ತನೆ ಸಿಡಿದಂತೆ ಬರುವ ತಲೆನೋವು ರಕ್ತನಾಳದ ತುರ್ತು ಸಮಸ್ಯೆಯನ್ನು ಸೂಚಿಸಬಹುದು; ಒಂದು ಬದಿಯ ನೋವು ಮೈಗ್ರೇನ್ ಅನ್ನು ತೋರಿಸುತ್ತದೆ."
+      },
+      {
+        id: "ha_associated_sensory",
+        questionEn: "Are you sensitive to bright lights, loud sounds, or feeling nauseated?",
+        questionKn: "ಬೆಳಕು ನೋಡಲು ಕಷ್ಟ (ಕಣ್ಣು ಕುಕ್ಕುವುದು), ಸದ್ದಿಗೆ ಕಿರಿಕಿರಿ ಅಥವಾ ವಾಂತಿಯ ಅನುಭವ ಇದೆಯೇ?",
+        inputType: "multi_chips",
+        options: [
+          { en: "Sensitivity to light (Photophobia)", kn: "ಬೆಳಕು ನೋಡಲು ಕಷ್ಟ", tag: "Photophobia" },
+          { en: "Sensitivity to loud sounds (Phonophobia)", kn: "ಶಬ್ದ ಕೇಳಿದರೆ ಕಿರಿಕಿರಿ", tag: "Phonophobia" },
+          { en: "Nausea or actual vomiting", kn: "ವಾಕರಿಕೆ ಅಥವಾ ವಾಂತಿ", tag: "Nausea/Vomiting" },
+          { en: "Visual aura (flashing lights, zigzag lines)", kn: "ಕಣ್ಣಿನ ಮುಂದೆ ಮಿಂಚು ಅಥವಾ ಗೆರೆಗಳು", tag: "Migraine aura", isAlert: true },
+          { en: "None", kn: "ಯಾವುದೂ ಇಲ್ಲ", tag: "None" }
+        ],
+        explainabilityEn: "Photophobia, phonophobia, and aura fulfill International Headache Society criteria for classical migraine with aura.",
+        explainabilityKn: "ಬೆಳಕಿನ ಕಿರಿಕಿರಿ ಮತ್ತು ಕಣ್ಣಿನ ಮುಂದೆ ಮಿಂಚು ಬರುವುದು ಮೈಗ್ರೇನ್ ರೋಗನಿರ್ಣಯಕ್ಕೆ ಪ್ರಮುಖ ಮಾನದಂಡಗಳಾಗಿವೆ."
+      },
+      {
+        id: "ha_red_flags",
+        questionEn: "Do you have fever with stiff neck, weakness in arms/legs, or slurred speech?",
+        questionKn: "ಕತ್ತು ತಿರುಗಿಸಲು ಕಷ್ಟವಾಗುವ ಜ್ವರ, ಕೈಕಾಲುಗಳ ದೌರ್ಬಲ್ಯ ಅಥವಾ ಮಾತು ತೊದಲುವುದು ಇದೆಯೇ?",
+        inputType: "multi_chips",
+        options: [
+          { en: "Stiff neck with fever (Meningeal sign)", kn: "ಜ್ವರದ ಜೊತೆಗೆ ಕತ್ತು ಗಟ್ಟಿಯಾಗುವುದು", tag: "Meningismus", isAlert: true },
+          { en: "Weakness or numbness in arm/leg/face", kn: "ಮುಖ ಅಥವಾ ಕೈಕಾಲುಗಳ ಸ್ಪರ್ಶ ನಷ್ಟ/ದೌರ್ಬಲ್ಯ", tag: "Neurological deficit", isAlert: true },
+          { en: "Confusion or altered speech", kn: "ಗೊಂದಲ ಅಥವಾ ಮಾತಿನಲ್ಲಿ ಬದಲಾವಣೆ", tag: "Altered speech", isAlert: true },
+          { en: "None of these warning signs", kn: "ಯಾವುದೂ ಇಲ್ಲ", tag: "None" }
+        ],
+        explainabilityEn: "Fever with neck stiffness warrants immediate lumbar puncture / evaluation for acute meningitis; focal deficits require urgent neuro-imaging.",
+        explainabilityKn: "ಕತ್ತು ಬಿಗಿತ ಮತ್ತು ಜ್ವರ ಮೆದುಳು ಜ್ವರವನ್ನು (ಮೆನಿಂಜೈಟಿಸ್) ಸೂಚಿಸುವುದರಿಂದ ತಕ್ಷಣದ ತಪಾಸಣೆ ಅತ್ಯಗತ್ಯ."
+      }
+    ]
+  },
+
+  "diabetes_metabolic": {
+    category: "Endocrinology & Diabetology",
+    chiefComplaintKey: "Diabetes / Metabolic / ಸಕ್ಕರೆ ಕಾಯಿಲೆ",
+    questions: [
+      {
+        id: "dm_osmotic_symptoms",
+        questionEn: "Are you experiencing excessive thirst, waking up multiple times to pass urine, or excessive hunger?",
+        questionKn: "ಅತಿಯಾದ ಬಾಯಾರಿಕೆ, ರಾತ್ರಿ ಪದೇ ಪದೇ ಮೂತ್ರಕ್ಕೆ ಹೋಗುವುದು ಅಥವಾ ಅತಿಯಾದ ಹಸಿವು ಇದೆಯೇ?",
+        inputType: "multi_chips",
+        options: [
+          { en: "Excessive thirst (Polydipsia)", kn: "ವಿಪರೀತ ಬಾಯಾರಿಕೆ", tag: "Polydipsia", isAlert: true },
+          { en: "Frequent night urination (Nocturia / Polyuria)", kn: "ರಾತ್ರಿ ಪದೇ ಪದೇ ಮೂತ್ರ ವಿಸರ್ಜನೆ", tag: "Polyuria", isAlert: true },
+          { en: "Frequent hunger despite eating (Polyphagia)", kn: "ಊಟ ಮಾಡಿದರೂ ವಿಪರೀತ ಹಸಿವು", tag: "Polyphagia" },
+          { en: "Unexplained weight loss despite normal diet", kn: "ತಿನ್ನುತ್ತಿದ್ದರೂ ತೂಕ ಕಡಿಮೆಯಾಗುತ್ತಿದೆ", tag: "Weight loss", isAlert: true },
+          { en: "None of these", kn: "ಯಾವುದೂ ಇಲ್ಲ", tag: "None" }
+        ],
+        explainabilityEn: "The classical osmotic triad (polyuria, polydipsia, polyphagia) signals significant hyperglycemia exceeding renal threshold (HbA1c workup needed).",
+        explainabilityKn: "ಪದೇ ಪದೇ ಬಾಯಾರಿಕೆ ಮತ್ತು ಮೂತ್ರ ವಿಸರ್ಜನೆ ರಕ್ತದಲ್ಲಿ ಸಕ್ಕರೆ ಅಂಶ ಹೆಚ್ಚಾಗಿರುವುದನ್ನು (ಡಯಾಬಿಟಿಸ್) ಸ್ಪಷ್ಟವಾಗಿ ತೋರಿಸುತ್ತದೆ."
+      },
+      {
+        id: "dm_neuropathy_wounds",
+        questionEn: "Do you feel tingling, numbness, or burning sensations in your feet, or have slow-healing cuts?",
+        questionKn: "ಪಾದಗಳಲ್ಲಿ ಮರಗಟ್ಟುವಿಕೆ, ಇರುವೆ ಹರಿದಂತೆ ಅಥವಾ ಉರಿಯುವ ಅನುಭವ ಇದೆಯೇ? ಅಥವಾ ಗಾಯಗಳು ನಿಧಾನವಾಗಿ ಗುಣವಾಗುತ್ತಿವೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Yes, burning numbness or pins and needles in feet", kn: "ಹೌದು, ಪಾದಗಳಲ್ಲಿ ಉರಿ, ಮರಗಟ್ಟುವಿಕೆ ಅಥವಾ ಇರುವೆ ಹರಿದಂತೆ", tag: "Diabetic neuropathy", isAlert: true },
+          { en: "Slow healing foot cut, sore, or ulcer", kn: "ಪಾದದಲ್ಲಿ ಗಾಯ ಅಥವಾ ಹುಣ್ಣು ಗುಣವಾಗುತ್ತಿಲ್ಲ", tag: "Foot ulcer risk", isAlert: true },
+          { en: "Occasional blurred vision", kn: "ಕಣ್ಣಿನ ದೃಷ್ಟಿ ಮಂಜಾಗುವುದು", tag: "Visual blurring" },
+          { en: "No foot symptoms or vision issues", kn: "ಯಾವುದೇ ಸಮಸ್ಯೆ ಇಲ್ಲ", tag: "Normal" }
+        ],
+        explainabilityEn: "Distal sensory neuropathy and non-healing foot lesions signify microvascular diabetic complications needing monofilament testing and podiatry care.",
+        explainabilityKn: "ಪಾದಗಳ ಮರಗಟ್ಟುವಿಕೆ ನರಗಳ ದೌರ್ಬಲ್ಯವನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಇದಕ್ಕೆ ಕಾಲಿನ ಪರೀಕ್ಷೆ ಮತ್ತು ಸಕ್ಕರೆ ನಿಯಂತ್ರಣ ಅನಿವಾರ್ಯ."
+      }
+    ]
+  },
+
+  "asthma_wheezing": {
+    category: "Pulmonology / Asthma",
+    chiefComplaintKey: "Asthma / Wheezing / ಉಬ್ಬಸ",
+    questions: [
+      {
+        id: "as_wheeze_nocturnal",
+        questionEn: "Do you hear a whistling sound in your chest, or wake up at night choking/coughing?",
+        questionKn: "ಉಸಿರಾಡುವಾಗ ಎದೆಯಲ್ಲಿ ಸೀಟಿ ಶಬ್ದ ಕೇಳಿಸುತ್ತದೆಯೇ? ಅಥವಾ ರಾತ್ರಿ ಕೆಮ್ಮಿ ಉಸಿರುಗಟ್ಟಿ ಎಚ್ಚರವಾಗುತ್ತದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Yes, loud whistling sound (Wheeze) and night waking", kn: "ಹೌದು, ಎದೆಯಲ್ಲಿ ಸೀಟಿ ಶಬ್ದ ಮತ್ತು ರಾತ್ರಿ ಎಚ್ಚರ", tag: "Active bronchospasm", isAlert: true },
+          { en: "Tightness across the chest during cold weather or early morning", kn: "ಚಳಿಗಾಲ ಅಥವಾ ಮುಂಜಾನೆ ಎದೆ ಹಿಡಿದಂತೆ", tag: "Diurnal variability" },
+          { en: "Cough triggered primarily by dust, pollen, or smoke", kn: "ಧೂಳು, ಹೂವಿನ ಪರಾಗ ಅಥವಾ ಹೊಗೆಯಿಂದ", tag: "Allergic trigger" },
+          { en: "No whistling, just throat irritation", kn: "ಸೀಟಿ ಶಬ್ದವಿಲ್ಲ, ಕೇವಲ ಗಂಟಲು ಕೆರೆತ", tag: "Upper airway" }
+        ],
+        explainabilityEn: "Nocturnal waking and diurnal variation are hallmark clinical parameters of uncontrolled bronchial asthma requiring stepped inhaler therapy.",
+        explainabilityKn: "ರಾತ್ರಿ ಉಸಿರುಕಟ್ಟುವುದು ಅಸ್ತಮಾ ನಿಯಂತ್ರಣ ತಪ್ಪಿರುವುದನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಇನ್ಹೇಲರ್ ಚಿಕಿತ್ಸೆಯನ್ನು ಹೆಚ್ಚಿಸಬೇಕಾಗಬಹುದು."
+      },
+      {
+        id: "as_inhaler_response",
+        questionEn: "Are you using an inhaler or nebulizer, and does it relieve your breathlessness?",
+        questionKn: "ನೀವು ಇನ್ಹೇಲರ್ ಬಳಸುತ್ತಿದ್ದೀರಾ? ಮತ್ತು ಅದು ನಿಮ್ಮ ಉಸಿರಾಟವನ್ನು ಸರಾಗಗೊಳಿಸುತ್ತದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Relieved quickly by blue inhaler (Salbutamol)", kn: "ಇನ್ಹೇಲರ್ ಬಳಸಿದಾಗ ತಕ್ಷಣ ಕಡಿಮೆಯಾಗುತ್ತದೆ", tag: "Bronchodilator responsive" },
+          { en: "Using inhaler multiple times daily without complete relief", kn: "ದಿನಕ್ಕೆ ಹಲವು ಬಾರಿ ಬಳಸಿದರೂ ಸಂಪೂರ್ಣ ಗುಣವಾಗುತ್ತಿಲ್ಲ", tag: "Inhaler refractoriness", isAlert: true },
+          { en: "Never used an inhaler before", kn: "ಇದುವರೆಗೆ ಇನ್ಹೇಲರ್ ಬಳಸಿ ತಿಳಿದಿಲ್ಲ", tag: "Naive to inhaler" },
+          { en: "Only take oral syrups or home remedies", kn: "ಕೇವಲ ಸಿರಪ್ ಅಥವಾ ಮನೆಮದ್ದು ತೆಗೆದುಕೊಳ್ಳುತ್ತೇನೆ", tag: "Home remedy" }
+        ],
+        explainabilityEn: "Frequent use of rescue bronchodilators (>2 times/week) signifies poor asthma control under GINA guidelines.",
+        explainabilityKn: "ವಾರದಲ್ಲಿ ಹಲವು ಬಾರಿ ಇನ್ಹೇಲರ್ ಬಳಸಬೇಕಾದ ಪರಿಸ್ಥಿತಿ ಬಂದರೆ ವೈದ್ಯರಿಂದ ನಿಯಮಿತ ತಡೆಗಟ್ಟುವ ಚಿಕಿತ್ಸೆ (ಕಂಟ್ರೋಲರ್) ಅಗತ್ಯವಿದೆ."
+      }
+    ]
+  },
+
+  "skin_rash_dermatology": {
+    category: "Dermatology",
+    chiefComplaintKey: "Skin Rash / Allergy / ಚರ್ಮದ ಸಮಸ್ಯೆ",
+    questions: [
+      {
+        id: "sk_itch_morphology",
+        questionEn: "How severe is the itching, and what does the skin rash look like?",
+        questionKn: "ತುರಿಕೆಯ ತೀವ್ರತೆ ಎಷ್ಟಿದೆ ಮತ್ತು ಚರ್ಮದ ಮೇಲಿನ ದದ್ದು ಹೇಗಿದೆ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Severe intense itching, worse at night in finger webs/wrists", kn: "ತೀವ್ರ ತುರಿಕೆ, ರಾತ್ರಿ ವೇಳೆ ಬೆರಳುಗಳ ಸಂದಿಯಲ್ಲಿ ಹೆಚ್ಚು", tag: "Scabies / Parasitic suspect", isAlert: true },
+          { en: "Raised red itchy welts that appear and fade (Hives)", kn: "ಕೆಂಪಾಗಿ ಊದಿಕೊಂಡ ದದ್ದುಗಳು (ಉರ್ಟಿಕೇರಿಯಾ)", tag: "Urticaria" },
+          { en: "Dry, scaling, itchy patches with skin thickening", kn: "ಒಣಗಿದ, ಸಿಪ್ಪೆ ಏಳುವ, ತುರಿಸುವ ಚರ್ಮ (ಎಕ್ಸಿಮಾ)", tag: "Eczema / Psoriasis" },
+          { en: "Fluid-filled painful blisters", kn: "ನೀರು ತುಂಬಿದ ನೋವಿನ ಗುಳ್ಳೆಗಳು", tag: "Vesicular / Herpes suspect", isAlert: true }
+        ],
+        explainabilityEn: "Nocturnal web-space itching strongly suggests Sarcoptes scabiei, while raised evanescent welts indicate mast-cell mediated acute urticaria.",
+        explainabilityKn: "ಬೆರಳುಗಳ ಸಂದಿಯಲ್ಲಿ ರಾತ್ರಿ ಹೆಚ್ಚಾಗುವ ತುರಿಕೆ ಸೋಂಕನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಕೆಂಪಾದ ಗುಳ್ಳೆಗಳು ಅಲರ್ಜಿಯನ್ನು ತೋರಿಸುತ್ತವೆ."
+      },
+      {
+        id: "sk_trigger_contact",
+        questionEn: "Did this rash start after starting any new medication, soap, cosmetics, or hair dye?",
+        questionKn: "ಯಾವುದಾದರೂ ಹೊಸ ಔಷಧಿ, ಸಾಬೂನು, ಕಾಸ್ಮೆಟಿಕ್ ಅಥವಾ ಹೇರ್ ಡೈ ಬಳಸಿದ ನಂತರ ಈ ಸಮಸ್ಯೆ ಶುರುವಾಯಿತಾ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Started after taking a new oral tablet / antibiotic", kn: "ಹೊಸ ಮಾತ್ರೆ ಅಥವಾ ಆಂಟಿಬಯೋಟಿಕ್ ತೆಗೆದುಕೊಂಡ ನಂತರ", tag: "Drug eruption suspect", isAlert: true },
+          { en: "Started after using new soap, cream, or detergent", kn: "ಹೊಸ ಸಾಬೂನು ಅಥವಾ ಕ್ರೀಮ್ ಬಳಸಿದ ನಂತರ", tag: "Contact dermatitis" },
+          { en: "Associated with eye/mouth peeling or fever", kn: "ಕಣ್ಣು/ಬಾಯಿಯ ಒಳಗೆ ಹುಣ್ಣು ಅಥವಾ ಜ್ವರದ ಜೊತೆ", tag: "Severe cutaneous reaction", isAlert: true },
+          { en: "No obvious exposure to new products", kn: "ಯಾವುದೇ ಹೊಸ ವಸ್ತು ಬಳಸಿಲ್ಲ", tag: "Endogenous" }
+        ],
+        explainabilityEn: "Drug-induced exanthems with mucosal involvement (mouth/eyes) are dermatological emergencies (SJS/TEN risk).",
+        explainabilityKn: "ಔಷಧಿಯ ನಂತರ ಮೈಮೇಲೆ ದದ್ದು ಬಂದು ಬಾಯಿಯೊಳಗೆ ಹುಣ್ಣಾದರೆ ತಕ್ಷಣ ಔಷಧಿಯನ್ನು ನಿಲ್ಲಿಸಿ ಆಸ್ಪತ್ರೆಗೆ ಭೇಟಿ ನೀಡಬೇಕು."
+      }
+    ]
+  },
+
+  "urinary_dysuria": {
+    category: "Urology & Nephrology",
+    chiefComplaintKey: "Urinary Burning / Dysuria / ಮೂತ್ರದ ಸಮಸ್ಯೆ",
+    questions: [
+      {
+        id: "ur_burning_frequency",
+        questionEn: "Do you have burning pain while passing urine, or need to rush to the toilet frequently?",
+        questionKn: "ಮೂತ್ರ ಮಾಡುವಾಗ ಉರಿ ಇದೆಯೇ? ಅಥವಾ ಪದೇ ಪದೇ ಅವಸರವಾಗಿ ಮೂತ್ರಕ್ಕೆ ಹೋಗಬೇಕೆನಿಸುತ್ತದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Severe burning sensation throughout urination", kn: "ಮೂತ್ರ ಮಾಡುವಾಗ ತೀವ್ರವಾದ ಉರಿ", tag: "Severe dysuria", isAlert: true },
+          { en: "Frequent urge every few minutes with very small drops", kn: "ಪದೇ ಪದೇ ಹನಿ ಹನಿಯಾಗಿ ಮೂತ್ರ ವಿಸರ್ಜನೆ", tag: "Frequency/Urgency" },
+          { en: "Visible reddish or tea-colored blood in urine (Hematuria)", kn: "ಮೂತ್ರದಲ್ಲಿ ಕೆಂಪು ರಕ್ತದ ಅಂಶ ಕಾಣಿಸುವುದು", tag: "Hematuria", isAlert: true },
+          { en: "Difficulty starting urine stream / straining", kn: "ಮೂತ್ರ ಪ್ರಾರಂಭಿಸಲು ಪ್ರಯಾಸ ಪಡುವುದು", tag: "Hesitancy / Prostatic" }
+        ],
+        explainabilityEn: "Dysuria with frequency is hallmark of acute cystitis/UTI; visible hematuria requires urine microscopy and urological tract evaluation.",
+        explainabilityKn: "ಮೂತ್ರದಲ್ಲಿ ಉರಿ ಸೋಂಕನ್ನು ಸೂಚಿಸುತ್ತದೆ, ರಕ್ತ ಕಂಡುಬಂದರೆ ತುರ್ತು ಮೂತ್ರ ಪರೀಕ್ಷೆ ಮತ್ತು ಸ್ಕ್ಯಾನಿಂಗ್ ಅಗತ್ಯ."
+      },
+      {
+        id: "ur_fever_flank",
+        questionEn: "Do you have high fever with shivering, or severe pain in your lower back / flank?",
+        questionKn: "ಚಳಿ-ನಡುಕದೊಂದಿಗೆ ತೀವ್ರ ಜ್ವರ ಅಥವಾ ಸೊಂಟದ ಹಿಂಭಾಗದಲ್ಲಿ (ಪಕ್ಕೆಲಬುಗಳ ಬಳಿ) ನೋವು ಇದೆಯೇ?",
+        inputType: "chips_and_text",
+        options: [
+          { en: "Yes, high fever with rigors and flank pain", kn: "ಹೌದು, ಚಳಿ ನಡುಕದ ಜ್ವರ ಮತ್ತು ಸೊಂಟದ ಬದಿ ನೋವು", tag: "Acute pyelonephritis", isAlert: true },
+          { en: "Sharp sudden pain shooting down from back to groin", kn: "ಬೆನ್ನಿನಿಂದ ಕೆಳ ಹೊಟ್ಟೆಗೆ ಹರಡುವ ತೀಕ್ಷ್ಣ ನೋವು (ಕಲ್ಲು)", tag: "Renal colic / Calculus", isAlert: true },
+          { en: "Mild lower belly discomfort only", kn: "ಹೊಟ್ಟೆಯ ಕೆಳಭಾಗದಲ್ಲಿ ಸಾಧಾರಣ ನೋವು ಮಾತ್ರ", tag: "Lower urinary" },
+          { en: "No fever or back pain", kn: "ಯಾವುದೇ ಜ್ವರ ಅಥವಾ ಬೆನ್ನು ನೋವಿಲ್ಲ", tag: "Uncomplicated" }
+        ],
+        explainabilityEn: "High fever with flank pain signals upper urinary tract ascending infection (acute pyelonephritis) or obstructing calculus.",
+        explainabilityKn: "ಚಳಿ ಜ್ವರದ ಜೊತೆ ಸೊಂಟ ನೋವು ಮೂತ್ರಪಿಂಡದ (ಕಿಡ್ನಿ) ಸೋಂಕನ್ನು ಅಥವಾ ಕಲ್ಲನ್ನು ತೋರಿಸುವುದರಿಂದ ತಕ್ಷಣದ ಚಿಕಿತ್ಸೆ ಅಗತ್ಯ."
+      }
+    ]
+  },
+
   "general_consultation": {
     category: "General Medicine",
     chiefComplaintKey: "General Symptoms / ಸಾಮಾನ್ಯ ಲಕ್ಷಣಗಳು",
@@ -374,10 +664,12 @@ export function scanRedFlags(patientInput, chiefComplaint, answers = []) {
 
     // Check answers flags
     for (const a of answers) {
-      if (a.isAlert && (a.id.startsWith("cp_") || a.id.startsWith("fc_") || a.id.startsWith("ab_"))) {
+      if (a.isAlert && (a.id.startsWith("cp_") || a.id.startsWith("fc_") || a.id.startsWith("ab_") || a.id.startsWith("ap_") || a.id.startsWith("ha_") || a.id.startsWith("as_") || a.id.startsWith("ur_") || a.id.startsWith("jp_") || a.id.startsWith("dm_") || a.id.startsWith("sk_"))) {
         if (crit.id === "acs_chest_pain" && a.id.startsWith("cp_")) triggered = true;
-        if (crit.id === "acute_abdomen" && a.id.startsWith("ab_")) triggered = true;
-        if (crit.id === "severe_dyspnea" && (a.answer.includes("Resting dyspnea") || a.answer.includes("struggling"))) triggered = true;
+        if (crit.id === "acute_abdomen" && (a.id.startsWith("ab_") || a.id === "ap_red_flags")) triggered = true;
+        if (crit.id === "severe_dyspnea" && (a.answer.includes("Resting dyspnea") || a.answer.includes("struggling") || a.answer.includes("Wheeze"))) triggered = true;
+        if (crit.id === "acute_stroke_signs" && (a.id === "ha_character_location" && a.answer.includes("Thunderclap"))) triggered = true;
+        if (crit.id === "severe_hemorrhage" && (a.id === "ap_red_flags" && (a.answer.includes("Melena") || a.answer.includes("coffee-ground")))) triggered = true;
       }
     }
     
@@ -435,10 +727,15 @@ export function extractClinicalEntities(text) {
     { key: "dyspnea", canonical: "Shortness of Breath (Dyspnea)", regex: /(shortness of breath|breathless|gasping|ಉಸಿರಾಟದ ತೊಂದರೆ|ಉಸಿರು ಕಟ್ಟುವಿಕೆ)/i },
     { key: "headache", canonical: "Headache (Cephalea)", regex: /(headache|head pain|migraine|ತಲೆನೋವು)/i },
     { key: "abdominal_pain", canonical: "Abdominal Pain", regex: /(stomach pain|belly pain|abdominal pain|cramps|ಹೊಟ್ಟೆ ನೋವು)/i },
+    { key: "acid_peptic", canonical: "Acid Peptic / Heartburn", regex: /(acidity|heartburn|acid reflux|sour burp|ಎದೆಯುರಿ|ಹುಳಿತೇಗು)/i },
+    { key: "joint_pain", canonical: "Joint Pain (Arthralgia)", regex: /(joint pain|knee pain|arthritis|body ache|ಕೀಲು ನೋವು|ಮೈಕೈ ನೋವು)/i },
+    { key: "diabetes", canonical: "Diabetes / Blood Sugar", regex: /(diabetes|sugar|high glucose|thirsty|ಸಕ್ಕರೆ ಕಾಯಿಲೆ)/i },
+    { key: "asthma", canonical: "Asthma / Bronchospasm", regex: /(asthma|wheeze|wheezing|inhaler|ಉಬ್ಬಸ)/i },
+    { key: "skin_rash", canonical: "Skin Rash / Allergy", regex: /(rash|skin allergy|itching|hives|ಚರ್ಮದ ಅಲರ್ಜಿ|ತುರಿಕೆ)/i },
+    { key: "urinary", canonical: "Urinary Discomfort / Dysuria", regex: /(urine|burning urine|dysuria|ಮೂತ್ರದಲ್ಲಿ ಉರಿ)/i },
     { key: "vomiting", canonical: "Nausea & Vomiting", regex: /(vomit|vomiting|nausea|throwing up|ವಾಂತಿ|ವಾಕರಿಕೆ)/i },
     { key: "diarrhea", canonical: "Loose Stools (Diarrhea)", regex: /(diarrhea|loose motion|watery stool|ಭೇದಿ|ಬೇಧಿ)/i },
-    { key: "fatigue", canonical: "Generalized Fatigue / Weakness", regex: /(tired|fatigue|weakness|exhausted|ದಣಿವು|ಸುಸ್ತು|ಆಯಾಸ)/i },
-    { key: "joint_pain", canonical: "Joint Pain (Arthralgia)", regex: /(joint pain|knee pain|body ache|ಕೀಲು ನೋವು|ಮೈಕೈ ನೋವು)/i }
+    { key: "fatigue", canonical: "Generalized Fatigue / Weakness", regex: /(tired|fatigue|weakness|exhausted|ದಣಿವು|ಸುಸ್ತು|ಆಯಾಸ)/i }
   ];
 
   for (const item of symptomDict) {
@@ -475,15 +772,30 @@ export function extractClinicalEntities(text) {
 
 /**
  * Adaptive Next Question Selector
+ * Disease-Specific Routing: Only presents questions relevant to particular condition
  */
 export function getNextAdaptiveQuestion(chiefComplaintKey, answeredQuestionIds = []) {
   // Normalize key
   let flowKey = "general_consultation";
   const lower = (chiefComplaintKey || "").toLowerCase();
 
-  if (lower.includes("chest") || lower.includes("heart") || lower.includes("ಎದೆ")) {
+  if (lower.includes("acid") || lower.includes("gerd") || lower.includes("gastric") || lower.includes("peptic") || lower.includes("heartburn") || lower.includes("ಎದೆಯುರಿ") || lower.includes("ಹುಳಿತೇಗು")) {
+    flowKey = "acid_peptic_gi";
+  } else if (lower.includes("asthma") || lower.includes("wheez") || lower.includes("inhaler") || lower.includes("ಉಬ್ಬಸ")) {
+    flowKey = "asthma_wheezing";
+  } else if (lower.includes("joint") || lower.includes("knee") || lower.includes("arthritis") || lower.includes("stiff") || lower.includes("ಕೀಲು")) {
+    flowKey = "joint_pain_arthritis";
+  } else if (lower.includes("headache") || lower.includes("migraine") || lower.includes("head") || lower.includes("ತಲೆನೋವು")) {
+    flowKey = "headache_migraine";
+  } else if (lower.includes("diabet") || lower.includes("sugar") || lower.includes("glucose") || lower.includes("thirst") || lower.includes("ಸಕ್ಕರೆ")) {
+    flowKey = "diabetes_metabolic";
+  } else if (lower.includes("rash") || lower.includes("skin") || lower.includes("itch") || lower.includes("allergy") || lower.includes("ಚರ್ಮ") || lower.includes("ತುರಿಕೆ")) {
+    flowKey = "skin_rash_dermatology";
+  } else if (lower.includes("urine") || lower.includes("urinary") || lower.includes("dysuria") || lower.includes("burning urine") || lower.includes("ಮೂತ್ರ")) {
+    flowKey = "urinary_dysuria";
+  } else if (lower.includes("chest") || (lower.includes("heart") && !lower.includes("heartburn")) || lower.includes("angina") || lower.includes("ಎದೆ")) {
     flowKey = "chest_pain";
-  } else if (lower.includes("fever") || lower.includes("cough") || lower.includes("cold") || lower.includes("ಜ್ವರ") || lower.includes("ಕೆಮ್ಮು")) {
+  } else if (lower.includes("fever") || lower.includes("cough") || lower.includes("cold") || lower.includes("chills") || lower.includes("ಜ್ವರ") || lower.includes("ಕೆಮ್ಮು")) {
     flowKey = "fever_cough";
   } else if (lower.includes("stomach") || lower.includes("belly") || lower.includes("abdomen") || lower.includes("ಹೊಟ್ಟೆ")) {
     flowKey = "abdominal_pain";
@@ -496,6 +808,7 @@ export function getNextAdaptiveQuestion(chiefComplaintKey, answeredQuestionIds =
     return {
       isComplete: true,
       category: flow.category,
+      flowKey,
       nextQuestion: null,
       progressPercent: 100
     };

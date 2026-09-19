@@ -68,7 +68,11 @@ router.post("/", (req, res) => {
     adaptiveAnswers = [],
     medicalHistory = {},
     documentExtractions = [],
-    ayushData = null
+    ayushData = null,
+    carePathway = "general",
+    ayurvedaCareRequest = null,
+    ayurvedaSpecificInfo = null,
+    interdisciplinaryReferral = null
   } = req.body;
 
   const redFlagScan = scanRedFlags(chiefComplaint, "", adaptiveAnswers);
@@ -97,6 +101,10 @@ router.post("/", (req, res) => {
     language,
     chiefComplaint: chiefComplaint || "General medical consultation",
     chiefComplaintKn: chiefComplaintKn || "",
+    carePathway: carePathway || "general",
+    ayurvedaCareRequest,
+    ayurvedaSpecificInfo,
+    interdisciplinaryReferral,
     status: isRedFlag ? "IMMEDIATE_ATTENTION" : "PENDING_REVIEW",
     isRedFlag,
     urgencyLevel: redFlagScan.urgencyLevel,
@@ -123,7 +131,7 @@ router.post("/", (req, res) => {
 
   addAuditLog(
     isRedFlag ? "EMERGENCY_INTAKE_COMPLETED" : "PATIENT_INTAKE_COMPLETED",
-    `Consultation ${tokenNumber} registered for ${patient?.name || 'Patient'}. Red flag status: ${isRedFlag}`,
+    `Consultation ${tokenNumber} registered for ${patient?.name || 'Patient'}. Care pathway: ${carePathway}. Red flag status: ${isRedFlag}`,
     "Patient Kiosk Terminal"
   );
 
@@ -148,10 +156,19 @@ router.put("/:id/doctor-verify", (req, res) => {
     suggestedInvestigations = [],
     prescriptions = [],
     amendedSummary,
-    status = "REVIEWED"
+    status = "REVIEWED",
+    carePathway,
+    ayurvedaDoctorNotes,
+    ayurvedaFollowUp,
+    interdisciplinaryReferral
   } = req.body;
 
   consultation.status = status;
+  if (carePathway) consultation.carePathway = carePathway;
+  if (ayurvedaDoctorNotes) consultation.ayurvedaDoctorNotes = ayurvedaDoctorNotes;
+  if (ayurvedaFollowUp) consultation.ayurvedaFollowUp = ayurvedaFollowUp;
+  if (interdisciplinaryReferral) consultation.interdisciplinaryReferral = interdisciplinaryReferral;
+
   consultation.doctorVerification = {
     verified: true,
     verifiedBy: doctorName || "Attending Physician",
@@ -180,6 +197,55 @@ router.put("/:id/doctor-verify", (req, res) => {
   res.json({
     success: true,
     message: "Doctor verification and clinical notes saved successfully.",
+    data: consultation
+  });
+});
+
+// Interdisciplinary Referral Endpoint (General -> Ayurveda or Ayurveda -> Allopathy)
+router.post("/:id/referral", (req, res) => {
+  const consultation = getConsultationById(req.params.id);
+  if (!consultation) {
+    return res.status(404).json({ success: false, message: "Consultation not found" });
+  }
+
+  const {
+    referringDoctor,
+    fromSpecialty,
+    toSpecialty,
+    reason,
+    patientConsentConfirmed,
+    clinicalNotes
+  } = req.body;
+
+  const referralRecord = {
+    referralId: `REF-${Date.now().toString().slice(-4)}`,
+    date: new Date().toISOString().split('T')[0],
+    fromDoctor: referringDoctor || "Attending Physician",
+    fromSpecialty: fromSpecialty || "General Medicine",
+    toSpecialty: toSpecialty || "Ayurveda Care",
+    reason: reason || "Integrative evaluation",
+    clinicalNotes: clinicalNotes || "",
+    patientConsentConfirmed: Boolean(patientConsentConfirmed),
+    status: "ACTIVE_REFERRAL",
+    timestamp: new Date().toISOString()
+  };
+
+  consultation.interdisciplinaryReferral = referralRecord;
+  if (toSpecialty?.toLowerCase().includes("ayurveda")) {
+    consultation.carePathway = "ayurveda";
+  }
+
+  saveConsultation(consultation);
+
+  addAuditLog(
+    "INTERDISCIPLINARY_REFERRAL",
+    `Referral from ${fromSpecialty} to ${toSpecialty} for case ${consultation.tokenNumber} with patient consent.`,
+    referringDoctor || "Attending Physician"
+  );
+
+  res.json({
+    success: true,
+    message: "Referral recorded successfully with patient consent.",
     data: consultation
   });
 });
