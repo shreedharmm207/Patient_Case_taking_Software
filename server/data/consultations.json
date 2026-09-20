@@ -1,5 +1,395 @@
 [
   {
+    "id": "cons_1789886722476_gd72",
+    "tokenNumber": "OPD-107 [URGENT]",
+    "patientId": "pat_1789886722470",
+    "patientName": "Smt. Gangamma Gowda",
+    "patientAge": 58,
+    "patientGender": "Female",
+    "abhaId": "91-3829-5721-8932",
+    "language": "kn",
+    "chiefComplaint": "Severe Chest Pain (ಎದೆ ನೋವು)",
+    "chiefComplaintKn": "ತೀವ್ರ ಎದೆ ನೋವು",
+    "carePathway": "general",
+    "ayurvedaCareRequest": null,
+    "ayurvedaSpecificInfo": null,
+    "interdisciplinaryReferral": null,
+    "status": "IMMEDIATE_ATTENTION",
+    "isRedFlag": true,
+    "urgencyLevel": "CRITICAL",
+    "redFlagReport": {
+      "isRedFlag": true,
+      "flags": [
+        {
+          "id": "acs_chest_pain",
+          "title": "Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+          "severity": "CRITICAL",
+          "triggerEvidence": "crushing",
+          "rationale": "Chest pain especially with radiation to the arm, jaw, or accompanied by diaphoresis and shortness of breath requires immediate clinical evaluation to rule out acute myocardial infarction.",
+          "rationaleKn": "ಎದೆ ನೋವು ಕೈಗೆ ಅಥವಾ ದವಡೆಗೆ ಹರಡುವುದು ಮತ್ತು ಬೆವರುವಿಕೆ ಕಾಣಿಸಿಕೊಂಡಿರುವುದು ತಕ್ಷಣದ ವೈದ್ಯಕೀಯ ತಪಾಸಣೆಗೆ ಒಳಪಡಿಸಬೇಕಾಗಿದೆ.",
+          "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
+        }
+      ],
+      "urgencyLevel": "CRITICAL",
+      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+    },
+    "createdAt": "2026-09-20T06:45:22.476Z",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Chest Pain / Discomfort",
+          "detectedWord": "chest_pain",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        }
+      ],
+      "duration": null,
+      "severity": "Severe (Grade 3)",
+      "modifiers": []
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "cp_onset_duration",
+        "question": "When exactly did the chest pain start, and was it sudden or gradual?",
+        "questionEn": "When exactly did the chest pain start, and was it sudden or gradual?",
+        "questionKn": "ಎದೆ ನೋವು ಯಾವಾಗ ಪ್ರಾರಂಭವಾಯಿತು? ಮತ್ತು ಇದು ಹಠಾತ್ತನೆ ಬಂದಿದ್ದಾ ಅಥವಾ ನಿಧಾನವಾಗಿ ಶುರುವಾಯಿತಾ?",
+        "answer": "Sudden (Within 2 hours)",
+        "rationale": "Knowing the exact onset helps clinicians distinguish acute time-critical emergencies like a heart attack from chronic muscular or digestive pain.",
+        "rationaleKn": "ನೋವು ಯಾವಾಗ ಪ್ರಾರಂಭವಾಯಿತು ಎಂಬುದನ್ನು ತಿಳಿಯುವುದರಿಂದ ಹೃದಯಾಘಾತದಂತಹ ತುರ್ತು ಪರಿಸ್ಥಿತಿಗಳನ್ನು ಸ್ನಾಯು ನೋವಿನಿಂದ ಬೇರ್ಪಡಿಸಲು ವೈದ್ಯರಿಗೆ ಸಹಾಯವಾಗುತ್ತದೆ.",
+        "isAlert": false,
+        "source": "Patient Touch / Voice"
+      },
+      {
+        "id": "cp_character",
+        "question": "How would you describe the feeling of the pain?",
+        "questionEn": "How would you describe the feeling of the pain?",
+        "questionKn": "ನೋವಿನ ಅನುಭವ ಹೇಗಿದೆ ಎಂದು ನೀವು ಹೇಗೆ ವಿವರಿಸುತ್ತೀರಿ?",
+        "answer": "Heavy pressure / Crushing weight",
+        "rationale": "Crushing, heavy pressure is characteristic of cardiac ischemia, whereas sharp stabbing pain may relate to pleural inflammation or chest wall strain.",
+        "rationaleKn": "ಭಾರವಾದ ಎದೆಭಾರವು ಹೃದಯ ರಕ್ತಪರಿಚಲನೆಯ ಕೊರತೆಯನ್ನು ಸೂಚಿಸಬಲ್ಲದು, ಆದರೆ ಚುಚ್ಚುವ ನೋವು ಸ್ನಾಯು ಅಥವಾ ಶ್ವಾಸಕೋಶದ ಸಮಸ್ಯೆಯನ್ನು ಸೂಚಿಸಬಹುದು.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      },
+      {
+        "id": "cp_radiation",
+        "question": "Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)?",
+        "questionEn": "Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)?",
+        "questionKn": "ಈ ನೋವು ಎಡಗೈ, ಭುಜ, ದವಡೆ, ಕತ್ತು ಅಥವಾ ಬೆನ್ನಿನ ಕಡೆಗೆ ಹರಡುತ್ತಿದೆಯೇ?",
+        "answer": "Yes, spreads to left arm or shoulder",
+        "rationale": "Radiation of pain to the left arm or jaw is a classic dermatomal referral sign of myocardial ischemia.",
+        "rationaleKn": "ಎಡಗೈ ಅಥವಾ ದವಡೆಗೆ ನೋವು ಹರಡುವುದು ಹೃದಯಾಘಾತದ ಪ್ರಮುಖ ಲಕ್ಷಣವಾಗಿದ್ದು, ತಕ್ಷಣದ ಎಚ್ಚರಿಕೆಯನ್ನು ನೀಡುತ್ತದೆ.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      },
+      {
+        "id": "cp_exertion",
+        "question": "Does the pain increase when walking, climbing stairs, or doing physical effort?",
+        "questionEn": "Does the pain increase when walking, climbing stairs, or doing physical effort?",
+        "questionKn": "ನಡೆಯುವಾಗ, ಮೆಟ್ಟಿಲು ಹತ್ತುವಾಗ ಅಥವಾ ಶ್ರಮದ ಕೆಲಸ ಮಾಡುವಾಗ ನೋವು ಹೆಚ್ಚಾಗುತ್ತದೆಯೇ?",
+        "answer": "Yes, definitely gets worse with exertion",
+        "rationale": "Exertional angina typically worsens with cardiac workload, helping the doctor prioritize immediate cardiac monitoring.",
+        "rationaleKn": "ಶ್ರಮಪಟ್ಟಾಗ ಹೆಚ್ಚಾಗುವ ಎದೆನೋವು ಹೃದಯಕ್ಕೆ ಆಮ್ಲಜನಕದ ಕೊರತೆಯನ್ನು ತೋರಿಸಬಹುದು, ಆದ್ದರಿಂದ ವೈದ್ಯರು ಇಸಿಜಿ ಪರೀಕ್ಷಿಸಲು ಆದ್ಯತೆ ನೀಡುತ್ತಾರೆ.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      },
+      {
+        "id": "cp_associated_symptoms",
+        "question": "Are you experiencing any of these other symptoms along with the chest pain?",
+        "questionEn": "Are you experiencing any of these other symptoms along with the chest pain?",
+        "questionKn": "ಎದೆ ನೋವಿನೊಂದಿಗೆ ಇವುಗಳಲ್ಲಿ ಯಾವುದಾದರೂ ಇತರ ಲಕ್ಷಣಗಳು ನಿಮ್ಮಲ್ಲಿವೆಯೇ?",
+        "answer": "Cold sweating (Diaphoresis)",
+        "rationale": "Associated diaphoresis (sweating) and breathlessness significantly elevate the urgency of evaluating for myocardial infarction.",
+        "rationaleKn": "ಬೆವರು ಮತ್ತು ಉಸಿರುಕಟ್ಟುವಿಕೆ ಎದೆನೋವಿನ ಜೊತೆಯಲ್ಲಿದ್ದರೆ ಅದು ತುರ್ತು ಹೃದಯ ಸಂಬಂಧಿ ಪರೀಕ್ಷೆಗೆ ಅತ್ಯಗತ್ಯ ಸೂಚನೆಯಾಗಿದೆ.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Hypertension (5 years)"
+      ],
+      "medications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [],
+    "ayushData": null,
+    "summary": {
+      "generatedAt": "2026-09-20T06:45:22.475Z",
+      "clinicalStatus": "IMMEDIATE_ATTENTION",
+      "isRedFlag": true,
+      "redFlagReport": {
+        "isRedFlag": true,
+        "flags": [
+          {
+            "id": "acs_chest_pain",
+            "title": "Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+            "severity": "CRITICAL",
+            "triggerEvidence": "crushing",
+            "rationale": "Chest pain especially with radiation to the arm, jaw, or accompanied by diaphoresis and shortness of breath requires immediate clinical evaluation to rule out acute myocardial infarction.",
+            "rationaleKn": "ಎದೆ ನೋವು ಕೈಗೆ ಅಥವಾ ದವಡೆಗೆ ಹರಡುವುದು ಮತ್ತು ಬೆವರುವಿಕೆ ಕಾಣಿಸಿಕೊಂಡಿರುವುದು ತಕ್ಷಣದ ವೈದ್ಯಕೀಯ ತಪಾಸಣೆಗೆ ಒಳಪಡಿಸಬೇಕಾಗಿದೆ.",
+            "actionRequired": "Needs Immediate Clinical Attention - Doctor Triage Priority"
+          }
+        ],
+        "urgencyLevel": "CRITICAL",
+        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+      },
+      "chiefComplaint": "Severe Chest Pain (ACS Evaluation)",
+      "presentingSymptoms": [
+        "Chest Pain / Discomfort"
+      ],
+      "duration": "Recorded during intake",
+      "severity": "Severe (Grade 3)",
+      "historyOfPresentingIllness": "Patient presented with chief complaint of Severe Chest Pain (ACS Evaluation). Reported severity: Severe (Grade 3). When exactly did the chest pain start, and was it sudden or gradual? -> Sudden (Within 2 hours). How would you describe the feeling of the pain? -> Heavy pressure / Crushing weight. Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)? -> Yes, spreads to left arm or shoulder. Does the pain increase when walking, climbing stairs, or doing physical effort? -> Yes, definitely gets worse with exertion. Are you experiencing any of these other symptoms along with the chest pain? -> Cold sweating (Diaphoresis).",
+      "pastMedicalHistory": [
+        "Hypertension (5 years)"
+      ],
+      "currentMedications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Balanced regular diet",
+        "activity": "Moderate activity"
+      },
+      "documentFindings": [],
+      "ayushAssessment": null,
+      "clinicalObservations": [
+        "PRIORITY: Urgent red-flag symptoms detected during intake. Immediate vitals & triage advised.",
+        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
+        "Attending physician verification required before prescribing or formulating clinical impression."
+      ],
+      "crossVerificationReport": {
+        "verifiedAt": "2026-09-20T06:45:22.476Z",
+        "totalAlerts": 1,
+        "alerts": [
+          {
+            "type": "MEDICATION_DISCREPANCY",
+            "severity": "HIGH",
+            "title": "Medication Adherence Gap: Antihypertensive Therapy",
+            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+            "evidenceSource": "Intake History & Medication Audit",
+            "status": "REQUIRES_PHYSICIAN_REVIEW"
+          }
+        ],
+        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+      },
+      "doctorVerification": {
+        "verified": false,
+        "verifiedBy": null,
+        "verificationTimestamp": null,
+        "doctorNotes": "",
+        "provisionalDiagnosis": "",
+        "suggestedInvestigations": [],
+        "prescriptions": []
+      }
+    },
+    "doctorVerification": {
+      "verified": false,
+      "verifiedBy": null,
+      "verificationTimestamp": null,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "suggestedInvestigations": [],
+      "prescriptions": []
+    }
+  },
+  {
+    "id": "cons_1789885175790_kg11",
+    "tokenNumber": "OPD-106",
+    "patientId": "pat_1789885175762",
+    "patientName": "Smt. Gangamma Gowda",
+    "patientAge": 58,
+    "patientGender": "Female",
+    "abhaId": "91-3829-5721-8932",
+    "language": "en",
+    "chiefComplaint": "Diabetes / High Sugar Symptoms",
+    "chiefComplaintKn": "",
+    "carePathway": "general",
+    "ayurvedaCareRequest": null,
+    "ayurvedaSpecificInfo": null,
+    "interdisciplinaryReferral": null,
+    "status": "PENDING_REVIEW",
+    "isRedFlag": false,
+    "urgencyLevel": "STANDARD",
+    "redFlagReport": {
+      "isRedFlag": false,
+      "flags": [],
+      "urgencyLevel": "STANDARD",
+      "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+    },
+    "createdAt": "2026-09-20T06:19:35.790Z",
+    "extractedEntities": {
+      "symptoms": [
+        {
+          "canonicalName": "Diabetes / Blood Sugar",
+          "detectedWord": "diabetes",
+          "duration": "Unspecified",
+          "source": "Patient Voice / Text Natural Language"
+        }
+      ],
+      "duration": null,
+      "severity": "Moderate",
+      "modifiers": []
+    },
+    "adaptiveAnswers": [
+      {
+        "id": "dm_osmotic_symptoms",
+        "question": "Are you experiencing excessive thirst, waking up multiple times to pass urine, or excessive hunger?",
+        "answer": "Frequent night urination (Nocturia / Polyuria)",
+        "rationale": "The classical osmotic triad (polyuria, polydipsia, polyphagia) signals significant hyperglycemia exceeding renal threshold (HbA1c workup needed).",
+        "rationaleKn": "ಪದೇ ಪದೇ ಬಾಯಾರಿಕೆ ಮತ್ತು ಮೂತ್ರ ವಿಸರ್ಜನೆ ರಕ್ತದಲ್ಲಿ ಸಕ್ಕರೆ ಅಂಶ ಹೆಚ್ಚಾಗಿರುವುದನ್ನು (ಡಯಾಬಿಟಿಸ್) ಸ್ಪಷ್ಟವಾಗಿ ತೋರಿಸುತ್ತದೆ.",
+        "isAlert": true,
+        "source": "Patient Touch / Voice"
+      },
+      {
+        "id": "dm_neuropathy_wounds",
+        "question": "Do you feel tingling, numbness, or burning sensations in your feet, or have slow-healing cuts?",
+        "answer": "Occasional blurred vision",
+        "rationale": "Distal sensory neuropathy and non-healing foot lesions signify microvascular diabetic complications needing monofilament testing and podiatry care.",
+        "rationaleKn": "ಪಾದಗಳ ಮರಗಟ್ಟುವಿಕೆ ನರಗಳ ದೌರ್ಬಲ್ಯವನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಇದಕ್ಕೆ ಕಾಲಿನ ಪರೀಕ್ಷೆ ಮತ್ತು ಸಕ್ಕರೆ ನಿಯಂತ್ರಣ ಅನಿವಾರ್ಯ.",
+        "isAlert": false,
+        "source": "Patient Touch / Voice"
+      }
+    ],
+    "medicalHistory": {
+      "conditions": [
+        "Hypertension (5 years)"
+      ],
+      "medications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "surgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "smoking": "Non-smoker",
+      "alcohol": "Non-drinker"
+    },
+    "documentExtractions": [],
+    "ayushData": null,
+    "summary": {
+      "generatedAt": "2026-09-20T06:19:35.790Z",
+      "clinicalStatus": "PENDING_DOCTOR_REVIEW",
+      "isRedFlag": false,
+      "redFlagReport": {
+        "isRedFlag": false,
+        "flags": [],
+        "urgencyLevel": "STANDARD",
+        "legalDisclaimer": "MEDICAL ADVISORY: This is an AI-assisted clinical information collection tool. It does not provide medical diagnoses or replace clinical judgment. Final triage and diagnosis rest solely with the licensed physician."
+      },
+      "chiefComplaint": "Diabetes / High Sugar Symptoms",
+      "presentingSymptoms": [
+        "Diabetes / Blood Sugar"
+      ],
+      "duration": "Recorded during intake",
+      "severity": "Moderate",
+      "historyOfPresentingIllness": "Patient presented with chief complaint of Diabetes / High Sugar Symptoms. Reported severity: Moderate. Are you experiencing excessive thirst, waking up multiple times to pass urine, or excessive hunger? -> Frequent night urination (Nocturia / Polyuria). Do you feel tingling, numbness, or burning sensations in your feet, or have slow-healing cuts? -> Occasional blurred vision.",
+      "pastMedicalHistory": [
+        "Hypertension (5 years)"
+      ],
+      "currentMedications": [
+        "Tab. Amlodipine 5mg OD"
+      ],
+      "allergies": [
+        "NKDA (No Known Drug Allergies)"
+      ],
+      "previousSurgeries": [
+        "None"
+      ],
+      "familyHistory": [
+        "Brother had heart attack at age 54"
+      ],
+      "lifestyleInformation": {
+        "smoking": "Non-smoker",
+        "alcohol": "Non-drinker",
+        "diet": "Balanced regular diet",
+        "activity": "Moderate activity"
+      },
+      "documentFindings": [],
+      "ayushAssessment": null,
+      "clinicalObservations": [
+        "Vitals and triage recommended prior to clinical examination.",
+        "Information collected via AI-guided pre-consultation intake with patient consent (ABDM framework compatible).",
+        "Attending physician verification required before prescribing or formulating clinical impression."
+      ],
+      "crossVerificationReport": {
+        "verifiedAt": "2026-09-20T06:19:35.790Z",
+        "totalAlerts": 1,
+        "alerts": [
+          {
+            "type": "MEDICATION_DISCREPANCY",
+            "severity": "HIGH",
+            "title": "Medication Adherence Gap: Antihypertensive Therapy",
+            "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+            "evidenceSource": "Intake History & Medication Audit",
+            "status": "REQUIRES_PHYSICIAN_REVIEW"
+          }
+        ],
+        "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+      },
+      "doctorVerification": {
+        "verified": false,
+        "verifiedBy": null,
+        "verificationTimestamp": null,
+        "doctorNotes": "",
+        "provisionalDiagnosis": "",
+        "suggestedInvestigations": [],
+        "prescriptions": []
+      }
+    },
+    "doctorVerification": {
+      "verified": false,
+      "verifiedBy": null,
+      "verificationTimestamp": null,
+      "doctorNotes": "",
+      "provisionalDiagnosis": "",
+      "suggestedInvestigations": [],
+      "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-20T06:45:22.476Z",
+      "totalAlerts": 1,
+      "alerts": [
+        {
+          "type": "MEDICATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Medication Adherence Gap: Antihypertensive Therapy",
+          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+          "evidenceSource": "Intake History & Medication Audit",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
+    }
+  },
+  {
     "id": "cons_demo_01",
     "tokenNumber": "OPD-101",
     "patientId": "pat_001",
@@ -132,6 +522,21 @@
       "doctorNotes": "",
       "provisionalDiagnosis": "",
       "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-20T06:19:35.791Z",
+      "totalAlerts": 1,
+      "alerts": [
+        {
+          "type": "ALLERGY_CONFLICT",
+          "severity": "CRITICAL",
+          "title": "Allergy Conflict: Penicillin Class Contraindication",
+          "finding": "Patient has documented Penicillin allergy. Beta-lactam antibiotics (Amoxicillin, Augmentin, Ampicillin) are strictly contraindicated.",
+          "evidenceSource": "Patient Medical History (Documented Allergies)",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -343,6 +748,37 @@
       "doctorNotes": "",
       "provisionalDiagnosis": "",
       "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-20T06:19:35.791Z",
+      "totalAlerts": 3,
+      "alerts": [
+        {
+          "type": "MEDICATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Medication Adherence Gap: Antihypertensive Therapy",
+          "finding": "Known hypertensive patient reports irregular adherence to blood pressure regimen (e.g. Amlodipine). High risk of hypertensive rebound or target organ involvement.",
+          "evidenceSource": "Intake History & Medication Audit",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        },
+        {
+          "type": "CLINICAL_ESCALATION",
+          "severity": "CRITICAL",
+          "title": "Escalation Warning: Vascular Risk Correlation",
+          "finding": "Patient with pre-existing vascular risk (Hypertension) presents with acute chest pain radiating to extremity. Immediate 12-lead ECG and troponin monitoring indicated.",
+          "evidenceSource": "Cross-comparison: Past History vs Presenting Complaint",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        },
+        {
+          "type": "INVESTIGATION_DISCREPANCY",
+          "severity": "CRITICAL",
+          "title": "Abnormal Lab Correlation: Cardiac Troponin I",
+          "finding": "Cardiac Troponin I observed at 0.28 ng/mL (Reference: < 0.04 ng/mL). CRITICAL ALERT: Strongly indicative of acute myocardial infarction. Immediate Cath Lab triage required.",
+          "evidenceSource": "Uploaded LAB_REPORT (Emergency Cardiac Biomarker Report - Troponin I)",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -488,6 +924,21 @@
       "doctorNotes": "",
       "provisionalDiagnosis": "",
       "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-20T06:19:35.791Z",
+      "totalAlerts": 0,
+      "alerts": [
+        {
+          "type": "VERIFIED_CLEAR",
+          "severity": "STANDARD",
+          "title": "Cross-Verification: No Active Drug-Allergy or Adherence Conflicts",
+          "finding": "Current presenting symptoms and reported medications show no direct adverse cross-reactions with documented baseline history.",
+          "evidenceSource": "Cross-Verification Rule Engine",
+          "status": "VERIFIED_OK"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -745,6 +1196,37 @@
           "duration": "30 days"
         }
       ]
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-20T06:19:35.791Z",
+      "totalAlerts": 3,
+      "alerts": [
+        {
+          "type": "INVESTIGATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Abnormal Lab Correlation: HbA1c",
+          "finding": "HbA1c observed at 9.2 % (Reference: < 5.7 %). Indicates uncontrolled glycemic control over the past 90 days.",
+          "evidenceSource": "Uploaded LAB_REPORT (Diagnostic Lab Report - Blood Glucose & Lipid Panel)",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        },
+        {
+          "type": "INVESTIGATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Abnormal Lab Correlation: Fasting Blood Sugar",
+          "finding": "Fasting Blood Sugar observed at 188 mg/dL (Reference: 70-100 mg/dL). Elevated fasting hyperglycemia.",
+          "evidenceSource": "Uploaded LAB_REPORT (Diagnostic Lab Report - Blood Glucose & Lipid Panel)",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        },
+        {
+          "type": "INVESTIGATION_DISCREPANCY",
+          "severity": "HIGH",
+          "title": "Abnormal Lab Correlation: Lipid Profile",
+          "finding": "Lipid Profile observed at Cholesterol 242 mg/dL (Reference: <200 mg/dL). Mixed dyslipidemia detected.",
+          "evidenceSource": "Uploaded LAB_REPORT (Diagnostic Lab Report - Blood Glucose & Lipid Panel)",
+          "status": "REQUIRES_PHYSICIAN_REVIEW"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   },
   {
@@ -895,6 +1377,21 @@
       "doctorNotes": "",
       "provisionalDiagnosis": "",
       "prescriptions": []
+    },
+    "crossVerificationReport": {
+      "verifiedAt": "2026-09-20T06:19:35.791Z",
+      "totalAlerts": 0,
+      "alerts": [
+        {
+          "type": "VERIFIED_CLEAR",
+          "severity": "STANDARD",
+          "title": "Cross-Verification: No Active Drug-Allergy or Adherence Conflicts",
+          "finding": "Current presenting symptoms and reported medications show no direct adverse cross-reactions with documented baseline history.",
+          "evidenceSource": "Cross-Verification Rule Engine",
+          "status": "VERIFIED_OK"
+        }
+      ],
+      "disclaimer": "Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion."
     }
   }
 ]

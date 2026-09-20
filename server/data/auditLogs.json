@@ -1,5 +1,61 @@
 [
   {
+    "id": "log_1789886722478_xwdm",
+    "timestamp": "2026-09-20T06:45:22.478Z",
+    "event": "EMERGENCY_INTAKE_COMPLETED",
+    "details": "Consultation OPD-107 [URGENT] registered for Smt. Gangamma Gowda. Care pathway: general. Red flag status: true",
+    "actor": "Patient Kiosk Terminal"
+  },
+  {
+    "id": "log_1789886568557_o05u",
+    "timestamp": "2026-09-20T06:42:48.557Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789886546782_3tdg",
+    "timestamp": "2026-09-20T06:42:26.782Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789886517870_y901",
+    "timestamp": "2026-09-20T06:41:57.870Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789886488709_fi8s",
+    "timestamp": "2026-09-20T06:41:28.709Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789886466370_v4tf",
+    "timestamp": "2026-09-20T06:41:06.370Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789886328247_n9g9",
+    "timestamp": "2026-09-20T06:38:48.247Z",
+    "event": "EMERGENCY_RED_FLAG_TRIGGERED",
+    "details": "Clinical Red Flag Triggered: Suspected Acute Coronary Syndrome (ACS) / Cardiac Emergency",
+    "actor": "Clinical Rule Engine"
+  },
+  {
+    "id": "log_1789885175797_61xk",
+    "timestamp": "2026-09-20T06:19:35.797Z",
+    "event": "PATIENT_INTAKE_COMPLETED",
+    "details": "Consultation OPD-106 registered for Smt. Gangamma Gowda. Care pathway: general. Red flag status: false",
+    "actor": "Patient Kiosk Terminal"
+  },
+  {
     "id": "log_01",
     "timestamp": "2026-09-16T10:15:00.000Z",
     "event": "EMERGENCY_RED_FLAG_TRIGGERED",

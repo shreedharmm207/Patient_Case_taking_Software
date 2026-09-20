@@ -3,7 +3,7 @@ import React from 'react';
 import { AlertCircle, Flame, ShieldAlert, HeartPulse, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-export default function RedFlagAlertBanner({ redFlagReport, showActions = true, isCompact = false }) {
+export default function RedFlagAlertBanner({ redFlagReport, showActions = true, isCompact = false, forceEnglish = false }) {
   const { lang, t } = useLanguage();
 
   if (!redFlagReport || !redFlagReport.isRedFlag) {
@@ -11,6 +11,8 @@ export default function RedFlagAlertBanner({ redFlagReport, showActions = true, 
   }
 
   const flags = redFlagReport.flags || [];
+  const alertTitle = forceEnglish ? 'Critical Red-Flag Clinical Alert: High-Urgency Triage Required' : t('urgentAlertTitle');
+  const alertDesc = forceEnglish ? 'Immediate attending physician attention recommended. Emergency protocol active.' : t('urgentAlertDesc');
 
   if (isCompact) {
     return (
@@ -27,7 +29,7 @@ export default function RedFlagAlertBanner({ redFlagReport, showActions = true, 
         <AlertCircle size={22} color="#f43f5e" />
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: 800, fontSize: '0.88rem', color: '#ffffff' }}>
-            {t('urgentAlertTitle')}
+            {alertTitle}
           </div>
           <div style={{ fontSize: '0.78rem', color: '#fecdd3' }}>
             {flags.map(f => f.title).join(' • ')}
@@ -76,7 +78,7 @@ export default function RedFlagAlertBanner({ redFlagReport, showActions = true, 
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
               <h3 style={{ color: '#ffffff', fontSize: '1.2rem', fontWeight: 800, margin: 0 }}>
-                {t('urgentAlertTitle')}
+                {alertTitle}
               </h3>
               <span style={{
                 background: 'rgba(244, 63, 94, 0.2)',
@@ -92,7 +94,7 @@ export default function RedFlagAlertBanner({ redFlagReport, showActions = true, 
               </span>
             </div>
             <p style={{ color: '#fecdd3', fontSize: '0.85rem', marginTop: '0.25rem', margin: 0 }}>
-              {t('urgentAlertDesc')}
+              {alertDesc}
             </p>
           </div>
         </div>
@@ -144,7 +146,7 @@ export default function RedFlagAlertBanner({ redFlagReport, showActions = true, 
             </div>
 
             <p style={{ fontSize: '0.82rem', color: '#e2e8f0', marginTop: '0.4rem', lineHeight: '1.4', margin: 0 }}>
-              {lang === 'kn' && flag.rationaleKn ? flag.rationaleKn : flag.rationale}
+              {(!forceEnglish && lang === 'kn' && flag.rationaleKn) ? flag.rationaleKn : flag.rationale}
             </p>
 
             {flag.triggerEvidence && (

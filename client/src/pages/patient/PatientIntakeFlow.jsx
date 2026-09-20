@@ -347,7 +347,9 @@ export default function PatientIntakeFlow({ onCompleteConsultation, onGoHome, in
 
     const recordedAnswer = {
       id: currentQuestion.id,
-      question: isKannada ? currentQuestion.questionKn : currentQuestion.questionEn,
+      question: currentQuestion.questionEn,
+      questionEn: currentQuestion.questionEn,
+      questionKn: currentQuestion.questionKn,
       answer: answerValue,
       rationale: currentQuestion.explainabilityEn,
       rationaleKn: currentQuestion.explainabilityKn,
@@ -954,7 +956,7 @@ export default function PatientIntakeFlow({ onCompleteConsultation, onGoHome, in
                   {adaptiveFlow?.category || 'Clinical Adaptive Assessment'}
                 </span>
                 <h3 style={{ fontSize: '1.25rem', color: '#ffffff', marginTop: '0.2rem' }}>
-                  {t('adaptiveQuestionHeader')} {adaptiveFlow?.currentStep && `(${adaptiveFlow.currentStep}/${adaptiveFlow.totalSteps})`}
+                  AI Adaptive Follow-up Question {adaptiveFlow?.currentStep && `(${adaptiveFlow.currentStep}/${adaptiveFlow.totalSteps})`}
                 </h3>
               </div>
             </div>
@@ -1504,7 +1506,7 @@ export default function PatientIntakeFlow({ onCompleteConsultation, onGoHome, in
                 <div style={{ marginTop: '0.4rem', display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                   {answeredQuestions.map((ans, i) => (
                     <div key={i} style={{ fontSize: '0.88rem', color: '#cbd5e1', background: 'rgba(255, 255, 255, 0.04)', padding: '0.5rem 0.75rem', borderRadius: '6px' }}>
-                      <strong>Q:</strong> {ans.question} <br />
+                      <strong>Q:</strong> {ans.questionEn || ans.question} <br />
                       <strong style={{ color: '#00e5a3' }}>A:</strong> {ans.answer}
                     </div>
                   ))}

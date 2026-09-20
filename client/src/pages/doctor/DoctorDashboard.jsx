@@ -34,6 +34,132 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useAuth } from '../../contexts/AuthContext';
 import RedFlagAlertBanner from '../../components/RedFlagAlertBanner';
 
+const QUESTION_EN_LOOKUP = {
+  cp_onset_duration: "When exactly did the chest pain start, and was it sudden or gradual?",
+  cp_character: "How would you describe the feeling of the pain?",
+  cp_radiation: "Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)?",
+  cp_exertion: "Does the pain increase when walking, climbing stairs, or doing physical effort?",
+  cp_associated_symptoms: "Are you experiencing any of these other symptoms along with the chest pain?",
+  fc_duration_temp: "How many days have you had the fever?",
+  fc_cough_character: "Is your cough dry, or are you bringing up phlegm/mucus?",
+  fc_breathing: "Are you feeling breathless or hearing any wheezing?",
+  fc_systemic_symptoms: "Do you have any chills, body aches, vomiting, or rashes?",
+  ab_location: "Where in your abdomen is the pain most severe?",
+  ab_duration_type: "Is the abdominal pain continuous, crampy (comes and goes), or burning?",
+  ab_associated: "Are you experiencing any vomiting, fever, loose stools, or blood in stool?",
+  ap_timing_relation: "When does the pain occur in relation to eating?",
+  ap_triggers: "Do spicy foods, tea, coffee, or lying flat trigger the pain?",
+  ap_red_flags: "Have you had difficulty swallowing, black stools, or unexplained weight loss?",
+  jp_stiffness_duration: "Do you have morning stiffness in the joints, and how long does it last?",
+  jp_joints_affected: "Which joints are affected (e.g., knees, hands, multiple joints)?",
+  jp_swelling_heat: "Is there visible swelling, warmth, or redness over the joints?",
+  ha_character_location: "Where is the headache located and what does it feel like (throbbing, constant pressure)?",
+  ha_associated_sensory: "Are you sensitive to light or sound, or experiencing nausea?",
+  ha_red_flags: "Was this a sudden thunderclap onset, or accompanied by neck stiffness / vision changes?",
+  dm_osmotic_symptoms: "Are you experiencing excessive thirst, waking up multiple times to pass urine, or excessive hunger?",
+  dm_neuropathy_wounds: "Do you feel tingling, numbness, or burning sensations in your feet, or have slow-healing cuts?",
+  as_wheeze_nocturnal: "Do you wake up at night with coughing, chest tightness, or wheezing?",
+  as_inhaler_response: "Have you used an inhaler or nebulizer, and did it provide relief?",
+  sk_itch_morphology: "Is the skin lesion or rash severely itchy, and what does it look like?",
+  sk_trigger_contact: "Did the rash appear after exposure to new soaps, cosmetics, plants, or medications?",
+  ur_burning_frequency: "Do you feel a burning sensation during urination or need to pass urine unusually frequently?",
+  ur_fever_flank: "Do you have fever with chills, or pain in your lower back / flank?",
+  gen_onset: "How long have you had this problem, and did it start suddenly?",
+  gen_severity: "How severe is this problem in affecting your daily activities?",
+  ayur_digestion: "Describe your digestive comfort and appetite timing",
+  prakriti_body_frame: "What best describes your general body frame and skin type?",
+  agni_digestive_fire: "How is your digestion and appetite usually?",
+  koshtha_bowel: "How are your bowel habits?",
+  ahara_vihara: "What are your usual dietary habits and sleep cycle?"
+};
+
+const KANNADA_QUESTION_TO_ENGLISH = {
+  "ಎದೆ ನೋವು ಯಾವಾಗ ಪ್ರಾರಂಭವಾಯಿತು? ಮತ್ತು ಇದು ಹಠಾತ್ತನೆ ಬಂದಿದ್ದಾ ಅಥವಾ ನಿಧಾನವಾಗಿ ಶುರುವಾಯಿತಾ?": "When exactly did the chest pain start, and was it sudden or gradual?",
+  "ನೋವಿನ ಅನುಭವ ಹೇಗಿದೆ ಎಂದು ನೀವು ಹೇಗೆ ವಿವರಿಸುತ್ತೀರಿ?": "How would you describe the feeling of the pain?",
+  "ಈ ನೋವು ಎಡಗೈ, ಭುಜ, ದವಡೆ, ಕತ್ತು ಅಥವಾ ಬೆನ್ನಿನ ಕಡೆಗೆ ಹರಡುತ್ತಿದೆಯೇ?": "Does the pain travel or spread anywhere else (such as left arm, shoulder, jaw, neck, or back)?",
+  "ನಡೆಯುವಾಗ, ಮೆಟ್ಟಿಲು ಹತ್ತುವಾಗ ಅಥವಾ ಶ್ರಮದ ಕೆಲಸ ಮಾಡುವಾಗ ನೋವು ಹೆಚ್ಚಾಗುತ್ತದೆಯೇ?": "Does the pain increase when walking, climbing stairs, or doing physical effort?",
+  "ಎದೆ ನೋವಿನೊಂದಿಗೆ ಇವುಗಳಲ್ಲಿ ಯಾವುದಾದರೂ ಇತರ ಲಕ್ಷಣಗಳು ನಿಮ್ಮಲ್ಲಿವೆಯೇ?": "Are you experiencing any of these other symptoms along with the chest pain?",
+  "ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನಗಳಾಯಿತು?": "How many days have you had the fever?",
+  "ಕೆಮ್ಮು ಒಣ ಕೆಮ್ಮೇ ಅಥವಾ ಕಫ ಬರುತ್ತಿದೆಯೇ?": "Is your cough dry, or are you bringing up phlegm/mucus?",
+  "ಉಸಿರಾಟದಲ್ಲಿ ತೊಂದರೆ ಅಥವಾ ಶಿಳ್ಳೆ ಹೊಡೆದಂತೆ ಶಬ್ದ (ವೀಸಿಂಗ್) ಬರುತ್ತಿದೆಯೇ?": "Are you feeling breathless or hearing any wheezing?",
+  "ಚಳಿ, ಮೈ-ಕೈ ನೋವು, ವಾಂತಿ ಅಥವಾ ಚರ್ಮದ ಮೇಲೆ ಗುಳ್ಳೆಗಳು ಇವೆಯೇ?": "Do you have any chills, body aches, vomiting, or rashes?",
+  "ಹೊಟ್ಟೆಯಲ್ಲಿ ನೋವು ಎಲ್ಲಿ ಹೆಚ್ಚಾಗಿದೆ?": "Where in your abdomen is the pain most severe?",
+  "ಹೊಟ್ಟೆ ನೋವು ಸತತವಾಗಿದೆಯೇ ಅಥವಾ ಬಿಟ್ಟು ಬಿಟ್ಟು ಬರುತ್ತಿದೆಯೇ?": "Is the abdominal pain continuous, crampy (comes and goes), or burning?",
+  "ವಾಂತಿ, ಜ್ವರ, ಅತಿಸಾರ ಅಥವಾ ಮಲದಲ್ಲಿ ರಕ್ತ ಕಾಣಿಸಿಕೊಂಡಿದೆಯೇ?": "Are you experiencing any vomiting, fever, loose stools, or blood in stool?",
+  "ಊಟಕ್ಕೂ ಮತ್ತು ಈ ನೋವಿಗೂ ಏನಾದರೂ ಸಂಬಂಧವಿದೆಯೇ?": "When does the pain occur in relation to eating?",
+  "ಖಾರವಾದ ಆಹಾರ, ಟೀ, ಕಾಫಿ ಕುಡಿದಾಗ ಅಥವಾ ಮಲಗಿದಾಗ ನೋವು ಹೆಚ್ಚುತ್ತದೆಯೇ?": "Do spicy foods, tea, coffee, or lying flat trigger the pain?",
+  "ನುಂಗಲು ಕಷ್ಟ, ಕಪ್ಪು ಮಲ ಅಥವಾ ಕಾರಣವಿಲ್ಲದೆ ತೂಕ ಕಡಿಮೆಯಾಗಿದೆಯೇ?": "Have you had difficulty swallowing, black stools, or unexplained weight loss?",
+  "ಬೆಳಿಗ್ಗೆ ಎದ್ದಾಗ ಕೀಲುಗಳಲ್ಲಿ ಬಿಗಿತ (ಸ್ಟಿಫ್‌ನೆಸ್) ಇರುತ್ತದೆಯೇ?": "Do you have morning stiffness in the joints, and how long does it last?",
+  "ಯಾವ ಕೀಲುಗಳಲ್ಲಿ ನೋವಿದೆ (ಉದಾಹರಣೆಗೆ ಮಂಡಿ, ಕೈ ಬೆರಳುಗಳು)?": "Which joints are affected (e.g., knees, hands, multiple joints)?",
+  "ಕೀಲುಗಳಲ್ಲಿ ಊತ, ಬಿಸಿ ಅಥವಾ ಕೆಂಪಾಗುವಿಕೆ ಕಂಡುಬರುತ್ತಿದೆಯೇ?": "Is there visible swelling, warmth, or redness over the joints?",
+  "ತಲೆನೋವು ಎಲ್ಲಿ ಉಂಟಾಗುತ್ತಿದೆ ಮತ್ತು ಅದು ಯಾವ ರೀತಿಯ ನೋವು?": "Where is the headache located and what does it feel like (throbbing, constant pressure)?",
+  "ಬೆಳಕು ಅಥವಾ ಶಬ್ದ ಕೇಳಿದರೆ ಕಿರಿಕಿರಿಯಾಗುತ್ತದೆಯೇ ಅಥವಾ ವಾಕರಿಕೆ ಬರುತ್ತದೆಯೇ?": "Are you sensitive to light or sound, or experiencing nausea?",
+  "ತಲೆನೋವು ಹಠಾತ್ತನೆ ಬಂದಿದ್ದೇ ಅಥವಾ ಕುತ್ತಿಗೆ ಬಿಗಿತ / ಕಣ್ಣಿನ ದೃಷ್ಟಿ ಮಸುಕಾಗಿದೆಯೇ?": "Was this a sudden thunderclap onset, or accompanied by neck stiffness / vision changes?",
+  "ಹೆಚ್ಚು ಬಾಯಾರಿಕೆ, ಪದೇ ಪದೇ ಮೂತ್ರಕ್ಕೆ ಹೋಗುವುದು ಅಥವಾ ಅತಿಯಾದ ಹಸಿವು ಇದೆಯೇ?": "Are you experiencing excessive thirst, waking up multiple times to pass urine, or excessive hunger?",
+  "ಕಾಲುಗಳಲ್ಲಿ ಮರಗಟ್ಟುವಿಕೆ, ಇರುವೆ ಹರಿದಂತೆ ಅಥವಾ ಉರಿಯುವ ಅನುಭವವಾಗುತ್ತಿದೆಯೇ?": "Do you feel tingling, numbness, or burning sensations in your feet, or have slow-healing cuts?",
+  "ರಾತ್ರಿ ಕೆಮ್ಮಿನಿಂದ ಎಚ್ಚರವಾಗುವುದು, ಎದೆ ಬಿಗಿತ ಅಥವಾ ಉಸಿರೆಳೆಯುವಾಗ ಶಬ್ದ ಬರುತ್ತದೆಯೇ?": "Do you wake up at night with coughing, chest tightness, or wheezing?",
+  "ಇನ್ಹೇಲರ್ ಅಥವಾ ನೆಬುಲೈಸರ್ ಬಳಸಿದ್ದೀರಾ? ಅದರಿಂದ ಆರಾಮ ಸಿಕ್ಕಿತೇ?": "Have you used an inhaler or nebulizer, and did it provide relief?",
+  "ಚರ್ಮದ ಮೇಲೆ ತುರಿಕೆ ಅಥವಾ ದದ್ದುಗಳಿವೆಯೇ? ಅವು ಹೇಗಿವೆ?": "Is the skin lesion or rash severely itchy, and what does it look like?",
+  "ಹೊಸ ಸಾಬೂನು, ಕ್ರೀಮ್ ಅಥವಾ ಔಷಧಿ ಬಳಸಿದ ನಂತರ ಇದು ಕಾಣಿಸಿಕೊಂಡಿತೇ?": "Did the rash appear after exposure to new soaps, cosmetics, plants, or medications?",
+  "ಮೂತ್ರ ವಿಸರ್ಜನೆ ಮಾಡುವಾಗ ಉರಿ ಅಥವಾ ಪದೇ ಪದೇ ಹೋಗಬೇಕಾಗುತ್ತದೆಯೇ?": "Do you feel a burning sensation during urination or need to pass urine unusually frequently?",
+  "ಚಳಿಯೊಂದಿಗೆ ಜ್ವರ ಅಥವಾ ಬೆನ್ನು/ಸೊಂಟದ ಭಾಗದಲ್ಲಿ ನೋವಿದೆಯೇ?": "Do you have fever with chills, or pain in your lower back / flank?",
+  "ಈ ಸಮಸ್ಯೆ ಎಷ್ಟು ದಿನಗಳಿಂದ ಇದೆ ಮತ್ತು ಇದು ಹಠಾತ್ತನೆ ಶುರುವಾಯಿತೇ?": "How long have you had this problem, and did it start suddenly?",
+  "ನಿಮ್ಮ ದಿನನಿತ್ಯದ ಚಟುವಟಿಕೆಗಳಿಗೆ ಇದು ಎಷ್ಟು ತೊಂದರೆ ಉಂಟುಮಾಡುತ್ತಿದೆ?": "How severe is this problem in affecting your daily activities?"
+};
+
+const COMPLAINT_EN_LOOKUP = {
+  "ತೀವ್ರ ಎದೆ ನೋವು": "Severe Chest Pain (ACS Evaluation)",
+  "ಎದೆ ನೋವು": "Chest Pain / Discomfort",
+  "ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು": "Fever & Productive Cough",
+  "ತೀವ್ರ ಹೊಟ್ಟೆ ನೋವು": "Severe Abdominal Pain",
+  "ಹೊಟ್ಟೆ ನೋವು": "Abdominal Pain",
+  "ತೀವ್ರ ತಲೆನೋವು": "Severe Acute Headache",
+  "ಉಸಿರಾಟದ ತೊಂದರೆ": "Shortness of Breath / Dyspnea",
+  "ಮಧುಮೇಹ ತಪಾಸಣೆ": "Diabetes Mellitus Review"
+};
+
+function getEnglishQuestion(ans) {
+  if (!ans) return '';
+  if (ans.questionEn) return ans.questionEn;
+  if (ans.id && QUESTION_EN_LOOKUP[ans.id]) return QUESTION_EN_LOOKUP[ans.id];
+  if (ans.question && KANNADA_QUESTION_TO_ENGLISH[ans.question.trim()]) return KANNADA_QUESTION_TO_ENGLISH[ans.question.trim()];
+  return ans.question || '';
+}
+
+function getEnglishChiefComplaint(c) {
+  if (!c) return '';
+  if (c.extractedEntities?.symptoms?.[0]?.canonicalName) {
+    return c.extractedEntities.symptoms[0].canonicalName;
+  }
+  if (c.chiefComplaint && COMPLAINT_EN_LOOKUP[c.chiefComplaint.trim()]) {
+    return COMPLAINT_EN_LOOKUP[c.chiefComplaint.trim()];
+  }
+  return c.chiefComplaint || '';
+}
+
+function getEnglishHpi(selectedCase) {
+  if (!selectedCase) return '';
+  const hpi = selectedCase.summary?.historyOfPresentingIllness;
+  if (hpi && !/[\u0C80-\u0CFF]/.test(hpi)) {
+    return hpi;
+  }
+  const sentences = [];
+  const complaintEn = getEnglishChiefComplaint(selectedCase);
+  if (complaintEn) {
+    sentences.push(`Patient presented with chief complaint of ${complaintEn}.`);
+  }
+  if (selectedCase.summary?.severity || selectedCase.extractedEntities?.severity) {
+    sentences.push(`Reported severity: ${selectedCase.summary?.severity || selectedCase.extractedEntities?.severity}.`);
+  }
+  if (selectedCase.adaptiveAnswers && selectedCase.adaptiveAnswers.length > 0) {
+    selectedCase.adaptiveAnswers.forEach(ans => {
+      const qText = getEnglishQuestion(ans);
+      sentences.push(`${qText} -> ${ans.answer}.`);
+    });
+  }
+  return sentences.join(' ') || hpi || selectedCase.chiefComplaint || '';
+}
+
 export default function DoctorDashboard({ initialSelectedCaseId = null }) {
   const { t, lang, isKannada } = useLanguage();
   const { user } = useAuth();
@@ -139,8 +265,9 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
     }
   };
 
-  // Open Case Sheet Modal & Load Timeline
+  // Open Case Sheet Modal & Load Full Case (with cross-verification + timeline)
   const openCaseSheet = async (caseItem) => {
+    // Immediately show the modal with card data
     setSelectedCase(caseItem);
     setDoctorNotes(caseItem.doctorVerification?.doctorNotes || '');
     setProvisionalDiagnosis(caseItem.doctorVerification?.provisionalDiagnosis || '');
@@ -148,6 +275,26 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
     setAyurvedaDietAdvice(caseItem.ayurvedaDoctorNotes?.dietAdvice || '');
     setAyurvedaRoutineAdvice(caseItem.ayurvedaDoctorNotes?.routineAdvice || '');
     setAyurvedaFollowUp(caseItem.ayurvedaFollowUp || '2 Weeks');
+
+    // Fetch the full case record from API to get summary.crossVerificationReport
+    try {
+      const fullRes = await getConsultationById(caseItem.id);
+      if (fullRes.success && fullRes.data) {
+        const full = fullRes.data;
+        // Flatten crossVerificationReport so the render can find it in one place
+        const crossReport =
+          full.crossVerificationReport ||
+          full.summary?.crossVerificationReport ||
+          null;
+        const enriched = { ...full, crossVerificationReport: crossReport };
+        setSelectedCase(enriched);
+        setDoctorNotes(enriched.doctorVerification?.doctorNotes || '');
+        setProvisionalDiagnosis(enriched.doctorVerification?.provisionalDiagnosis || '');
+        setPrescriptions(enriched.doctorVerification?.prescriptions || []);
+      }
+    } catch (err) {
+      console.error('Could not fetch full case detail:', err);
+    }
 
     // Fetch unified patient history timeline
     if (caseItem.patientId || caseItem.abhaId) {
@@ -279,7 +426,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <h1 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.3rem)', fontWeight: 900, color: '#ffffff', margin: 0 }}>
-              {doctorRole === 'ayurveda' ? 'Ayurveda Physician Portal (BAMS / MD)' : t('doctorDashboardTitle')}
+              {doctorRole === 'ayurveda' ? 'Ayurveda Physician Portal (BAMS / MD)' : 'Physician Clinical Dashboard (OPD Triage)'}
             </h1>
             {urgentCount > 0 && doctorRole === 'allopathic' && (
               <span className="badge badge-urgent" style={{ fontSize: '0.8rem', padding: '0.3rem 0.75rem' }}>
@@ -372,7 +519,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
             <Search size={16} color="var(--text-muted)" />
             <input
               type="text"
-              placeholder={doctorRole === 'ayurveda' ? 'Search Ayurveda cases...' : t('searchPlaceholder')}
+              placeholder={doctorRole === 'ayurveda' ? 'Search Ayurveda cases...' : 'Search by patient name, token number, ABHA ID...'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
@@ -572,7 +719,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                       Chief Complaint:
                     </span>
                     <p style={{ fontSize: '0.88rem', color: '#f1f5f9', marginTop: '0.15rem', lineHeight: '1.4' }}>
-                      "{item.chiefComplaint}"
+                      "{getEnglishChiefComplaint(item)}"
                     </p>
                   </div>
 
@@ -610,7 +757,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                       {item.createdAt ? new Date(item.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'Today'}
                     </span>
                     <span style={{ color: '#38bdf8', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
-                      {t('viewCaseBtn')}
+                      Open Clinical Case Sheet
                       <ChevronRight size={14} />
                     </span>
                   </div>
@@ -1058,7 +1205,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                   <h2 style={{ fontSize: '1.6rem', fontWeight: 800 }}>
-                    {t('caseSheetTitle')}
+                    Clinical Case Sheet
                   </h2>
                   <span style={{
                     padding: '0.2rem 0.6rem',
@@ -1091,7 +1238,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
 
             {/* RED-FLAG ALERT BANNER IF APPLICABLE */}
             {selectedCase.isRedFlag && (
-              <RedFlagAlertBanner redFlagReport={selectedCase.redFlagReport} />
+              <RedFlagAlertBanner redFlagReport={selectedCase.redFlagReport} forceEnglish={true} />
             )}
 
             {/* AI Case Summary Badge Notice */}
@@ -1109,7 +1256,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Stethoscope size={16} color="#818cf8" />
-                <span>{t('physicianSummaryBadge')}</span>
+                <span>AI Synthesized Clinical Record (ABDM Aligned)</span>
               </div>
               <span style={{ color: '#94a3b8' }}>ABDM & HL7 FHIR Compatible</span>
             </div>
@@ -1233,12 +1380,12 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                 <div style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', padding: '1.25rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                     <strong style={{ fontSize: '0.95rem', color: '#00e5a3' }}>
-                      {t('socratesHpi')}
+                      SOCRATES History of Present Illness (HPI)
                     </strong>
                     <span className="badge badge-source">[AI Structured + Voice Transcript]</span>
                   </div>
                   <p style={{ fontSize: '0.88rem', color: '#f1f5f9', lineHeight: '1.55' }}>
-                    {selectedCase.summary?.historyOfPresentingIllness || selectedCase.chiefComplaint}
+                    {getEnglishHpi(selectedCase)}
                   </p>
                 </div>
 
@@ -1253,7 +1400,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     {selectedCase.adaptiveAnswers?.map((ans, idx) => (
                       <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '0.6rem 0.8rem', borderRadius: '8px', fontSize: '0.85rem' }}>
-                        <div style={{ color: '#cbd5e1', fontWeight: 600 }}>• {ans.question}</div>
+                        <div style={{ color: '#cbd5e1', fontWeight: 600 }}>• {getEnglishQuestion(ans)}</div>
                         <div style={{ color: ans.isAlert ? '#ff4d6d' : '#00e5a3', fontWeight: 700, marginTop: '0.15rem' }}>
                           ➜ {ans.answer}
                         </div>
@@ -1394,7 +1541,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                         {doc.abnormalValues && doc.abnormalValues.length > 0 && (
                           <div style={{ marginTop: '0.35rem', background: 'rgba(255, 45, 85, 0.15)', border: '1px solid #ff2d55', borderRadius: '6px', padding: '0.5rem 0.75rem' }}>
                             <span style={{ color: '#ff4d6d', fontWeight: 700, fontSize: '0.78rem' }}>
-                              ⚠️ {t('abnormalFindings')}:
+                              ⚠️ Abnormal Findings:
                             </span>
                             {doc.abnormalValues.map((abn, j) => (
                               <div key={j} style={{ fontSize: '0.78rem', color: '#ffccd5', marginTop: '0.15rem' }}>
@@ -1413,7 +1560,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.6rem' }}>
                     <Calendar size={16} color="#00e5a3" />
                     <strong style={{ fontSize: '0.95rem', color: '#00e5a3' }}>
-                      {t('patientTimelineTitle')}
+                      Longitudinal Patient History Timeline
                     </strong>
                   </div>
 
@@ -1449,62 +1596,125 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
             </div>
 
             {/* CLINICAL CROSS-VERIFICATION ENGINE FINDINGS */}
-            {selectedCase.crossVerificationReport && (
-              <div style={{
-                background: 'rgba(168, 85, 247, 0.08)',
-                border: '1.5px solid rgba(168, 85, 247, 0.4)',
-                borderRadius: '16px',
-                padding: '1.25rem 1.5rem',
-                marginBottom: '1.5rem'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <ShieldAlert size={22} color="#c084fc" />
-                    <div>
-                      <strong style={{ fontSize: '1.05rem', color: '#ffffff' }}>
-                        Clinical Cross-Verification Engine Findings
-                      </strong>
-                      <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>
-                        Automated reconciliation of current symptoms against past history, medications & allergies
+            {(() => {
+              try {
+                // Resolve cross-verification report from any stored location
+                const rawCvReport =
+                  selectedCase.crossVerificationReport ||
+                  selectedCase.summary?.crossVerificationReport;
+
+                // Normalise the stored report (guards against malformed data)
+                const cvReport = rawCvReport && Array.isArray(rawCvReport.alerts)
+                  ? rawCvReport
+                  : null;
+
+                // Client-side fallback: if no valid stored report, compute minimal version
+                const effectiveReport = cvReport || (() => {
+                  const alerts = [];
+                  // Safely normalise fields that can be array OR string
+                  const toStr = (v) => Array.isArray(v) ? v.join(' ') : (typeof v === 'string' ? v : '');
+                  const allergies = toStr(selectedCase.medicalHistory?.allergies).toLowerCase();
+                  const conditions = toStr(selectedCase.medicalHistory?.conditions).toLowerCase();
+                  const meds = toStr(selectedCase.medicalHistory?.medications).toLowerCase();
+                  const complaint = (selectedCase.chiefComplaint || '').toLowerCase();
+
+                  if (allergies.includes('penicillin') || allergies.includes('amoxicillin')) {
+                    alerts.push({ type: 'ALLERGY_CONFLICT', severity: 'CRITICAL', title: 'Allergy Conflict: Penicillin Class Contraindication', finding: 'Patient has documented Penicillin allergy. Beta-lactam antibiotics are strictly contraindicated.', evidenceSource: 'Patient Medical History (Documented Allergies)', status: 'REQUIRES_PHYSICIAN_REVIEW' });
+                  }
+                  if (allergies.includes('aspirin') || allergies.includes('nsaid')) {
+                    alerts.push({ type: 'ALLERGY_CONFLICT', severity: 'HIGH', title: 'Allergy Conflict: NSAID / Aspirin Sensitivity', finding: 'Patient has reported sensitivity to NSAIDs. Avoid non-steroidal anti-inflammatory agents.', evidenceSource: 'Patient Medical History (Documented Allergies)', status: 'REQUIRES_PHYSICIAN_REVIEW' });
+                  }
+                  if (conditions.includes('hypertension') && (complaint.includes('chest') || complaint.includes('arm') || complaint.includes('jaw'))) {
+                    alerts.push({ type: 'CLINICAL_ESCALATION', severity: 'CRITICAL', title: 'Escalation Warning: Vascular Risk Correlation', finding: 'Patient with pre-existing hypertension presents with acute chest pain. Immediate ECG and troponin monitoring indicated.', evidenceSource: 'Cross-comparison: Past History vs Presenting Complaint', status: 'REQUIRES_PHYSICIAN_REVIEW' });
+                  }
+                  if (conditions.includes('diabetes') && meds.includes('metformin') && (meds.includes('missed') || meds.includes('stopped') || meds.includes('irregular'))) {
+                    alerts.push({ type: 'MEDICATION_DISCREPANCY', severity: 'HIGH', title: 'Medication Adherence Gap: Antidiabetic Therapy', finding: 'Known diabetic patient reports irregular antidiabetic medication use. Risk of hyperglycemic episodes.', evidenceSource: 'Intake History & Medication Audit', status: 'REQUIRES_PHYSICIAN_REVIEW' });
+                  }
+                  (selectedCase.documentExtractions || []).forEach(doc => {
+                    (doc.abnormalValues || []).forEach(abn => {
+                      alerts.push({ type: 'INVESTIGATION_DISCREPANCY', severity: (abn.parameter || '').includes('Troponin') ? 'CRITICAL' : 'HIGH', title: `Abnormal Lab Correlation: ${abn.parameter}`, finding: `${abn.parameter} observed at ${abn.observed} (Reference: ${abn.reference}). ${abn.clinicalNote}`, evidenceSource: `Uploaded ${doc.documentType || 'Lab Report'} (${doc.name || 'OCR'})`, status: 'REQUIRES_PHYSICIAN_REVIEW' });
+                    });
+                  });
+                  if (alerts.length === 0) {
+                    alerts.push({ type: 'VERIFIED_CLEAR', severity: 'STANDARD', title: 'Cross-Verification: No Active Drug-Allergy or Adherence Conflicts Detected', finding: 'Current presenting symptoms and reported medications show no direct adverse cross-reactions with documented baseline history.', evidenceSource: 'Cross-Verification Rule Engine (Client-Side)', status: 'VERIFIED_OK' });
+                  }
+                  return { verifiedAt: new Date().toISOString(), totalAlerts: alerts.filter(a => a.severity !== 'STANDARD').length, alerts, disclaimer: 'Evidence-linked clinical decision support for physician verification. Not an autonomous diagnostic assertion.' };
+                })();
+
+                // Final safety: ensure alerts is always an array
+                const safeAlerts = Array.isArray(effectiveReport?.alerts) ? effectiveReport.alerts : [];
+                const safeTotal = typeof effectiveReport?.totalAlerts === 'number' ? effectiveReport.totalAlerts : safeAlerts.filter(a => a.severity !== 'STANDARD').length;
+
+                return (
+                  <div style={{
+                    background: 'rgba(168, 85, 247, 0.08)',
+                    border: '1.5px solid rgba(168, 85, 247, 0.4)',
+                    borderRadius: '16px',
+                    padding: '1.25rem 1.5rem',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                        <ShieldAlert size={22} color="#c084fc" />
+                        <div>
+                          <strong style={{ fontSize: '1.05rem', color: '#ffffff' }}>
+                            Clinical Cross-Verification Engine Findings
+                          </strong>
+                          <div style={{ fontSize: '0.78rem', color: '#cbd5e1' }}>
+                            Automated reconciliation of current symptoms against past history, medications &amp; allergies
+                          </div>
+                        </div>
                       </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span className="badge badge-source" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.4)' }}>
+                          {safeTotal} Flagged Issue{safeTotal === 1 ? '' : 's'}
+                        </span>
+                        {!cvReport && (
+                          <span style={{ fontSize: '0.68rem', color: '#94a3b8', fontStyle: 'italic' }}>live</span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                      {safeAlerts.map((alert, aIdx) => (
+                        <div key={aIdx} style={{
+                          background: 'rgba(0, 0, 0, 0.35)',
+                          borderLeft: `4px solid ${alert.severity === 'CRITICAL' ? '#ff2d55' : alert.severity === 'HIGH' ? '#f59e0b' : '#00e5a3'}`,
+                          borderRadius: '8px',
+                          padding: '0.75rem 1rem',
+                          fontSize: '0.85rem'
+                        }}>
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                            <strong style={{ color: '#ffffff' }}>{alert.title}</strong>
+                            <span style={{
+                              fontSize: '0.68rem',
+                              fontWeight: 700,
+                              padding: '0.15rem 0.45rem',
+                              borderRadius: '4px',
+                              background: alert.severity === 'CRITICAL' ? 'rgba(255, 45, 85, 0.3)' : alert.severity === 'HIGH' ? 'rgba(245, 158, 11, 0.3)' : 'rgba(0, 229, 163, 0.2)',
+                              color: alert.severity === 'CRITICAL' ? '#ff85a1' : alert.severity === 'HIGH' ? '#fbbf24' : '#00e5a3'
+                            }}>
+                              {alert.severity}
+                            </span>
+                          </div>
+                          <p style={{ color: '#e2e8f0', margin: '0.15rem 0' }}>{alert.finding}</p>
+                          <div style={{ fontSize: '0.73rem', color: '#94a3b8', marginTop: '0.3rem' }}>
+                            Evidence Source: <span style={{ color: '#c7d2fe' }}>{alert.evidenceSource}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div style={{ fontSize: '0.7rem', color: '#64748b', marginTop: '0.75rem', fontStyle: 'italic' }}>
+                      ⚕️ {effectiveReport?.disclaimer || 'Evidence-linked clinical decision support for physician verification.'}
                     </div>
                   </div>
-                  <span className="badge badge-source" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.4)' }}>
-                    {selectedCase.crossVerificationReport.totalAlerts || 0} Flagged Issue{selectedCase.crossVerificationReport.totalAlerts === 1 ? '' : 's'}
-                  </span>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {selectedCase.crossVerificationReport.alerts?.map((alert, aIdx) => (
-                    <div key={aIdx} style={{
-                      background: 'rgba(0, 0, 0, 0.35)',
-                      borderLeft: `4px solid ${alert.severity === 'CRITICAL' ? '#ff2d55' : alert.severity === 'HIGH' ? '#f59e0b' : '#00e5a3'}`,
-                      borderRadius: '8px',
-                      padding: '0.75rem 1rem',
-                      fontSize: '0.85rem'
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-                        <strong style={{ color: '#ffffff' }}>{alert.title}</strong>
-                        <span style={{
-                          fontSize: '0.68rem',
-                          fontWeight: 700,
-                          padding: '0.15rem 0.45rem',
-                          borderRadius: '4px',
-                          background: alert.severity === 'CRITICAL' ? 'rgba(255, 45, 85, 0.3)' : alert.severity === 'HIGH' ? 'rgba(245, 158, 11, 0.3)' : 'rgba(0, 229, 163, 0.2)',
-                          color: alert.severity === 'CRITICAL' ? '#ff85a1' : alert.severity === 'HIGH' ? '#fbbf24' : '#00e5a3'
-                        }}>
-                          {alert.severity}
-                        </span>
-                      </div>
-                      <p style={{ color: '#e2e8f0', margin: '0.15rem 0' }}>{alert.finding}</p>
-                      <div style={{ fontSize: '0.73rem', color: '#94a3b8', marginTop: '0.3rem' }}>
-                        Evidence Source: <span style={{ color: '#c7d2fe' }}>{alert.evidenceSource}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                );
+              } catch (e) {
+                console.error('Cross-verification render error:', e);
+                return null;
+              }
+            })()}
 
             {/* EXISTING REFERRAL NOTICE IF PRESENT */}
             {selectedCase.interdisciplinaryReferral && (
@@ -1548,7 +1758,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   {doctorRole === 'ayurveda' ? <Leaf size={20} color="#2dd4bf" /> : <Edit3 size={20} color="#00e5a3" />}
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#ffffff', margin: 0 }}>
-                    {doctorRole === 'ayurveda' ? 'Ayurveda Physician Notes & Verified Clinical Protocol' : t('doctorNotesHeading')}
+                    {doctorRole === 'ayurveda' ? 'Ayurveda Physician Notes & Verified Clinical Protocol' : 'Physician Clinical Notes & Verified Assessment'}
                   </h3>
                 </div>
 
@@ -1590,7 +1800,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#cbd5e1', marginBottom: '0.35rem' }}>
-                    {doctorRole === 'ayurveda' ? 'Classical Assessment / Verified Diagnosis:' : `${t('provisionalDiagnosisLabel')}:`}
+                    {doctorRole === 'ayurveda' ? 'Classical Assessment / Verified Diagnosis:' : 'Provisional / Differential Diagnosis:'}
                   </label>
                   <input
                     type="text"
@@ -1713,7 +1923,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                   rows={4}
                   value={doctorNotes}
                   onChange={(e) => setDoctorNotes(e.target.value)}
-                  placeholder={doctorRole === 'ayurveda' ? 'Record Ayurvedic clinical observations, doshic assessment, treatment response, and lifestyle directions...' : t('doctorNotesPlaceholder')}
+                  placeholder={doctorRole === 'ayurveda' ? 'Record Ayurvedic clinical observations, doshic assessment, treatment response, and lifestyle directions...' : 'Document clinical reasoning, examination findings, differential diagnosis, and recommended investigations...'}
                   style={{
                     width: '100%',
                     padding: '0.75rem 1rem',
@@ -1771,7 +1981,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                     onClick={() => setSelectedCase(null)}
                     className="btn btn-secondary"
                   >
-                    {t('closeModal')}
+                    Close Case Sheet
                   </button>
                   <button
                     type="button"
@@ -1781,7 +1991,7 @@ export default function DoctorDashboard({ initialSelectedCaseId = null }) {
                     style={{ minWidth: '220px' }}
                   >
                     <Save size={18} />
-                    <span>{isVerifying ? 'Saving Verification...' : t('verifyAndApproveBtn')}</span>
+                    <span>{isVerifying ? 'Saving Verification...' : 'Verify & Approve Case Sheet'}</span>
                   </button>
                 </div>
               </div>

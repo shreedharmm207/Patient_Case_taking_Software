@@ -860,8 +860,21 @@ export function generatePhysicianCaseSummary(consultationData) {
     hpiSentences.push(`Reported severity: ${extractedEntities.severity}.`);
   }
 
+  // Helper to find question in CLINICAL_QUESTION_FLOWS
+  const findQuestionEn = (id) => {
+    if (!id) return null;
+    for (const flow of Object.values(CLINICAL_QUESTION_FLOWS)) {
+      if (flow.questions) {
+        const found = flow.questions.find(q => q.id === id);
+        if (found && found.questionEn) return found.questionEn;
+      }
+    }
+    return null;
+  };
+
   adaptiveAnswers.forEach(ans => {
-    hpiSentences.push(`${ans.question} -> ${ans.answer}.`);
+    const qText = ans.questionEn || findQuestionEn(ans.id) || ans.question;
+    hpiSentences.push(`${qText} -> ${ans.answer}.`);
   });
 
   const hpi = hpiSentences.join(" ");
